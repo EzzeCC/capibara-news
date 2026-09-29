@@ -1411,7 +1411,6 @@
                     <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
                     <h3>Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
                     <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 24 de Julio de 2026</div>
-                    <img src="espacio01.jpg" alt="Norberto Delgado y Victoria Villarruel" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 20px; display: block;">
                     <p> En un mano a mano picante, el referente de Junín habló del armado territorial, de la incertidumbre por la candidatura de Villarruel y de por qué el interior bonaerense ya no quiere ser un convidado de piedra.</p>
                     <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.
 
@@ -1738,7 +1737,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-            <!-- SIDEBAR ESTÁNDAR (INICIO, MUNICIPIOS, EL PASTIZAL, PUBLICIDAD) -->
+            <!-- SIDEBAR ESTÁNDAR (INICIO, LA ROSCA, MUNICIPIOS, CLASIFICADOS, PUBLICIDAD) -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -1748,7 +1747,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </a>
                 </div>
                 
-                <!-- BANNER 300x600 (HALF-PAGE) -->
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario Premium</div>
                     <div class="massive-placeholder-banner" style="padding: 80px 15px;">
@@ -1757,7 +1755,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- BANNER 300x250 -->
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
                     <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
@@ -1776,13 +1773,11 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR LA ROSCA -->
-            <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
+            <!-- SIDEBAR CON NORBERTO (EL PASTIZAL, EL VECINDARIO, LA BILLETERA) -->
+            <div id="sidebar-norberto" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
-                    <div class="ad-title">Patrocinio Político Exclusivo</div>
-                    <div class="large-placeholder-banner">
-                        ESPACIO 300x400<br><small style="font-size: 12px; font-weight: normal;">Banner Premium</small>
-                    </div>
+                    <div class="ad-title">Publicidad</div>
+                    <img src="espacio01.jpg" alt="Norberto Delgado - Victoria Villarruel" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
@@ -1790,7 +1785,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR EL VECINDARIO, LA BILLETERA, EL TERMÓMETRO, CONTACTO -->
+            <!-- SIDEBAR GENÉRICA (EL TERMÓMETRO, CONTACTO) -->
             <div id="sidebar-generic" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Patrocinio de Sección</div>
@@ -1908,16 +1903,16 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
 
             const sidebarStandard = document.getElementById('sidebar-standard');
-            const sidebarRosca = document.getElementById('sidebar-rosca');
+            const sidebarNorberto = document.getElementById('sidebar-norberto');
             const sidebarGeneric = document.getElementById('sidebar-generic');
 
             if(sidebarStandard) sidebarStandard.style.display = 'none';
-            if(sidebarRosca) sidebarRosca.style.display = 'none';
+            if(sidebarNorberto) sidebarNorberto.style.display = 'none';
             if(sidebarGeneric) sidebarGeneric.style.display = 'none';
 
-            if (nombreVista === 'rosca') {
-                if(sidebarRosca) sidebarRosca.style.display = 'flex';
-            } else if (nombreVista === 'vecindario' || nombreVista === 'billetera' || nombreVista === 'termometro' || nombreVista === 'contacto') {
+            if (nombreVista === 'pastizal' || nombreVista === 'vecindario' || nombreVista === 'billetera') {
+                if(sidebarNorberto) sidebarNorberto.style.display = 'flex';
+            } else if (nombreVista === 'termometro' || nombreVista === 'contacto') {
                 if(sidebarGeneric) sidebarGeneric.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
