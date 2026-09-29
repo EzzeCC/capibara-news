@@ -1215,7 +1215,7 @@
                     <div>
                         <h4>✨ En exclusiva en nuestra sección El Pastizal</h4>
                         <p>Nota exclusiva a Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</p>
-                        <p>Proximamente el Capi se pego un viaje a Neuquen, para charlar con los que la ROSCA POLITICA deja a la deriva, estuvimos conversando con los referentes de los vecinos...</p>
+                        <p>Ademas dentro en breve, el Capi se dio una vuelta por Neuquen a visitar a los que LA ROSCA dejo de la deriva,charlando con referentes de los vecinos...</p>
                     </div>
                     <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Ver nota en El Pastizal</a>
                 </div>
@@ -1771,7 +1771,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR CON NORBERTO (EL PASTIZAL, EL VECINDARIO, LA BILLETERA) -->
+            <!-- SIDEBAR CON NORBERTO (SOLO EL PASTIZAL) -->
             <div id="sidebar-norberto" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad</div>
@@ -1783,7 +1783,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR GENÉRICA (EL TERMÓMETRO, CONTACTO) -->
+            <!-- SIDEBAR GENÉRICA (EL VECINDARIO, LA BILLETERA, EL TERMÓMETRO, CONTACTO) -->
             <div id="sidebar-generic" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Patrocinio de Sección</div>
@@ -1908,9 +1908,9 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             if(sidebarNorberto) sidebarNorberto.style.display = 'none';
             if(sidebarGeneric) sidebarGeneric.style.display = 'none';
 
-            if (nombreVista === 'pastizal' || nombreVista === 'vecindario' || nombreVista === 'billetera') {
+            if (nombreVista === 'pastizal') {
                 if(sidebarNorberto) sidebarNorberto.style.display = 'flex';
-            } else if (nombreVista === 'termometro' || nombreVista === 'contacto') {
+            } else if (nombreVista === 'vecindario' || nombreVista === 'billetera' || nombreVista === 'termometro' || nombreVista === 'contacto') {
                 if(sidebarGeneric) sidebarGeneric.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
