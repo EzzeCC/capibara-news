@@ -1048,6 +1048,46 @@
             color: var(--text-color);
             font-weight: bold;
         }
+
+        /* Media Kit Download */
+        .media-kit-download {
+            background: linear-gradient(135deg, #f0f4f8, #ffffff);
+            border: 2px solid var(--primary-color);
+            border-left: 5px solid var(--lima-color);
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin-top: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .media-kit-download h4 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        .media-kit-download p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .media-kit-download a {
+            background-color: var(--lima-color);
+            color: #113019;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .media-kit-download a:hover {
+            background-color: #7cb342;
+        }
     </style>
 </head>
 <body>
@@ -1079,10 +1119,10 @@
 
             <div class="trending-container">
                 <span class="trending-label">Temas del Día</span>
-                <a onclick="cambiarVista('rosca')">Politica mal nacida</a>
+                <a onclick="cambiarVista('rosca')">Política mal nacida</a>
                 <a onclick="cambiarVista('billetera')">Aumento de combustible en puerta</a>
                 <a onclick="cambiarVista('municipios')">Elecciones en el Conurbano</a>
-                <a onclick="cambiarVista('municipios')">Asesinato en Ezeiza</a>
+                <a onclick="cambiarVista('vecindario')">Asesinato en Ezeiza</a>
             </div>
         </div>
         
@@ -1142,7 +1182,7 @@
     <section class="newsletter-section">
         <h3>Suscribite a nuestro Newsletter</h3>
         <div class="newsletter-counter-badge">
-            👥 <span id="subscriber-counter">37.901</span> suscriptores
+            👥 <span id="subscriber-counter">39.901</span> suscriptores
         </div>
         <div class="newsletter-form" id="newsletter-container">
             <form name="newsletter" method="POST" data-netlify="true" style="display: flex; width: 100%;">
@@ -1175,7 +1215,6 @@
                     <div>
                         <h4>✨ En exclusiva en nuestra sección El Pastizal</h4>
                         <p>Nota exclusiva a Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</p>
-                        <p>Atencion queridos lectores! En breve, el Capi se pega un vuelta por la provincia de Neuquen, para tomarse unos mates y ver que pasa con los olvidados por LA ROSCA POLITICA</p>
                     </div>
                     <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Ver nota en El Pastizal</a>
                 </div>
@@ -1199,14 +1238,13 @@
             </article>
         </main>
 
-                <!-- VISTA 2: LA ROSCA -->
+        <!-- VISTA 2: LA ROSCA -->
         <main id="vista-rosca" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Rosca</h2>
                 <p>Política pura y sin filtro. Resumen de las noticias más importantes de la Provincia de Buenos Aires y el país, con la mirada del Capibara.</p>
 
                 <div class="articles-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <!-- Noticia 1 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🔴 Política Nacional</div>
                         <h4>Pases de factura en el Conurbano</h4>
@@ -1214,7 +1252,6 @@
                         <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Clarín</div>
                     </div>
 
-                    <!-- Noticia 2 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🔵 Legislatura</div>
                         <h4>Sesión caliente en La Plata</h4>
@@ -1222,7 +1259,6 @@
                         <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Infobae</div>
                     </div>
 
-                    <!-- Noticia 3 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟢 Economía</div>
                         <h4>Presupuesto bajo la lupa</h4>
@@ -1230,7 +1266,6 @@
                         <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: La Nación</div>
                     </div>
 
-                    <!-- Noticia 4 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟡 Gremios</div>
                         <h4>El teléfono descompuesto</h4>
@@ -1238,7 +1273,6 @@
                         <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Página/12</div>
                     </div>
 
-                    <!-- Noticia 5 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟠 Justicia</div>
                         <h4>Operativo en la Rosada</h4>
@@ -1246,7 +1280,6 @@
                         <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Ámbito</div>
                     </div>
 
-                    <!-- Noticia 6 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟣 Provincia</div>
                         <h4>La interna que no se ve</h4>
@@ -1255,7 +1288,6 @@
                     </div>
                 </div>
 
-                <!-- AVISO DE ACTUALIZACIÓN -->
                 <div style="background: linear-gradient(90deg, #102630, #1F4E5F); color: #ffffff; padding: 15px 25px; border-radius: 6px; margin-top: 25px; text-align: center; border-left: 5px solid var(--lima-color);">
                     <p style="margin: 0; font-size: 13px; color: #e0f7fa;">📌 <strong style="color: var(--lima-color);">Resumen actualizado todos los días.</strong> Las noticias son un compilado de los principales medios nacionales y provinciales, con resumen propio de Capibara News.</p>
                 </div>
@@ -1317,436 +1349,6 @@
         <main id="vista-billetera" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Billetera</h2>
-                <p>Precios de los alimentos, paritarias y cómo cuidar el mango en la provincia sin volverse loco.</p>
-
-                <div class="articles-grid">
-                    <div class="article-box-card">
-                        <h4>1. El changuito en terapia</h4>
-                        <p>Relevamiento de precios en ferias barriales y mayoristas del conurbano para ganarle a la inflación.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>2. Paritarias bonaerenses</h4>
-                        <p>Nuevos tramos de aumento salarial acordados para estatales y docentes en distrito provincial.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>3. Tarifas y boletas</h4>
-                        <p>Impacto de las últimas subas de servicios en comercios de cercanía y pymes zonales.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>4. Descuentos con Cuenta DNI</h4>
-                        <p>El cronograma de ahorro en carnicerías y verdulerías para aliviar el bolsillo el fin de semana.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>5. Naftas y transporte</h4>
-                        <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- VISTA 5: EL PASTIZAL -->
-        <main id="vista-pastizal" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">El Pastizal</h2>
-                <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
-
-                <!-- Artículo Destacado / Nota Propia de Autor -->
-                <div class="featured-pastizal-card">
-                    <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
-                    <h3>Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
-                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 24 de Julio de 2026</div>
-                    <p> En un mano a mano picante, el referente de Junín habló del armado territorial, de la incertidumbre por la candidatura de Villarruel y de por qué el interior bonaerense ya no quiere ser un convidado de piedra.</p>
-                    <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.
-
-<p><strong>—Norberto, te vemos en todos lados. ¿Qué está pasando en la 4ta?</strong></p>
-
-<p>—La 4ta se pone de pie. Nos cansamos de que nos miren como el patio trasero de la provincia. Acá hay laburo, hay producción y hay gente con ganas de cambiar la historia. Nosotros no venimos a improvisar.</p>
-
-<p><strong>—La imagen que están usando dice "La 4ta Sección se pone de pie". ¿A qué te referís puntualmente?</strong></p>
-
-<p>—A que estamos organizando el territorio. Queremos una banca que nos represente de verdad. No un nombre de Buenos Aires que baja en una 4x4, saluda y se va. Queremos gente que viva acá, que sepa lo que es levantarse a las 6 de la mañana para laburar en el campo o en el comercio.</p>
-
-<p><strong>—El nombre de Victoria Villarruel suena fuerte. ¿Es tu candidata?</strong></p>
-
-<p>—Mirá, yo soy un soldado del proyecto. Y te digo una cosa: Victoria es la única que puede poner de pie a la Argentina y a nuestra sección. Tiene el coraje, tiene la convicción y, sobre todo, tiene el orden. Hoy la gente busca eso: orden. Y nosotros con Norberto Delgado a la cabeza, con Victoria, representamos eso.</p>
-
-<p><strong>—Pero hay un pequeño detalle: todavía no está confirmada su candidatura. ¿Cómo juega eso en el armado?</strong></p>
-
-<p>—(Se ríe) La política es dinámica, amigo. Hoy no está confirmado, mañana puede estarlo. Lo que sí te aseguro es que el armado está en marcha. Nosotros ya estamos caminando, tocando timbre y juntando voluntades. Si Villarruel decide dar el paso, va a encontrar una 4ta Sección totalmente organizada y lista para pelear. Si no, seguiremos trabajando por los vecinos. Pero el compromiso es con la gente.</p>
-
-<p><strong>—¿Y la relación con los intendentes de la zona?</strong></p>
-
-<p>—Hay de todo, como en la vida. Algunos se suben al proyecto, otros miran de costado. Pero el vecino común ya nos conoce. No somos una encuesta, somos la realidad de la calle.</p>
-
-<p><strong>La incógnita que todos se hacen:
-Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita en el tablero bonaerense, hombres como Norberto Delgado ya juegan su propio partido. En Junín, dicen, la 4ta Sección se está poniendo de pie. Y si el armado sigue creciendo, no sería descabellado ver ese eslogan convertido en una boleta real en los próximos comicios.<br>Lo único seguro es que la política bonaerense no duerme. Y en la 4ta, menos que menos.</strong></p>
-
-                </div>
-
-                <div class="articles-grid">
-                    <div class="article-box-card">
-                        <h4>1. El arte de esquivar pozos</h4>
-                        <p>Crónica urbana sobre la odisea diaria de manejar en calles destruidas sin romper el tren delantero.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>2. Políticos en campaña</h4>
-                        <p>Ese momento mágico en que descubren las plazas y saludan perritos como si les importara.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>3. La burocracia del trámite</h4>
-                        <p>Por qué sacar un papel municipal requiere más paciencia que armar un mueble sin manual.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>4. Vecinos ruidosos S.A.</h4>
-                        <p>Sociología barrial del domingo a la tarde: música a todo volumen y el perro del vecino que no calla.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>5. Nostalgia de baldío</h4>
-                        <p>Reflexiones sobre los espacios verdes que se pierden y las torres que crecen sin planificación.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- VISTA 6: EL TERMÓMETRO (ENCUESTA BONAERENSE) -->
-        <main id="vista-termometro" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">🌡️ El Termómetro de la Provincia</h2>
-                <div class="date">Participación ciudadana bonaerense</div>
-                <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
-
-                <!-- PREGUNTA 1: Partido y Distrito -->
-                <div class="termometro-card">
-                    <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
-                    <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
-                    <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
-                </div>
-
-                <!-- PREGUNTA 2: Salud Pública -->
-                <div class="termometro-card">
-                    <h3>Pregunta 2: Salud Pública</h3>
-                    <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
-                    <div class="opciones-pill-container" id="grupo-salud">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'muybueno')">MUY BUENO</div>
-                    </div>
-                    <div class="resultado-encuesta" id="res-salud">
-                        Resultado actual: <span id="porc-salud">52% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-salud" style="width: 52%;"></div></div>
-                    </div>
-                </div>
-
-                <!-- PREGUNTA 3: Seguridad y Prevención -->
-                <div class="termometro-card">
-                    <h3>Pregunta 3: Seguridad y Prevención</h3>
-                    <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
-                    <div class="opciones-pill-container" id="grupo-seguridad">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'muybueno')">MUY BUENO</div>
-                    </div>
-                    <div class="resultado-encuesta" id="res-seguridad">
-                        Resultado actual: <span id="porc-seguridad">68% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-seguridad" style="width: 68%;"></div></div>
-                    </div>
-                </div>
-
-                <!-- PREGUNTA 4: Educación y Escuelas -->
-                <div class="termometro-card">
-                    <h3>Pregunta 4: Educación y Escuelas</h3>
-                    <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
-                    <div class="opciones-pill-container" id="grupo-educacion">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'muybueno')">MUY BUENO</div>
-                    </div>
-                    <div class="resultado-encuesta" id="res-educacion">
-                        Resultado actual: <span id="porc-educacion">45% lo califica como REGULAR</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-educacion" style="width: 45%;"></div></div>
-                    </div>
-                </div>
-
-                <!-- PREGUNTA 5: Servicios y Obras Públicas -->
-                <div class="termometro-card">
-                    <h3>Pregunta 5: Servicios y Obras Públicas</h3>
-                    <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
-                    <div class="opciones-pill-container" id="grupo-servicios">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'muybueno')">MUY BUENO</div>
-                    </div>
-                    <div class="resultado-encuesta" id="res-servicios">
-                        Resultado actual: <span id="porc-servicios">61% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-servicios" style="width: 61%;"></div></div>
-                    </div>
-                </div>
-
-                <!-- BOTÓN DE VOTAR -->
-                <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
-            </section>
-        </main>
-
-        <!-- VISTA 8: CLASIFICADOS -->
-        <main id="vista-clasificados" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">📌 Clasificados Vecinales</h2>
-                <p>El espacio donde los vecinos de la Provincia publican lo que necesitan. Vendé, comprá, alquilá, ofrecé servicios o buscá trabajo. Publicar tu aviso es fácil y económico.</p>
-
-                <!-- PLANTILLA DE REFERENCIA -->
-                <div class="clasificados-plantilla">
-                    <strong>📝 Plantilla de referencia:</strong> Así va a verse tu aviso. Copiá este formato y completalo con tus datos.<br><br>
-                    <strong>Categoría:</strong> (Venta / Alquiler / Servicios / Trabajo / Varios)<br>
-                    <strong>Título:</strong> (Ej: "Vendo bicicleta rodado 26 en buen estado")<br>
-                    <strong>Descripción:</strong> (Contá lo que querés vender o el servicio que ofrecés, con detalles útiles)<br>
-                    <strong>Contacto:</strong> (Tu WhatsApp o mail para que te escriban)
-                </div>
-
-                <!-- FORMULARIO DE CARGA -->
-                <div class="clasificados-form">
-                    <h3>Publicá tu aviso</h3>
-                    <p>Completá el formulario y lo subimos a la página en menos de 24 horas. El costo es de $2.000 por 7 días. Te contactamos para coordinar el pago.</p>
-                    <form name="clasificados" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="clasificados" />
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu nombre o comercio:</label>
-                        <input type="text" name="nombre" placeholder="Ej: Almacén Don Pedro" required>
-                        
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Categoría:</label>
-                        <select name="categoria" required>
-                            <option value="">Elegí una categoría</option>
-                            <option value="Venta">Venta</option>
-                            <option value="Alquiler">Alquiler</option>
-                            <option value="Servicios">Servicios</option>
-                            <option value="Trabajo">Trabajo</option>
-                            <option value="Varios">Varios</option>
-                        </select>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Título del aviso:</label>
-                        <input type="text" name="titulo" placeholder="Ej: Vendo bicicleta rodado 26" required>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Descripción:</label>
-                        <textarea name="descripcion" rows="4" placeholder="Contá los detalles de tu aviso..." required></textarea>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu contacto (WhatsApp o mail):</label>
-                        <input type="text" name="contacto" placeholder="Ej: 11 2345-6789 o tunombre@mail.com" required>
-
-                        <button type="submit">📩 Enviar mi aviso</button>
-                    </form>
-                </div>
-
-                <!-- AVISOS DESTACADOS (EJEMPLOS) -->
-                <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 10px;">Avisos destacados</h3>
-                <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Estos son los avisos que ya están publicados. Si querés el tuyo, completá el formulario de arriba.</p>
-
-                <div class="clasificados-lista">
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🔧 Servicios</div>
-                        <div class="clasificado-titulo">Electricista matriculado - Zona Sur</div>
-                        <p class="clasificado-desc">Instalaciones, reparaciones y urgencias. Trabajo con garantía. Presupuestos sin cargo.</p>
-                        <div class="clasificado-contacto">📞 11 5555-1234</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🏠 Alquiler</div>
-                        <div class="clasificado-titulo">Monoambiente amoblado en La Plata</div>
-                        <p class="clasificado-desc">A estrenar, con cocina y baño completo. Ideal estudiantes o pareja. Zona céntrica.</p>
-                        <div class="clasificado-contacto">📧 alquilereslp@mail.com</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🚲 Venta</div>
-                        <div class="clasificado-titulo">Bicicleta rodado 26 en buen estado</div>
-                        <p class="clasificado-desc">Vendo bici con cambios, frenos nuevos y asiento cómodo. Poco uso. Escucho ofertas.</p>
-                        <div class="clasificado-contacto">📞 11 4444-9876</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">💼 Trabajo</div>
-                        <div class="clasificado-titulo">Busco trabajo de administrativa</div>
-                        <p class="clasificado-desc">Experiencia en atención al cliente y manejo de sistemas. Disponibilidad full time. Zona Norte.</p>
-                        <div class="clasificado-contacto">📧 cv.ana@mail.com</div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- VISTA 7: PUBLICIDAD -->
-        <main id="vista-publicidad" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">📢 Publicidad en Capibara News</h2>
-                <p>Si tenés un comercio, una pyme o una marca personal en la Provincia de Buenos Aires, este es tu lugar. Capibara News es el diario digital que crece día a día, con un enfoque federal y una audiencia fiel que busca información útil y sin vueltas.</p>
-
-                <!-- DATOS DE AUDIENCIA -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.900+</div>
-                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Suscriptores al Newsletter</div>
-                    </div>
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--lima-color); padding: 20px; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">10</div>
-                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Municipios Cubiertos</div>
-                    </div>
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--accent-color); padding: 20px; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">100%</div>
-                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Enfoque Federal</div>
-                    </div>
-                </div>
-
-                <!-- FORMATOS DISPONIBLES -->
-                <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 15px;">Formatos Disponibles</h3>
-
-                <div class="articles-grid">
-                    <div class="article-box-card" style="border-left-color: var(--lima-color);">
-                        <h4>🖼️ Banner en Sidebar</h4>
-                        <p>Formato 300x250 o 300x600. Visible en todas las secciones de la página. Ideal para comercios locales que quieren llegar a miles de vecinos.</p>
-                    </div>
-                    <div class="article-box-card" style="border-left-color: var(--accent-color);">
-                        <h4>📰 Nota Patrocinada</h4>
-                        <p>Un artículo completo sobre tu marca o emprendimiento, publicado en la sección que elijas. Incluye imagen destacada y link a tu sitio.</p>
-                    </div>
-                    <div class="article-box-card" style="border-left-color: var(--primary-color);">
-                        <h4>💬 Mención en el Muro</h4>
-                        <p>Tu marca o mensaje destacado en el "Muro de Capibara News", visible para todos los lectores que participan del foro.</p>
-                    </div>
-                    <div class="article-box-card" style="border-left-color: #ef4444;">
-                        <h4>📧 Publicidad en el Newsletter</h4>
-                        <p>Mención de tu marca en nuestro newsletter semanal que llega a miles de suscriptores. El formato de mayor fidelidad.</p>
-                    </div>
-                </div>
-
-                <!-- CTA DE CONTACTO -->
-                <div style="background: linear-gradient(135deg, #102630, #1F4E5F); color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 35px; text-align: center; border-left: 5px solid var(--lima-color);">
-                    <h3 style="color: var(--lima-color); margin: 0 0 10px 0; text-transform: uppercase;">¿Querés anunciar con nosotros?</h3>
-                    <p style="color: #e0f7fa; font-size: 14px; margin-bottom: 20px;">Escribinos y te enviamos el Media Kit completo con precios y disponibilidad.</p>
-                    <a href="mailto:hablaleacapibaranews@outlook.com?subject=Consulta%20de%20Publicidad" style="background-color: var(--lima-color); color: #113019; padding: 12px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; display: inline-block;">📩 Consultar Disponibilidad</a>
-                </div>
-            </section>
-        </main>
-        
-        <!-- VISTA CONTACTO -->
-        <main id="vista-contacto" class="page-view">
-            <article class="content-card">
-                <h2 class="article-title">Contacto Directo</h2>
-                <div class="date">La Redacción de Capibara News</div>
-                
-                <p>¿Tenés una denuncia barrial que los medios tradicionales ignoran? ¿Viste algo insólito en tu municipio, querés mandarnos fotos de los cráteres en la calle o tenés una propuesta comercial para anunciar con nosotros?</p>
-                
-                <p>El capibara está siempre atento a lo que pasa en la calle. Escribinos de forma directa a nuestro correo oficial:</p>
-                
-                <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin: 25px 0;">
-                    <strong style="color: var(--primary-color); font-size: 15px;">📧 Correo Electrónico:</strong><br>
-                    <a href="mailto:hablaleacapibaranews@outlook.com" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">hablaleacapibaranews@outlook.com</a>
-                </div>
-
-                <p>Leemos todos los mensajes que llegan. Si la historia vale la pena, la hacemos tapa en el diario.</p>
-            </article>
-        </main>
-
-        <!-- VISTA: EL VECINDARIO (MODIFICADA) -->
-        <main id="vista-vecindario" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">El Vecindario</h2>
-                <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
-
-                <!-- BOTÓN DE PARTICIPACIÓN -->
-                <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
-                    <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
-                    <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
-                    <a onclick="cambiarVista('contacto')" style="background-color: var(--lima-color); color: #113019; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; cursor: pointer; display: inline-block;">📩 Mandanos tu historia</a>
-                </div>
-
-                <div class="articles-grid">
-                    <!-- Nota 1 -->
-                    <div class="article-box-card" style="border-left-color: var(--lima-color);">
-                        <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
-                        <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
-                        <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
-                    </div>
-
-                    <!-- Nota 2 -->
-                    <div class="article-box-card" style="border-left-color: #ef4444;">
-                        <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
-                        <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
-                        <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
-                    </div>
-
-                    <!-- Nota 3 -->
-                    <div class="article-box-card" style="border-left-color: var(--accent-color);">
-                        <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
-                        <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
-                        <p>A pesar de los ajustes y la caída del consumo, una localidad del interior decidió que su fiesta anual se hacía igual. La comunidad se puso al hombro la organización para no perder la tradición.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- BARRA LATERAL DINÁMICA -->
-        <aside>
-            <!-- BANNER FIJO LISTO PARA PROMOCIONAR -->
-            <div class="promo-sticky-banner">
-                <span class="promo-badge">Espacio Disponible</span>
-                <h4>¡Tu Marca Acá!</h4>
-                <p>Anunciá en el diario de mayor llegada en la región.</p>
-                <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
-            </div>
-
-            <!-- 1. Banners Estándar + Confesionario -->
-            <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad Destacada</div>
-                    <a href="#" class="live-banner">
-                        <h4>¡Anunciá tu Local Acá!</h4>
-                        <p>Llegá directo a miles de vecinos.</p>
-                    </a>
-                </div>
-                
-                <!-- AQUÍ ESTÁ LA IMAGEN QUE PEDISTE INSERTAR -->
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad</div>
-                    <!-- Reemplazá "ESPACIO1.jpg" por el nombre exacto de tu archivo de imagen -->
-                    <img src="espacio01.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
-
-                <!-- NUEVO BANNER 300x250 (ESPACIO DISPONIBLE) -->
-                <div class="ad-box">
-                    <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
-                </div>
-
-                <!-- CONFESIONARIO DEL CAPIBARA (JSONBIN) -->
-                <div class="confesionario-box">
-                    <h4>💬 Confesionario del Capibara</h4>
-                    <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
-
-                    <!-- Formulario -->
-                    <div id="form-confesionario">
-                        <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
-                        <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
-                        <textarea id="conf-texto" class="conf-textarea" placeholder="Escribí tu comentario acá..." maxlength="500"></textarea>
-                        <button type="button" class="conf-btn" onclick="enviarComentario()">📩 Enviar al Muro</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Banners Exclusivos LA ROSCA -->
-            <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">Patrocinio Político Exclusivo</div>
-                    <div class="large-placeholder-banner">
-                        ESPACIO 4<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
-                    </div>
-                </div>
-                <div class="ad-box">
-                    <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
-                </div>
-            </div>
-
-                            <!-- VISTA 4: LA BILLETERA -->
-        <main id="vista-billetera" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">La Billetera</h2>
                 <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara.</p>
 
                 <div class="articles-grid" style="grid-template-columns: repeat(3, 1fr);">
@@ -1798,6 +1400,417 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </section>
         </main>
+
+        <!-- VISTA 5: EL PASTIZAL -->
+        <main id="vista-pastizal" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">El Pastizal</h2>
+                <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
+
+                <div class="featured-pastizal-card">
+                    <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
+                    <h3>Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
+                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 24 de Julio de 2026</div>
+                    <p> En un mano a mano picante, el referente de Junín habló del armado territorial, de la incertidumbre por la candidatura de Villarruel y de por qué el interior bonaerense ya no quiere ser un convidado de piedra.</p>
+                    <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.
+
+<p><strong>—Norberto, te vemos en todos lados. ¿Qué está pasando en la 4ta?</strong></p>
+
+<p>—La 4ta se pone de pie. Nos cansamos de que nos miren como el patio trasero de la provincia. Acá hay laburo, hay producción y hay gente con ganas de cambiar la historia. Nosotros no venimos a improvisar.</p>
+
+<p><strong>—La imagen que están usando dice "La 4ta Sección se pone de pie". ¿A qué te referís puntualmente?</strong></p>
+
+<p>—A que estamos organizando el territorio. Queremos una banca que nos represente de verdad. No un nombre de Buenos Aires que baja en una 4x4, saluda y se va. Queremos gente que viva acá, que sepa lo que es levantarse a las 6 de la mañana para laburar en el campo o en el comercio.</p>
+
+<p><strong>—El nombre de Victoria Villarruel suena fuerte. ¿Es tu candidata?</strong></p>
+
+<p>—Mirá, yo soy un soldado del proyecto. Y te digo una cosa: Victoria es la única que puede poner de pie a la Argentina y a nuestra sección. Tiene el coraje, tiene la convicción y, sobre todo, tiene el orden. Hoy la gente busca eso: orden. Y nosotros con Norberto Delgado a la cabeza, con Victoria, representamos eso.</p>
+
+<p><strong>—Pero hay un pequeño detalle: todavía no está confirmada su candidatura. ¿Cómo juega eso en el armado?</strong></p>
+
+<p>—(Se ríe) La política es dinámica, amigo. Hoy no está confirmado, mañana puede estarlo. Lo que sí te aseguro es que el armado está en marcha. Nosotros ya estamos caminando, tocando timbre y juntando voluntades. Si Villarruel decide dar el paso, va a encontrar una 4ta Sección totalmente organizada y lista para pelear. Si no, seguiremos trabajando por los vecinos. Pero el compromiso es con la gente.</p>
+
+<p><strong>—¿Y la relación con los intendentes de la zona?</strong></p>
+
+<p>—Hay de todo, como en la vida. Algunos se suben al proyecto, otros miran de costado. Pero el vecino común ya nos conoce. No somos una encuesta, somos la realidad de la calle.</p>
+
+<p><strong>La incógnita que todos se hacen:
+Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita en el tablero bonaerense, hombres como Norberto Delgado ya juegan su propio partido. En Junín, dicen, la 4ta Sección se está poniendo de pie. Y si el armado sigue creciendo, no sería descabellado ver ese eslogan convertido en una boleta real en los próximos comicios.<br>Lo único seguro es que la política bonaerense no duerme. Y en la 4ta, menos que menos.</strong></p>
+                </div>
+
+                <div class="articles-grid">
+                    <div class="article-box-card">
+                        <h4>1. El arte de esquivar pozos</h4>
+                        <p>Crónica urbana sobre la odisea diaria de manejar en calles destruidas sin romper el tren delantero.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>2. Políticos en campaña</h4>
+                        <p>Ese momento mágico en que descubren las plazas y saludan perritos como si les importara.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>3. La burocracia del trámite</h4>
+                        <p>Por qué sacar un papel municipal requiere más paciencia que armar un mueble sin manual.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>4. Vecinos ruidosos S.A.</h4>
+                        <p>Sociología barrial del domingo a la tarde: música a todo volumen y el perro del vecino que no calla.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>5. Nostalgia de baldío</h4>
+                        <p>Reflexiones sobre los espacios verdes que se pierden y las torres que crecen sin planificación.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VISTA 6: EL TERMÓMETRO (ENCUESTA BONAERENSE) -->
+        <main id="vista-termometro" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">🌡️ El Termómetro de la Provincia</h2>
+                <div class="date">Participación ciudadana bonaerense</div>
+                <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
+
+                <div class="termometro-card">
+                    <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
+                    <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
+                    <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
+                </div>
+
+                <div class="termometro-card">
+                    <h3>Pregunta 2: Salud Pública</h3>
+                    <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
+                    <div class="opciones-pill-container" id="grupo-salud">
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'malo')">MALO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'regular')">REGULAR</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'bueno')">BUENO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'muybueno')">MUY BUENO</div>
+                    </div>
+                    <div class="resultado-encuesta" id="res-salud">
+                        Resultado actual: <span id="porc-salud">52% lo califica como MALO</span> en la región.
+                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-salud" style="width: 52%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="termometro-card">
+                    <h3>Pregunta 3: Seguridad y Prevención</h3>
+                    <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
+                    <div class="opciones-pill-container" id="grupo-seguridad">
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'malo')">MALO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'regular')">REGULAR</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'bueno')">BUENO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'muybueno')">MUY BUENO</div>
+                    </div>
+                    <div class="resultado-encuesta" id="res-seguridad">
+                        Resultado actual: <span id="porc-seguridad">68% lo califica como MALO</span> en la región.
+                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-seguridad" style="width: 68%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="termometro-card">
+                    <h3>Pregunta 4: Educación y Escuelas</h3>
+                    <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
+                    <div class="opciones-pill-container" id="grupo-educacion">
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'malo')">MALO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'regular')">REGULAR</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'bueno')">BUENO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'muybueno')">MUY BUENO</div>
+                    </div>
+                    <div class="resultado-encuesta" id="res-educacion">
+                        Resultado actual: <span id="porc-educacion">45% lo califica como REGULAR</span> en la región.
+                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-educacion" style="width: 45%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="termometro-card">
+                    <h3>Pregunta 5: Servicios y Obras Públicas</h3>
+                    <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
+                    <div class="opciones-pill-container" id="grupo-servicios">
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'malo')">MALO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'regular')">REGULAR</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'bueno')">BUENO</div>
+                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'muybueno')">MUY BUENO</div>
+                    </div>
+                    <div class="resultado-encuesta" id="res-servicios">
+                        Resultado actual: <span id="porc-servicios">61% lo califica como MALO</span> en la región.
+                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-servicios" style="width: 61%;"></div></div>
+                    </div>
+                </div>
+
+                <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
+            </section>
+        </main>
+
+        <!-- VISTA 8: CLASIFICADOS -->
+        <main id="vista-clasificados" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">📌 Clasificados Vecinales</h2>
+                <p>El espacio donde los vecinos de la Provincia publican lo que necesitan. Vendé, comprá, alquilá, ofrecé servicios o buscá trabajo. Publicar tu aviso es fácil y económico.</p>
+
+                <div class="clasificados-plantilla">
+                    <strong>📝 Plantilla de referencia:</strong> Así va a verse tu aviso. Copiá este formato y completalo con tus datos.<br><br>
+                    <strong>Categoría:</strong> (Venta / Alquiler / Servicios / Trabajo / Varios)<br>
+                    <strong>Título:</strong> (Ej: "Vendo bicicleta rodado 26 en buen estado")<br>
+                    <strong>Descripción:</strong> (Contá lo que querés vender o el servicio que ofrecés, con detalles útiles)<br>
+                    <strong>Contacto:</strong> (Tu WhatsApp o mail para que te escriban)
+                </div>
+
+                <div class="clasificados-form">
+                    <h3>Publicá tu aviso</h3>
+                    <p>Completá el formulario y lo subimos a la página en menos de 24 horas. El costo es de $2.000 por 7 días. Te contactamos para coordinar el pago.</p>
+                    <form name="clasificados" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="clasificados" />
+                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu nombre o comercio:</label>
+                        <input type="text" name="nombre" placeholder="Ej: Almacén Don Pedro" required>
+                        
+                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Categoría:</label>
+                        <select name="categoria" required>
+                            <option value="">Elegí una categoría</option>
+                            <option value="Venta">Venta</option>
+                            <option value="Alquiler">Alquiler</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Trabajo">Trabajo</option>
+                            <option value="Varios">Varios</option>
+                        </select>
+
+                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Título del aviso:</label>
+                        <input type="text" name="titulo" placeholder="Ej: Vendo bicicleta rodado 26" required>
+
+                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Descripción:</label>
+                        <textarea name="descripcion" rows="4" placeholder="Contá los detalles de tu aviso..." required></textarea>
+
+                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu contacto (WhatsApp o mail):</label>
+                        <input type="text" name="contacto" placeholder="Ej: 11 2345-6789 o tunombre@mail.com" required>
+
+                        <button type="submit">📩 Enviar mi aviso</button>
+                    </form>
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 10px;">Avisos destacados</h3>
+                <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Estos son los avisos que ya están publicados. Si querés el tuyo, completá el formulario de arriba.</p>
+
+                <div class="clasificados-lista">
+                    <div class="clasificado-card">
+                        <div class="clasificado-categoria">🔧 Servicios</div>
+                        <div class="clasificado-titulo">Electricista matriculado - Zona Sur</div>
+                        <p class="clasificado-desc">Instalaciones, reparaciones y urgencias. Trabajo con garantía. Presupuestos sin cargo.</p>
+                        <div class="clasificado-contacto">📞 11 5555-1234</div>
+                    </div>
+                    <div class="clasificado-card">
+                        <div class="clasificado-categoria">🏠 Alquiler</div>
+                        <div class="clasificado-titulo">Monoambiente amoblado en La Plata</div>
+                        <p class="clasificado-desc">A estrenar, con cocina y baño completo. Ideal estudiantes o pareja. Zona céntrica.</p>
+                        <div class="clasificado-contacto">📧 alquilereslp@mail.com</div>
+                    </div>
+                    <div class="clasificado-card">
+                        <div class="clasificado-categoria">🚲 Venta</div>
+                        <div class="clasificado-titulo">Bicicleta rodado 26 en buen estado</div>
+                        <p class="clasificado-desc">Vendo bici con cambios, frenos nuevos y asiento cómodo. Poco uso. Escucho ofertas.</p>
+                        <div class="clasificado-contacto">📞 11 4444-9876</div>
+                    </div>
+                    <div class="clasificado-card">
+                        <div class="clasificado-categoria">💼 Trabajo</div>
+                        <div class="clasificado-titulo">Busco trabajo de administrativa</div>
+                        <p class="clasificado-desc">Experiencia en atención al cliente y manejo de sistemas. Disponibilidad full time. Zona Norte.</p>
+                        <div class="clasificado-contacto">📧 cv.ana@mail.com</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VISTA 7: PUBLICIDAD -->
+        <main id="vista-publicidad" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">📢 Publicidad en Capibara News</h2>
+                <p>Si tenés un comercio, una pyme o una marca personal en la Provincia de Buenos Aires, este es tu lugar. Capibara News es el diario digital que crece día a día, con un enfoque federal y una audiencia fiel que busca información útil y sin vueltas.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
+                    <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.901+</div>
+                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Suscriptores al Newsletter</div>
+                    </div>
+                    <div style="background: #f0f4f8; border-left: 4px solid var(--lima-color); padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">10</div>
+                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Municipios Cubiertos</div>
+                    </div>
+                    <div style="background: #f0f4f8; border-left: 4px solid var(--accent-color); padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">100%</div>
+                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Enfoque Federal</div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 15px;">Formatos Disponibles</h3>
+
+                <div class="articles-grid">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color);">
+                        <h4>🖼️ Banner en Sidebar</h4>
+                        <p>Formato 300x250 o 300x600. Visible en todas las secciones de la página. Ideal para comercios locales que quieren llegar a miles de vecinos.</p>
+                    </div>
+                    <div class="article-box-card" style="border-left-color: var(--accent-color);">
+                        <h4>📰 Nota Patrocinada</h4>
+                        <p>Un artículo completo sobre tu marca o emprendimiento, publicado en la sección que elijas. Incluye imagen destacada y link a tu sitio.</p>
+                    </div>
+                    <div class="article-box-card" style="border-left-color: var(--primary-color);">
+                        <h4>💬 Mención en el Muro</h4>
+                        <p>Tu marca o mensaje destacado en el "Muro de Capibara News", visible para todos los lectores que participan del foro.</p>
+                    </div>
+                    <div class="article-box-card" style="border-left-color: #ef4444;">
+                        <h4>📧 Publicidad en el Newsletter</h4>
+                        <p>Mención de tu marca en nuestro newsletter semanal que llega a miles de suscriptores. El formato de mayor fidelidad.</p>
+                    </div>
+                </div>
+
+                <div class="media-kit-download">
+                    <div>
+                        <h4>📄 Descargá nuestro Media Kit</h4>
+                        <p>Toda la información comercial en un solo PDF: audiencia, formatos, precios y contacto.</p>
+                    </div>
+                    <a href="media-kit.pdf" download>📥 Descargar Media Kit</a>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #102630, #1F4E5F); color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 35px; text-align: center; border-left: 5px solid var(--lima-color);">
+                    <h3 style="color: var(--lima-color); margin: 0 0 10px 0; text-transform: uppercase;">¿Querés anunciar con nosotros?</h3>
+                    <p style="color: #e0f7fa; font-size: 14px; margin-bottom: 20px;">Escribinos y te enviamos el Media Kit completo con precios y disponibilidad.</p>
+                    <a href="mailto:hablaleacapibaranews@outlook.com?subject=Consulta%20de%20Publicidad" style="background-color: var(--lima-color); color: #113019; padding: 12px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; display: inline-block;">📩 Consultar Disponibilidad</a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- VISTA CONTACTO -->
+        <main id="vista-contacto" class="page-view">
+            <article class="content-card">
+                <h2 class="article-title">Contacto Directo</h2>
+                <div class="date">La Redacción de Capibara News</div>
+                
+                <p>¿Tenés una denuncia barrial que los medios tradicionales ignoran? ¿Viste algo insólito en tu municipio, querés mandarnos fotos de los cráteres en la calle o tenés una propuesta comercial para anunciar con nosotros?</p>
+                
+                <p>El capibara está siempre atento a lo que pasa en la calle. Escribinos de forma directa a nuestro correo oficial:</p>
+                
+                <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin: 25px 0;">
+                    <strong style="color: var(--primary-color); font-size: 15px;">📧 Correo Electrónico:</strong><br>
+                    <a href="mailto:hablaleacapibaranews@outlook.com" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">hablaleacapibaranews@outlook.com</a>
+                </div>
+
+                <p>Leemos todos los mensajes que llegan. Si la historia vale la pena, la hacemos tapa en el diario.</p>
+            </article>
+        </main>
+
+        <!-- VISTA: EL VECINDARIO (MODIFICADA) -->
+        <main id="vista-vecindario" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">El Vecindario</h2>
+                <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
+
+                <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
+                    <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
+                    <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
+                    <a onclick="cambiarVista('contacto')" style="background-color: var(--lima-color); color: #113019; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; cursor: pointer; display: inline-block;">📩 Mandanos tu historia</a>
+                </div>
+
+                <div class="articles-grid">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color);">
+                        <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
+                        <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
+                        <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
+                    </div>
+
+                    <div class="article-box-card" style="border-left-color: #ef4444;">
+                        <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
+                        <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
+                        <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
+                    </div>
+
+                    <div class="article-box-card" style="border-left-color: var(--accent-color);">
+                        <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
+                        <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
+                        <p>A pesar de los ajustes y la caída del consumo, una localidad del interior decidió que su fiesta anual se hacía igual. La comunidad se puso al hombro la organización para no perder la tradición.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- BARRA LATERAL DINÁMICA -->
+        <aside>
+            <div class="promo-sticky-banner">
+                <span class="promo-badge">Espacio Disponible</span>
+                <h4>¡Tu Marca Acá!</h4>
+                <p>Anunciá en el diario de mayor llegada en la región.</p>
+                <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
+            </div>
+
+            <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title">Publicidad Destacada</div>
+                    <a href="#" class="live-banner">
+                        <h4>¡Anunciá tu Local Acá!</h4>
+                        <p>Llegá directo a miles de vecinos.</p>
+                    </a>
+                </div>
+                
+                <div class="ad-box">
+                    <div class="ad-title">Publicidad</div>
+                    <img src="espacio01.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+                </div>
+
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+
+                <div class="confesionario-box">
+                    <h4>💬 Confesionario del Capibara</h4>
+                    <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
+
+                    <div id="form-confesionario">
+                        <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
+                        <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
+                        <textarea id="conf-texto" class="conf-textarea" placeholder="Escribí tu comentario acá..." maxlength="500"></textarea>
+                        <button type="button" class="conf-btn" onclick="enviarComentario()">📩 Enviar al Muro</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title">Patrocinio Político Exclusivo</div>
+                    <div class="large-placeholder-banner">
+                        ESPACIO 4<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
+                    </div>
+                </div>
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+            </div>
+
+            <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title" style="color: var(--lima-color);">Sponsor Exclusivo de Sección</div>
+                    <div class="massive-placeholder-banner" style="padding: 50px 15px;">
+                        ESPACIO 6
+                        <span style="font-size: 12px; font-weight: normal; margin-top: 15px; color: #558b2f;">Formato Gigante (Half-Page) 300x600</span>
+                    </div>
+                </div>
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+            </div>
+
+            <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title">Patrocinio del Vecindario</div>
+                    <div class="large-placeholder-banner">
+                        ESPACIO 5<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
+                    </div>
+                </div>
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
 
     <!-- FOOTER -->
     <footer class="infobae-footer">
@@ -1866,7 +1879,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-        // Lógica del contador dinámico de suscriptores (Arranca en 37.654 y suma 5 por día desde el 9 de Julio de 2025)
         window.addEventListener('DOMContentLoaded', () => {
             const startDate = new Date('2025-07-09'); 
             const currentDate = new Date();
@@ -1874,7 +1886,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             const diffTime = Math.abs(currentDate - startDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
-            const baseSubscribers = 37654;
+            const baseSubscribers = 39901;
             const dailyGrowth = 5; 
             const totalSubscribers = baseSubscribers + (diffDays * dailyGrowth);
 
@@ -1929,7 +1941,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
-        // Lógica de selección de opciones de Encuesta (El Termómetro)
         function seleccionarOpcion(elemento, categoria, valor) {
             const contenedor = document.getElementById('grupo-' + categoria);
             const botones = contenedor.querySelectorAll('.pill-btn');
@@ -1952,7 +1963,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 return;
             }
 
-            // Mostrar resultados simulados en barra de progreso
             document.querySelectorAll('.resultado-encuesta').forEach(res => {
                 res.style.display = 'block';
             });
@@ -1968,17 +1978,16 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                        .replace(/'/g, "&#039;");
         }
 
-        // Lógica del Newsletter con Netlify Forms
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form[name="newsletter"]');
             if (form) {
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const formData = new FormData(form);
-                    fetch('/', {
+                    fetch('https://formspree.io/f/xyezlerk', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(formData).toString()
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
                     })
                     .then(() => {
                         document.getElementById('newsletter-container').style.display = 'none';
@@ -1998,7 +2007,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
       const JSONBIN_BIN_ID = '6aba8b7bffd5d1605338137d';
       const JSONBIN_URL = 'https://api.jsonbin.io/v3/b/' + JSONBIN_BIN_ID;
 
-      // Cargar comentarios al iniciar
       function cargarComentarios() {
         fetch(JSONBIN_URL + '/latest')
         .then(res => res.json())
@@ -2024,7 +2032,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         .catch(err => console.error('Error cargando comentarios:', err));
       }
 
-      // Enviar un comentario nuevo
       function enviarComentario() {
         const nombre = document.getElementById('conf-nombre').value.trim() || 'Anónimo';
         const red = document.getElementById('conf-red').value.trim();
@@ -2038,7 +2045,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         const ahora = new Date();
         const fecha = ahora.toLocaleDateString('es-AR') + ' ' + ahora.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
 
-        // Primero leemos los comentarios actuales
         fetch(JSONBIN_URL + '/latest')
         .then(res => res.json())
         .then(data => {
@@ -2050,7 +2056,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             fecha: fecha
           });
 
-          // Ahora guardamos la lista actualizada
           return fetch(JSONBIN_URL, {
             method: 'PUT',
             headers: {
@@ -2073,7 +2078,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         });
       }
 
-      // Cargar comentarios cuando la página esté lista
       window.addEventListener('load', cargarComentarios);
     </script>
 </body>
