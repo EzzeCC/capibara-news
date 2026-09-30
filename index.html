@@ -387,7 +387,7 @@
             text-align: left;
         }
 
-        /* BURBUJAS DE MUNICIPIOS CLICKEABLES */
+        /* TARJETAS CLICKEABLES (MUNICIPIOS, ROSCA, BILLETERA) */
         .article-box-card.clickable-municipio {
             cursor: pointer;
             position: relative;
@@ -412,6 +412,92 @@
         }
         .article-box-card.clickable-municipio:hover::after {
             opacity: 1;
+        }
+
+        /* RECUADRO DESTACADO LA BILLETERA HOY */
+        .billetera-hoy {
+            background: linear-gradient(135deg, #102630 0%, #1F4E5F 100%);
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--lima-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            color: #ffffff;
+        }
+        .billetera-hoy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #285467;
+        }
+        .billetera-hoy-header h3 {
+            margin: 0;
+            color: var(--lima-color);
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .billetera-hoy-fecha {
+            background: var(--lima-color);
+            color: #113019;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .billetera-hoy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+        .billetera-dato {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid #285467;
+            border-radius: 8px;
+            padding: 12px 15px;
+            text-align: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .billetera-dato:hover {
+            background: rgba(139, 195, 74, 0.12);
+            border-color: var(--lima-color);
+        }
+        .billetera-dato .dato-label {
+            font-size: 10px;
+            color: #b0bec5;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        .billetera-dato .dato-valor {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--lima-color);
+            line-height: 1.2;
+        }
+        .billetera-dato .dato-sub {
+            font-size: 10px;
+            color: #8ba8b5;
+            margin-top: 3px;
+        }
+        .billetera-hoy-footer {
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px dashed #285467;
+            font-size: 10px;
+            color: #8ba8b5;
+            text-align: center;
+            font-style: italic;
         }
 
         /* MODAL DE NOTICIAS POR DISTRITO */
@@ -668,6 +754,10 @@
         @media (max-width: 600px) {
             .opciones-pill-container {
                 grid-template-columns: 1fr 1fr;
+            }
+            .billetera-hoy-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
 
@@ -1300,7 +1390,6 @@
         <a id="nav-publicidad" onclick="cambiarVista('publicidad')">PUBLICIDAD</a>
         <a id="nav-contacto" onclick="cambiarVista('contacto')">CONTACTO</a>
     </nav>
-
     <!-- FRANJA DE SUSCRIPCIÓN CON CONTADOR DINÁMICO -->
     <section class="newsletter-section">
         <h3>Suscribite a nuestro Newsletter</h3>
@@ -1365,26 +1454,26 @@
         <main id="vista-rosca" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Rosca</h2>
-                <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas.</p>
+                <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
 
                 <div class="articles-grid">
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Pases de factura en el conurbano')">
                         <h4>1. Pases de factura en el conurbano</h4>
                         <p>Intendentes reconfiguran alianzas silenciosas pensando en el armado legislativo del próximo año.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Sesión caliente en La Plata')">
                         <h4>2. Sesión caliente en La Plata</h4>
                         <p>Fuerte cruce entre bloques por la distribución de fondos coparticipables a comunas opositoras.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Operativo operativo')">
                         <h4>3. Operativo operativo</h4>
                         <p>Reuniones cumbre en despachos oscuros para definir candidaturas territoriales sin hacer mucho ruido.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Presupuesto bajo la lupa')">
                         <h4>4. Presupuesto bajo la lupa</h4>
                         <p>Concejales analizan letra chica de partidas destinadas a obras públicas demoradas.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El teléfono descompuesto')">
                         <h4>5. El teléfono descompuesto</h4>
                         <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
                     </div>
@@ -1447,26 +1536,79 @@
         <main id="vista-billetera" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Billetera</h2>
-                <p>Precios de los alimentos, paritarias y cómo cuidar el mango en la provincia sin volverse loco.</p>
+                <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
+
+                <!-- RECUADRO DESTACADO: LA BILLETERA HOY -->
+                <div class="billetera-hoy">
+                    <div class="billetera-hoy-header">
+                        <h3>📊 La Billetera Hoy</h3>
+                        <span class="billetera-hoy-fecha">Semana del 30/09 al 06/10</span>
+                    </div>
+                    <div class="billetera-hoy-grid">
+                        <div class="billetera-dato">
+                            <div class="dato-label">🍞 Canasta Básica Total</div>
+                            <div class="dato-valor">$1.160.780</div>
+                            <div class="dato-sub">Familia tipo</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">🍽️ Canasta Alimentaria</div>
+                            <div class="dato-valor">+39,6%</div>
+                            <div class="dato-sub">Interanual</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">📈 Inflación mensual</div>
+                            <div class="dato-valor">~2,0%</div>
+                            <div class="dato-sub">Sept. (proyectada)</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">💵 Dólar Blue</div>
+                            <div class="dato-valor">$1.560</div>
+                            <div class="dato-sub">Venta</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">🥩 Asado (kg)</div>
+                            <div class="dato-valor">~$23.000</div>
+                            <div class="dato-sub">Media res</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">💡 Tarifas</div>
+                            <div class="dato-valor">+1,75%</div>
+                            <div class="dato-sub">Luz (gas +1,40%)</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">📉 Pobreza</div>
+                            <div class="dato-valor">32,3%</div>
+                            <div class="dato-sub">1er semestre 2026</div>
+                        </div>
+                        <div class="billetera-dato">
+                            <div class="dato-label">📊 Indigencia</div>
+                            <div class="dato-valor">7,5%</div>
+                            <div class="dato-sub">1er semestre 2026</div>
+                        </div>
+                    </div>
+                    <div class="billetera-hoy-footer">
+                        📌 Datos actualizados semanalmente. Fuente: INDEC, ENReGE, medios nacionales.
+                    </div>
+                </div>
 
                 <div class="articles-grid">
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El changuito en terapia')">
                         <h4>1. El changuito en terapia</h4>
                         <p>Relevamiento de precios en ferias barriales y mayoristas del conurbano para ganarle a la inflación.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Paritarias bonaerenses')">
                         <h4>2. Paritarias bonaerenses</h4>
                         <p>Nuevos tramos de aumento salarial acordados para estatales y docentes en distrito provincial.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Tarifas y boletas')">
                         <h4>3. Tarifas y boletas</h4>
                         <p>Impacto de las últimas subas de servicios en comercios de cercanía y pymes zonales.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Descuentos con Cuenta DNI')">
                         <h4>4. Descuentos con Cuenta DNI</h4>
                         <p>El cronograma de ahorro en carnicerías y verdulerías para aliviar el bolsillo el fin de semana.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Naftas y transporte')">
                         <h4>5. Naftas y transporte</h4>
                         <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
                     </div>
@@ -1594,14 +1736,12 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <div class="date">Participación ciudadana bonaerense</div>
                 <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
 
-                <!-- PREGUNTA 1: Partido y Distrito -->
                 <div class="termometro-card">
                     <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
                     <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
                     <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
                 </div>
 
-                <!-- PREGUNTA 2: Salud Pública -->
                 <div class="termometro-card">
                     <h3>Pregunta 2: Salud Pública</h3>
                     <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
@@ -1617,7 +1757,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- PREGUNTA 3: Seguridad y Prevención -->
                 <div class="termometro-card">
                     <h3>Pregunta 3: Seguridad y Prevención</h3>
                     <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
@@ -1633,7 +1772,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- PREGUNTA 4: Educación y Escuelas -->
                 <div class="termometro-card">
                     <h3>Pregunta 4: Educación y Escuelas</h3>
                     <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
@@ -1649,7 +1787,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- PREGUNTA 5: Servicios y Obras Públicas -->
                 <div class="termometro-card">
                     <h3>Pregunta 5: Servicios y Obras Públicas</h3>
                     <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
@@ -1665,7 +1802,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- BOTÓN DE VOTAR -->
                 <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
             </section>
         </main>
@@ -1676,7 +1812,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h2 class="article-title">📌 Clasificados Vecinales</h2>
                 <p>El espacio donde los vecinos de la Provincia publican lo que necesitan. Vendé, comprá, alquilá, ofrecé servicios o buscá trabajo. Publicar tu aviso es fácil y económico.</p>
 
-                <!-- PLANTILLA DE REFERENCIA -->
                 <div class="clasificados-plantilla">
                     <strong>📝 Plantilla de referencia:</strong> Así va a verse tu aviso. Copiá este formato y completalo con tus datos.<br><br>
                     <strong>Categoría:</strong> (Venta / Alquiler / Servicios / Trabajo / Varios)<br>
@@ -1685,7 +1820,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     <strong>Contacto:</strong> (Tu WhatsApp o mail para que te escriban)
                 </div>
 
-                <!-- FORMULARIO DE CARGA -->
                 <div class="clasificados-form">
                     <h3>Publicá tu aviso</h3>
                     <p>Completá el formulario y lo subimos a la página en menos de 24 horas. El costo es de $2.000 por 7 días. Te contactamos para coordinar el pago.</p>
@@ -1717,7 +1851,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </form>
                 </div>
 
-                <!-- AVISOS DESTACADOS (EJEMPLOS) -->
                 <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 10px;">Avisos destacados</h3>
                 <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Estos son los avisos que ya están publicados. Si querés el tuyo, completá el formulario de arriba.</p>
 
@@ -1756,7 +1889,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h2 class="article-title">📢 Publicidad en Capibara News</h2>
                 <p>Si tenés un comercio, una pyme o una marca personal en la Provincia de Buenos Aires, este es tu lugar. Capibara News es el diario digital que crece día a día, con un enfoque federal y una audiencia fiel que busca información útil y sin vueltas.</p>
 
-                <!-- DATOS DE AUDIENCIA -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
                     <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
                         <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.900+</div>
@@ -1772,7 +1904,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- FORMATOS DISPONIBLES -->
                 <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 15px;">Formatos Disponibles</h3>
 
                 <div class="articles-grid">
@@ -1794,7 +1925,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
-                <!-- CTA DE CONTACTO -->
                 <div style="background: linear-gradient(135deg, #102630, #1F4E5F); color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 35px; text-align: center; border-left: 5px solid var(--lima-color);">
                     <h3 style="color: var(--lima-color); margin: 0 0 10px 0; text-transform: uppercase;">¿Querés anunciar con nosotros?</h3>
                     <p style="color: #e0f7fa; font-size: 14px; margin-bottom: 20px;">Escribinos y te enviamos el Media Kit completo con precios y disponibilidad.</p>
@@ -1828,7 +1958,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h2 class="article-title">El Vecindario</h2>
                 <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
 
-                <!-- BOTÓN DE PARTICIPACIÓN -->
                 <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
                     <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
                     <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
@@ -1836,21 +1965,18 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
 
                 <div class="articles-grid">
-                    <!-- Nota 1 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color);">
                         <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
                         <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
                         <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
                     </div>
 
-                    <!-- Nota 2 -->
                     <div class="article-box-card" style="border-left-color: #ef4444;">
                         <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
                         <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
                         <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
                     </div>
 
-                    <!-- Nota 3 -->
                     <div class="article-box-card" style="border-left-color: var(--accent-color);">
                         <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
                         <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
@@ -1862,7 +1988,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
         <!-- BARRA LATERAL DINÁMICA -->
         <aside>
-            <!-- BANNER FIJO LISTO PARA PROMOCIONAR -->
             <div class="promo-sticky-banner">
                 <span class="promo-badge">Espacio Disponible</span>
                 <h4>¡Tu Marca Acá!</h4>
@@ -1872,30 +1997,25 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
             <!-- 1. Banners Estándar + Confesionario -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
-                <!-- NUEVA IMAGEN: ESPACIO 03 -->
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
                 
-                <!-- IMAGEN ORIGINAL: FOTO DE DENIS FERRAGUT -->
                 <div class="ad-box">
                     <div class="ad-title">Publicidad</div>
                     <img src="espacio02.jpg" alt="Denis Ferragut - IAFyP" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
 
-                <!-- BANNER 300x250 (ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
                     <div class="placeholder-banner" style="padding: 40px 10px;">ULTIMOS DISPONIBLES!<br><small>300x250</small></div>
                 </div>
 
-                <!-- CONFESIONARIO DEL CAPIBARA (JSONBIN) -->
                 <div class="confesionario-box">
                     <h4>💬 Confesionario del Capibara</h4>
                     <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
 
-                    <!-- Formulario -->
                     <div id="form-confesionario">
                         <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
                         <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
@@ -1907,7 +2027,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
             <!-- 2. Banners Exclusivos LA ROSCA -->
             <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVA IMAGEN: ESPACIO 03 -->
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -1926,7 +2045,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
             <!-- 3. Banner Exclusivo LA BILLETERA -->
             <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVA IMAGEN: ESPACIO 03 -->
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -1946,7 +2064,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
             <!-- 4. Banner Exclusivo EL VECINDARIO -->
             <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVA IMAGEN: ESPACIO 03 -->
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -2170,12 +2287,10 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         });
 
         // =====================================================
-        // NOTICIAS POR DISTRITO (CURADAS A MANO)
-        // =====================================================
-        // Para actualizar: cambiá el título, fuente, fecha y link de cada noticia.
-        // Podés agregar más distritos siguiendo el mismo formato.
+        // NOTICIAS POR CATEGORÍA (CURADAS A MANO)
         // =====================================================
         const noticiasPorDistrito = {
+            // MUNICIPIOS
             "La Matanza": [
                 { titulo: "Obras viales congeladas en la zona oeste", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
                 { titulo: "Reclamos barriales por falta de agua", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
@@ -2245,25 +2360,97 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "Nuevo centro comercial en San Martín", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
                 { titulo: "Obras de cloacas en José León Suárez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
                 { titulo: "Inauguran polideportivo municipal", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            // LA ROSCA
+            "Pases de factura en el conurbano": [
+                { titulo: "Intendentes rearman alianzas pensando en 2027", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Cumbre secreta en La Matanza por el armado legislativo", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "El peronismo bonaerense busca reordenarse", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Pases de factura entre bloques del conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Nuevos alineamientos en el Frente de Todos", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Sesión caliente en La Plata": [
+                { titulo: "Cruce por coparticipación en la Legislatura", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Fuerte debate por fondos a comunas opositoras", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Sesión maratónica en la Cámara de Diputados", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Tensión entre bloques por el presupuesto", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevos cruces en el Senado bonaerense", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Operativo operativo": [
+                { titulo: "Reuniones cumbre en despachos oscuros", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El armado territorial que no se ve", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Definen candidaturas sin hacer ruido", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Operativos políticos en el conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Los movimientos que no salen en los diarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Presupuesto bajo la lupa": [
+                { titulo: "Concejales analizan la letra chica del presupuesto", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Partidas para obras públicas demoradas", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Fuerte debate por el gasto municipal", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Auditoría sobre fondos educativos", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "El presupuesto bonaerense bajo sospecha", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "El teléfono descompuesto": [
+                { titulo: "Cortocircuitos entre Provincia y municipios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Demoras en convenios por falta de coordinación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Cruces entre carteras provinciales", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "El problema de la comunicación política", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Falta de diálogo entre Nación y Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            // LA BILLETERA
+            "El changuito en terapia": [
+                { titulo: "Relevamiento de precios en ferias barriales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Mayoristas del conurbano y la inflación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El precio de la carne sigue en aumento", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Verduras y frutas con fuertes subas", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Cómo ahorrar en el supermercado", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Paritarias bonaerenses": [
+                { titulo: "Nuevos tramos de aumento para estatales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Docentes bonaerenses reclaman reapertura", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Acuerdo salarial para la administración pública", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Los gremios evalúan la oferta oficial", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Paritarias: el pulso de la Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Tarifas y boletas": [
+                { titulo: "Impacto de las subas de servicios en comercios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Aumento de luz y gas: cómo afecta a las pymes", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El peso de las tarifas en el bolsillo", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Boletas que no dan respiro", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Reclamos por errores en la facturación", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Descuentos con Cuenta DNI": [
+                { titulo: "Cronograma de ahorro en carnicerías", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Descuentos en verdulerías y ferias", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Los mejores descuentos del fin de semana", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Cuenta DNI: beneficios de la semana", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Cómo aprovechar los descuentos bancarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Naftas y transporte": [
+                { titulo: "Nuevo incremento en combustibles", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "El costo logístico de delivery y remises", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Nafta súper supera los $2.000", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Impacto en el transporte de carga", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Subas que golpean al bolsillo", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ]
         };
 
         // =====================================================
-        // FUNCIONES DEL MODAL DE DISTRITOS
+        // FUNCIONES DEL MODAL
         // =====================================================
 
-        function abrirModalDistrito(nombreDistrito) {
+        function abrirModalDistrito(nombre) {
             const modal = document.getElementById('modal-distrito');
             const titulo = document.getElementById('modal-titulo');
             const lista = document.getElementById('modal-noticias-lista');
 
-            titulo.textContent = 'Noticias de ' + nombreDistrito;
+            titulo.textContent = 'Noticias: ' + nombre;
             lista.innerHTML = '';
 
-            const noticias = noticiasPorDistrito[nombreDistrito] || [];
+            const noticias = noticiasPorDistrito[nombre] || [];
 
             if (noticias.length === 0) {
-                lista.innerHTML = '<p style="text-align:center; color: var(--text-muted); font-style: italic;">Todavía no hay noticias cargadas para este distrito.</p>';
+                lista.innerHTML = '<p style="text-align:center; color: var(--text-muted); font-style: italic;">Todavía no hay noticias cargadas para esta categoría.</p>';
             } else {
                 noticias.forEach(n => {
                     const link = document.createElement('a');
@@ -2299,7 +2486,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
-        // Cerrar el modal con la tecla ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 cerrarModalDistrito();
