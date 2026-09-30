@@ -387,6 +387,169 @@
             text-align: left;
         }
 
+        /* BURBUJAS DE MUNICIPIOS CLICKEABLES */
+        .article-box-card.clickable-municipio {
+            cursor: pointer;
+            position: relative;
+            border-left-width: 5px;
+        }
+        .article-box-card.clickable-municipio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(31, 78, 95, 0.2);
+            border-left-color: var(--lima-color);
+        }
+        .article-box-card.clickable-municipio::after {
+            content: "🔍 Ver 5 noticias";
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            font-size: 10px;
+            color: var(--accent-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .article-box-card.clickable-municipio:hover::after {
+            opacity: 1;
+        }
+
+        /* MODAL DE NOTICIAS POR DISTRITO */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(16, 38, 48, 0.75);
+            z-index: 5000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInOverlay 0.25s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border-top: 5px solid var(--lima-color);
+            animation: slideUpModal 0.3s ease;
+        }
+        @keyframes slideUpModal {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            background: linear-gradient(90deg, #102630, var(--primary-color));
+            color: #fff;
+            padding: 20px 25px;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            color: var(--lima-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .modal-close {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .modal-close:hover {
+            background: var(--lima-color);
+            color: #113019;
+            border-color: var(--lima-color);
+        }
+        .modal-body {
+            padding: 20px 25px 25px 25px;
+        }
+        .modal-body > p {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: left;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .noticia-item {
+            background: #fdfdfe;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .noticia-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--lima-color);
+            box-shadow: 0 4px 12px rgba(31, 78, 95, 0.1);
+        }
+        .noticia-titulo {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 0 6px 0;
+            line-height: 1.3;
+        }
+        .noticia-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .noticia-meta .fuente {
+            color: var(--lima-color);
+            font-weight: bold;
+        }
+        .noticia-link-arrow {
+            font-size: 11px;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 6px;
+            display: block;
+        }
+        .noticia-item:hover .noticia-link-arrow {
+            color: var(--lima-color);
+            text-decoration: underline;
+        }
+
         /* ESTILOS ESPECÍFICOS PARA LA ENCUESTA "EL TERMÓMETRO" */
         .termometro-card {
             background: #ffffff;
@@ -1233,46 +1396,46 @@
         <main id="vista-municipios" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
-                <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires.</p>
+                <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
 
                 <div class="articles-grid">
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Matanza')">
                         <h4>1. La Matanza</h4>
                         <p>Obras viales congeladas y reclamos barriales marcan el pulso de la semana en la zona oeste.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Plata')">
                         <h4>2. La Plata</h4>
                         <p>Tensión en el Casco Urbano por la reestructuración de los recorridos de transporte público.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Lomas de Zamora')">
                         <h4>3. Lomas de Zamora</h4>
                         <p>Avanzan los operativos nocturnos de prevención vial en los principales corredores gastronómicos.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General Pueyrredón')">
                         <h4>4. General Pueyrredón</h4>
                         <p>Mar del Plata calienta motores para la temporada alta con foco en la llegada de turismo de escapada.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Quilmes')">
                         <h4>5. Quilmes</h4>
                         <p>Vecinos exigen refuerzos en la recolección de residuos tras las últimas jornadas de tormenta.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Almirante Brown')">
                         <h4>6. Almirante Brown</h4>
                         <p>Apertura de nuevas luminarias LED en accesos clave del parque industrial de Burzaco.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Merlo')">
                         <h4>7. Merlo</h4>
                         <p>Fuerte debate en el Concejo Deliberante por el presupuesto asignado al mantenimiento hospitalario.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Moreno')">
                         <h4>8. Moreno</h4>
                         <p>Lanzan programa de financiamiento y créditos blandos para pymes agroecológicas de la zona.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Florencio Varela')">
                         <h4>9. Florencio Varela</h4>
                         <p>Inauguran centro de salud comunitario enfocado en la atención pediátrica preventiva.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General San Martín')">
                         <h4>10. General San Martín</h4>
                         <p>Planes de asfaltado y reparación de colectoras avanzan sobre las arterias comerciales principales.</p>
                     </div>
@@ -1803,6 +1966,20 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         </aside>
     </div>
 
+    <!-- MODAL DE NOTICIAS POR DISTRITO -->
+    <div class="modal-overlay" id="modal-distrito" onclick="cerrarModalSiEsAfuera(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-titulo">Noticias del distrito</h3>
+                <button class="modal-close" onclick="cerrarModalDistrito()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Las 5 noticias más relevantes de la semana, con link a la fuente original.</p>
+                <div id="modal-noticias-lista"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="infobae-footer">
         <div class="infobae-footer-container">
@@ -1989,6 +2166,143 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                         alert('Hubo un error al suscribirte. Intentá de nuevo.');
                     });
                 });
+            }
+        });
+
+        // =====================================================
+        // NOTICIAS POR DISTRITO (CURADAS A MANO)
+        // =====================================================
+        // Para actualizar: cambiá el título, fuente, fecha y link de cada noticia.
+        // Podés agregar más distritos siguiendo el mismo formato.
+        // =====================================================
+        const noticiasPorDistrito = {
+            "La Matanza": [
+                { titulo: "Obras viales congeladas en la zona oeste", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Reclamos barriales por falta de agua", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Presupuesto municipal bajo la lupa", fuente: "El Día", fecha: "26/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Nuevo operativo de seguridad en San Justo", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Fuerte debate por tasas municipales", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "La Plata": [
+                { titulo: "Tensión por reestructuración del transporte público", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Obras en el casco urbano generan caos", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Nuevo centro de salud en Los Hornos", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Conflicto docente en la capital bonaerense", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Inauguran luminarias LED en el centro", fuente: "El Día", fecha: "24/09/2026", link: "https://www.eldia.com/" }
+            ],
+            "Lomas de Zamora": [
+                { titulo: "Operativos nocturnos en corredores gastronómicos", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Reclamos por inseguridad en Banfield", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Avanzan las obras en la avenida Hipólito Yrigoyen", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevo destacamento policial en Temperley", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Feria de emprendedores en el parque", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "General Pueyrredón": [
+                { titulo: "Mar del Plata se prepara para la temporada alta", fuente: "La Capital", fecha: "28/09/2026", link: "https://www.lacapital.com.ar/" },
+                { titulo: "Obras en el puerto generan expectativa", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Nuevos vuelos low cost al exterior", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Crecimiento del turismo de escapada", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Inauguran paseo costero en Playa Grande", fuente: "La Capital", fecha: "24/09/2026", link: "https://www.lacapital.com.ar/" }
+            ],
+            "Quilmes": [
+                { titulo: "Vecinos exigen refuerzos en recolección de residuos", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Tormenta dejó anegamientos en Bernal", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Obras de cloacas en Quilmes Oeste", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevo polo gastronómico en la ribera", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Fuerte operativo de seguridad en el centro", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Almirante Brown": [
+                { titulo: "Nuevas luminarias LED en Burzaco", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Parque industrial en pleno crecimiento", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Obras de asfalto en Adrogué", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Reclamos por inseguridad en Glew", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Nuevo centro cultural en Longchamps", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Merlo": [
+                { titulo: "Fuerte debate por presupuesto hospitalario", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Reclamos por falta de médicos en el Hospital Héroes de Malvinas", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Obras de agua corriente en San Antonio de Padua", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevo destacamento policial en Libertad", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Feria de productores locales en el centro", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Moreno": [
+                { titulo: "Créditos blandos para pymes agroecológicas", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Obras viales en la Ruta 23", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Reclamos por inseguridad en Paso del Rey", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevo centro de salud en Francisco Álvarez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Avanzan las obras de cloacas en Cuartel V", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Florencio Varela": [
+                { titulo: "Inauguran centro de salud comunitario", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Reclamos por falta de iluminación en Villa Angélica", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Obras de asfalto en el centro", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevo operativo de seguridad en Bosques", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Feria de emprendedores en el parque", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "General San Martín": [
+                { titulo: "Avanzan las obras de asfaltado", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Reclamos por inseguridad en Villa Ballester", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Nuevo centro comercial en San Martín", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Obras de cloacas en José León Suárez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Inauguran polideportivo municipal", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ]
+        };
+
+        // =====================================================
+        // FUNCIONES DEL MODAL DE DISTRITOS
+        // =====================================================
+
+        function abrirModalDistrito(nombreDistrito) {
+            const modal = document.getElementById('modal-distrito');
+            const titulo = document.getElementById('modal-titulo');
+            const lista = document.getElementById('modal-noticias-lista');
+
+            titulo.textContent = 'Noticias de ' + nombreDistrito;
+            lista.innerHTML = '';
+
+            const noticias = noticiasPorDistrito[nombreDistrito] || [];
+
+            if (noticias.length === 0) {
+                lista.innerHTML = '<p style="text-align:center; color: var(--text-muted); font-style: italic;">Todavía no hay noticias cargadas para este distrito.</p>';
+            } else {
+                noticias.forEach(n => {
+                    const link = document.createElement('a');
+                    link.className = 'noticia-item';
+                    link.href = n.link;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.innerHTML = `
+                        <p class="noticia-titulo">${escapeHtml(n.titulo)}</p>
+                        <div class="noticia-meta">
+                            <span class="fuente">📰 ${escapeHtml(n.fuente)}</span>
+                            <span>📅 ${escapeHtml(n.fecha)}</span>
+                        </div>
+                        <span class="noticia-link-arrow">Leer nota completa →</span>
+                    `;
+                    lista.appendChild(link);
+                });
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModalDistrito() {
+            const modal = document.getElementById('modal-distrito');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function cerrarModalSiEsAfuera(event) {
+            if (event.target.id === 'modal-distrito') {
+                cerrarModalDistrito();
+            }
+        }
+
+        // Cerrar el modal con la tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                cerrarModalDistrito();
             }
         });
     </script>
