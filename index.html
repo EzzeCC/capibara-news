@@ -205,8 +205,7 @@
             font-weight: 500;
         }
 
-        /* SECCIÓN ÚLTIMA HORA */
-              /* SECCIÓN ÚLTIMA HORA */
+        /* SECCIÓN ÚLTIMA HORA (fondo azul petróleo, badge rojo pulsante) */
         .ultima-hora-section {
             background: linear-gradient(135deg, #102630 0%, #163844 100%);
             border-top: 4px solid var(--lima-color);
@@ -311,6 +310,7 @@
             color: var(--lima-color);
             text-decoration: underline;
         }
+
         /* MODAL ÚLTIMA HORA */
         .modal-ultima-hora {
             display: none;
@@ -342,7 +342,7 @@
             animation: slideUpModal 0.3s ease;
         }
         .modal-ultima-hora-header {
-            background: linear-gradient(90deg, #1a0a0a, #2d0f0f);
+            background: linear-gradient(90deg, #102630, #163844);
             color: #fff;
             padding: 20px 25px;
             border-radius: 5px 5px 0 0;
@@ -378,7 +378,7 @@
         }
         .modal-ultima-hora-meta {
             font-size: 12px;
-            color: #ffcdd2;
+            color: #b0bec5;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             margin-top: 8px;
@@ -387,7 +387,7 @@
             flex-wrap: wrap;
         }
         .modal-ultima-hora-meta .fuente {
-            color: #ff8a80;
+            color: var(--lima-color);
             font-weight: bold;
         }
         .modal-ultima-hora-close {
@@ -543,7 +543,6 @@
             background-color: var(--secondary-color);
         }
 
-        /* Mensaje de éxito del Newsletter */
         .newsletter-success {
             display: none;
             background: #113019;
@@ -601,7 +600,6 @@
             text-align: justify;
         }
 
-        /* Clases para alternar Vistas (SPA) */
         .page-view {
             display: none;
         }
@@ -609,7 +607,6 @@
             display: block;
         }
 
-        /* Grids de Artículos */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -638,6 +635,158 @@
             margin: 0;
             color: var(--text-muted);
             text-align: left;
+        }
+
+        /* MAPA ESTILIZADO DE MUNICIPIOS */
+        .mapa-distritos-wrapper {
+            background: linear-gradient(135deg, #102630 0%, #1F4E5F 100%);
+            border-radius: 10px;
+            padding: 25px 20px 30px 20px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--lima-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .mapa-distritos-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(139,195,74,0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(79,195,247,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .mapa-distritos-titulo {
+            color: var(--lima-color);
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .mapa-distritos-subtitulo {
+            color: #b0bec5;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        .mapa-canvas {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 480px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            border: 1px dashed #285467;
+            border-radius: 8px;
+            z-index: 1;
+        }
+        .mapa-region {
+            position: absolute;
+            font-size: 9px;
+            color: #4a6677;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            pointer-events: none;
+            user-select: none;
+        }
+        .mapa-punto {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 5;
+        }
+        .mapa-punto-circulo {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1F4E5F, #163844);
+            border: 2px solid var(--lima-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 14px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .mapa-punto:hover .mapa-punto-circulo {
+            background: var(--lima-color);
+            color: #113019;
+            transform: scale(1.15);
+            box-shadow: 0 0 0 6px rgba(139,195,74,0.2), 0 6px 20px rgba(139,195,74,0.4);
+        }
+        .mapa-punto-label {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 6px;
+            font-size: 11px;
+            color: #e0f7fa;
+            white-space: nowrap;
+            font-weight: 600;
+            text-align: center;
+            pointer-events: none;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            transition: color 0.2s;
+        }
+        .mapa-punto:hover .mapa-punto-label {
+            color: var(--lima-color);
+        }
+        .mapa-punto-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--lima-color);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .mapa-punto:hover .mapa-punto-pulse {
+            animation: mapaPulse 1.5s infinite;
+        }
+        @keyframes mapaPulse {
+            0% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2.2);
+            }
+        }
+        @media (max-width: 600px) {
+            .mapa-canvas {
+                height: 520px;
+            }
+            .mapa-punto-circulo {
+                width: 36px;
+                height: 36px;
+                font-size: 12px;
+            }
+            .mapa-punto-label {
+                font-size: 10px;
+            }
+            .mapa-distritos-titulo {
+                font-size: 16px;
+            }
         }
 
         /* TARJETAS CLICKEABLES (MUNICIPIOS, ROSCA, BILLETERA) */
@@ -889,7 +1038,7 @@
             text-decoration: underline;
         }
 
-        /* ESTILOS ESPECÍFICOS PARA LA ENCUESTA "EL TERMÓMETRO" */
+        /* EL TERMÓMETRO */
         .termometro-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -961,7 +1110,6 @@
             color: #15803d;
         }
 
-        /* Resultados de la encuesta */
         .resultado-encuesta {
             display: none;
             margin-top: 15px;
@@ -1017,7 +1165,7 @@
             }
         }
 
-        /* Destacado Especial para Artículos Propios en El Pastizal */
+        /* EL PASTIZAL */
         .featured-pastizal-card {
             background: linear-gradient(135deg, #f1f8e9, #ffffff);
             border: 1px solid #c8e6c9;
@@ -1050,7 +1198,7 @@
             margin-bottom: 15px;
         }
 
-        /* MURO DE COMENTARIOS (EN INICIO) */
+        /* MURO DE COMENTARIOS */
         .fotolog-wall {
             margin-top: 35px;
             border-top: 2px dashed #cbd5e1;
@@ -1069,7 +1217,6 @@
             text-align: left;
         }
 
-        /* Muro de comentarios JSONBin */
         .muro-confesionario {
             display: flex;
             flex-direction: column;
@@ -1112,7 +1259,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Banner Promocional / Destacado Personalizado */
         .content-ad-banner {
             background: linear-gradient(90deg, #102630, #1F4E5F);
             color: #ffffff;
@@ -1203,7 +1349,6 @@
             opacity: 0.9;
         }
 
-        /* Banner Fijo para Promocionar */
         .promo-sticky-banner {
             background: linear-gradient(145deg, #102630, var(--primary-color));
             border: 1px solid #285467;
@@ -1290,7 +1435,6 @@
             line-height: 1.4;
         }
 
-        /* Confesionario del Capibara */
         .confesionario-box {
             background: linear-gradient(145deg, #163844, #102630);
             border: 1px solid #285467;
@@ -1315,7 +1459,6 @@
             line-height: 1.4;
         }
 
-        /* Formulario del Confesionario */
         .conf-input, .conf-textarea {
             width: 100%;
             background: #0d1f27;
@@ -1585,8 +1728,6 @@
                     Dólar Hoy: <strong>$1.250 / $1.270</strong>
                 </div>
             </a>
-
-            
         </div>
         
         <div class="search-municipio-container">
@@ -1651,7 +1792,7 @@
         <a id="nav-publicidad" onclick="cambiarVista('publicidad')">PUBLICIDAD</a>
         <a id="nav-contacto" onclick="cambiarVista('contacto')">CONTACTO</a>
     </nav>
-    <!-- FRANJA DE SUSCRIPCIÓN CON CONTADOR DINÁMICO -->
+    <!-- FRANJA DE SUSCRIPCIÓN -->
     <section class="newsletter-section">
         <h3>Suscribite a nuestro Newsletter</h3>
         <div class="newsletter-counter-badge">
@@ -1683,7 +1824,6 @@
                 
                 <p>Nuestro compromiso es simple: traerte la información de lo que pasa en tu distrito, en tu barrio y en tu región sin vueltas. Queremos ser ese puente entre los grandes temas provinciales y tu cuadra, con un enfoque federal real, útil y con la dosis justa de humor ácido que la coyuntura merece.</p>
 
-                <!-- BARRA EN EXCLUSIVA EL PASTIZAL - ACTUALIZADA CON LA NOTA DE DENIS -->
                 <div class="content-ad-banner">
                     <div>
                         <h4>✨ En exclusiva en nuestra sección El Pastizal</h4>
@@ -1692,7 +1832,6 @@
                     <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Leer la entrevista completa</a>
                 </div>
 
-                <!-- SECCIÓN DEL MURO DE COMENTARIOS EN INICIO -->
                 <div class="fotolog-wall">
                     <h3>💬 El Muro de Capibara News</h3>
                     <p>Acá se van acumulando en tiempo real las opiniones, confesiones y preguntas que mandan los lectores desde el panel lateral.</p>
@@ -1700,7 +1839,6 @@
                     <div class="muro-confesionario" id="muro-confesionario"></div>
                 </div>
 
-                <!-- BARRA COMERCIAL REUBICADA ABAJO DE TODO EN PORTADA -->
                 <div class="content-ad-banner" style="margin-top: 40px; background: linear-gradient(90deg, #163844, #102630);">
                     <div>
                         <h4>📢 ¡Patrociná las notas principales!</h4>
@@ -1747,6 +1885,79 @@
             <section class="content-card">
                 <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
                 <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
+
+                <!-- MAPA ESTILIZADO DE LOS 10 DISTRITOS -->
+                <div class="mapa-distritos-wrapper">
+                    <h3 class="mapa-distritos-titulo">🗺️ Mapa Interactivo de Distritos</h3>
+                    <p class="mapa-distritos-subtitulo">Hacé click en cada distrito para ver las 5 noticias más relevantes</p>
+                    
+                    <div class="mapa-canvas">
+                        <span class="mapa-region" style="top: 8%; left: 5%;">Zona Norte</span>
+                        <span class="mapa-region" style="top: 45%; left: 5%;">Zona Oeste</span>
+                        <span class="mapa-region" style="top: 65%; left: 35%;">Zona Sur</span>
+                        <span class="mapa-region" style="top: 90%; left: 65%;">Interior / Costa</span>
+
+                        <div class="mapa-punto" style="top: 15%; left: 65%;" onclick="abrirModalDistrito('Tigre')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">T</div>
+                            <div class="mapa-punto-label">Tigre</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 20%; left: 45%;" onclick="abrirModalDistrito('San Isidro')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">SI</div>
+                            <div class="mapa-punto-label">San Isidro</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 28%; left: 58%;" onclick="abrirModalDistrito('General San Martín')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">SM</div>
+                            <div class="mapa-punto-label">San Martín</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 42%; left: 38%;" onclick="abrirModalDistrito('Morón')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">MO</div>
+                            <div class="mapa-punto-label">Morón</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 50%; left: 22%;" onclick="abrirModalDistrito('Merlo')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">ME</div>
+                            <div class="mapa-punto-label">Merlo</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 55%; left: 38%;" onclick="abrirModalDistrito('La Matanza')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">LM</div>
+                            <div class="mapa-punto-label">La Matanza</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 68%; left: 52%;" onclick="abrirModalDistrito('Lomas de Zamora')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">LZ</div>
+                            <div class="mapa-punto-label">Lomas de Zamora</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 72%; left: 68%;" onclick="abrirModalDistrito('Quilmes')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">Q</div>
+                            <div class="mapa-punto-label">Quilmes</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 85%; left: 55%;" onclick="abrirModalDistrito('La Plata')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">LP</div>
+                            <div class="mapa-punto-label">La Plata</div>
+                        </div>
+
+                        <div class="mapa-punto" style="top: 88%; left: 82%;" onclick="abrirModalDistrito('General Pueyrredón')">
+                            <div class="mapa-punto-pulse"></div>
+                            <div class="mapa-punto-circulo">GP</div>
+                            <div class="mapa-punto-label">Gral. Pueyrredón</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="articles-grid">
                     <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Matanza')">
@@ -1799,7 +2010,6 @@
                 <h2 class="article-title">La Billetera</h2>
                 <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
 
-                <!-- RECUADRO DESTACADO: LA BILLETERA HOY -->
                 <div class="billetera-hoy">
                     <div class="billetera-hoy-header">
                         <h3>📊 La Billetera Hoy</h3>
@@ -1883,13 +2093,11 @@
                 <h2 class="article-title">El Pastizal</h2>
                 <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
 
-                <!-- NUEVA NOTA DESTACADA: DENIS FERRAGUT -->
                 <div class="featured-pastizal-card">
                     <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
                     <h3>Denis Ferragut: "No somos políticos profesionales, somos gente de trabajo que quiere que el país produzca"</h3>
                     <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 29 de Septiembre de 2026 | Cutral Co, Neuquén</div>
                     
-                    <!-- BOTÓN DE COMPARTIR POR WHATSAPP -->
                     <div style="margin: 15px 0 25px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                         <a href="https://wa.me/?text=Mir%C3%A1%20esta%20nota%20de%20Capibara%20News%3A%20Denis%20Ferragut%20-%20%22No%20somos%20pol%C3%ADticos%20profesionales%22%20%F0%9F%93%B0%20https%3A%2F%2Fezzecc.github.io%2Fcapibara-news%2F" 
                            target="_blank" 
@@ -1933,7 +2141,6 @@
                     </div>
                 </div>
 
-                <!-- NOTA ANTERIOR: NORBERTO DELGADO -->
                 <div class="featured-pastizal-card" style="border-left-color: var(--text-muted); background: #fdfdfe; margin-top: 30px;">
                     <span class="featured-pastizal-badge" style="background-color: var(--text-muted); color: #fff;">📌 Nota Pasada</span>
                     <h3 style="color: var(--text-muted);">Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
@@ -1990,7 +2197,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             </section>
         </main>
 
-        <!-- VISTA 6: EL TERMÓMETRO (ENCUESTA BONAERENSE) -->
+        <!-- VISTA 6: EL TERMÓMETRO -->
         <main id="vista-termometro" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">🌡️ El Termómetro de la Provincia</h2>
@@ -2213,7 +2420,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             </article>
         </main>
 
-        <!-- VISTA: EL VECINDARIO (MODIFICADA) -->
+        <!-- VISTA: EL VECINDARIO -->
         <main id="vista-vecindario" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">El Vecindario</h2>
@@ -2442,12 +2649,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-        // =====================================================
-        // ÚLTIMA HORA - NOTICIAS URGENTES
-        // Para activar/desactivar: cambiar "activa: true/false"
-        // Para agregar nueva: copiar un bloque y editarlo
-        // Se muestran las 3 primeras con activa: true
-        // =====================================================
+        // ÚLTIMA HORA
         const ultimasNoticias = [
             {
                 id: "ultima-1",
@@ -2481,22 +2683,9 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <p>Defensa Civil recomendó a los vecinos asegurar objetos que puedan volar, no circular por calles inundadas y tener a mano números de emergencia. Los equipos de rescate ya están desplegados en puntos estratégicos del conurbano.</p>`,
                 link: "https://www.lanacion.com.ar/",
                 activa: true
-            },
-            // NOTICIA DE EJEMPLO DESACTIVADA (para que veas cómo se ve una apagada)
-            {
-                id: "ultima-4",
-                titulo: "Noticia de ejemplo desactivada - no aparece porque activa: false",
-                fuente: "Ejemplo",
-                fecha: "29/09/2026",
-                resumen: `<p>Esta noticia no se muestra porque tiene activa: false. Podés activarla cambiando a true.</p>`,
-                link: "https://www.ejemplo.com/",
-                activa: false
             }
         ];
 
-        // =====================================================
-        // RENDERIZADO DE ÚLTIMA HORA
-        // =====================================================
         function renderizarUltimaHora() {
             const lista = document.getElementById('ultima-hora-lista');
             if (!lista) return;
@@ -2552,9 +2741,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
-        // =====================================================
-        // INICIALIZACIÓN
-        // =====================================================
         window.addEventListener('DOMContentLoaded', () => {
             renderizarUltimaHora();
             
@@ -2679,9 +2865,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         });
 
-        // =====================================================
-        // NOTICIAS POR CATEGORÍA (CURADAS A MANO)
-        // =====================================================
         const noticiasPorDistrito = {
             "La Matanza": [
                 { titulo: "Obras viales congeladas en la zona oeste", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
