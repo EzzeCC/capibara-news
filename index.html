@@ -206,12 +206,13 @@
         }
 
         /* SECCIÓN ÚLTIMA HORA */
+              /* SECCIÓN ÚLTIMA HORA */
         .ultima-hora-section {
-            background: linear-gradient(135deg, #1a0a0a 0%, #2d0f0f 100%);
-            border-top: 4px solid #e53935;
-            border-bottom: 4px solid #e53935;
+            background: linear-gradient(135deg, #102630 0%, #163844 100%);
+            border-top: 4px solid var(--lima-color);
+            border-bottom: 4px solid var(--lima-color);
             padding: 20px 20px;
-            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .ultima-hora-container {
             max-width: 1200px;
@@ -249,7 +250,7 @@
             }
         }
         .ultima-hora-subtitle {
-            color: #ffcdd2;
+            color: #b0bec5;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -261,9 +262,9 @@
             gap: 15px;
         }
         .ultima-hora-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #7f1d1d;
-            border-left: 4px solid #e53935;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid #285467;
+            border-left: 4px solid var(--lima-color);
             padding: 15px 18px;
             border-radius: 6px;
             cursor: pointer;
@@ -271,10 +272,10 @@
             color: #ffffff;
         }
         .ultima-hora-item:hover {
-            background: rgba(229, 57, 53, 0.12);
-            border-left-color: #ff5252;
+            background: rgba(139, 195, 74, 0.12);
+            border-left-color: var(--lima-color);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(229, 57, 53, 0.25);
+            box-shadow: 0 8px 20px rgba(139, 195, 74, 0.2);
         }
         .ultima-hora-item-titulo {
             font-size: 15px;
@@ -285,7 +286,7 @@
         }
         .ultima-hora-item-meta {
             font-size: 11px;
-            color: #ffcdd2;
+            color: #b0bec5;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             display: flex;
@@ -294,12 +295,12 @@
             align-items: center;
         }
         .ultima-hora-item-meta .fuente {
-            color: #ff8a80;
+            color: var(--lima-color);
             font-weight: bold;
         }
         .ultima-hora-item-cta {
             font-size: 11px;
-            color: #ff8a80;
+            color: var(--accent-color);
             font-weight: bold;
             margin-top: 8px;
             display: block;
@@ -307,10 +308,9 @@
             letter-spacing: 0.5px;
         }
         .ultima-hora-item:hover .ultima-hora-item-cta {
-            color: #ff5252;
+            color: var(--lima-color);
             text-decoration: underline;
         }
-
         /* MODAL ÚLTIMA HORA */
         .modal-ultima-hora {
             display: none;
