@@ -1048,6 +1048,46 @@
             color: var(--text-color);
             font-weight: bold;
         }
+
+        /* Media Kit Download */
+        .media-kit-download {
+            background: linear-gradient(135deg, #f0f4f8, #ffffff);
+            border: 2px solid var(--primary-color);
+            border-left: 5px solid var(--lima-color);
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin-top: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .media-kit-download h4 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        .media-kit-download p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .media-kit-download a {
+            background-color: var(--lima-color);
+            color: #113019;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .media-kit-download a:hover {
+            background-color: #7cb342;
+        }
     </style>
 </head>
 <body>
@@ -1079,9 +1119,10 @@
 
             <div class="trending-container">
                 <span class="trending-label">Temas del Día</span>
-                <a onclick="cambiarVista('rosca')">Bacheazo en la esquina</a>
-                <a onclick="cambiarVista('billetera')">Suba de boleta de luz</a>
+                <a onclick="cambiarVista('rosca')">Política mal nacida</a>
+                <a onclick="cambiarVista('billetera')">Aumento de combustible en puerta</a>
                 <a onclick="cambiarVista('municipios')">Elecciones en el Conurbano</a>
+                <a onclick="cambiarVista('vecindario')">Asesinato en Ezeiza</a>
             </div>
         </div>
         
@@ -1126,11 +1167,11 @@
     <!-- MENÚ DE NAVEGACIÓN -->
     <nav>
         <a id="nav-inicio" class="active" onclick="cambiarVista('inicio')">INICIO</a>
-        <a id="nav-vecindario" onclick="cambiarVista('vecindario')">EL VECINDARIO</a>
         <a id="nav-rosca" onclick="cambiarVista('rosca')">LA ROSCA</a>
         <a id="nav-municipios" onclick="cambiarVista('municipios')">MUNICIPIOS</a>
         <a id="nav-billetera" onclick="cambiarVista('billetera')">LA BILLETERA</a>
         <a id="nav-pastizal" onclick="cambiarVista('pastizal')">EL PASTIZAL</a>
+        <a id="nav-vecindario" onclick="cambiarVista('vecindario')">EL VECINDARIO</a>
         <a id="nav-termometro" onclick="cambiarVista('termometro')">EL TERMÓMETRO</a>
         <a id="nav-clasificados" onclick="cambiarVista('clasificados')">CLASIFICADOS</a>
         <a id="nav-publicidad" onclick="cambiarVista('publicidad')">PUBLICIDAD</a>
@@ -1141,7 +1182,7 @@
     <section class="newsletter-section">
         <h3>Suscribite a nuestro Newsletter</h3>
         <div class="newsletter-counter-badge">
-            👥 <span id="subscriber-counter">37.654</span> suscriptores
+            👥 <span id="subscriber-counter">39.901</span> suscriptores
         </div>
         <div class="newsletter-form" id="newsletter-container">
             <form name="newsletter" method="POST" data-netlify="true" style="display: flex; width: 100%;">
@@ -1201,29 +1242,54 @@
         <main id="vista-rosca" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Rosca</h2>
-                <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas.</p>
+                <p>Política pura y sin filtro. Resumen de las noticias más importantes de la Provincia de Buenos Aires y el país, con la mirada del Capibara.</p>
 
-                <div class="articles-grid">
-                    <div class="article-box-card">
-                        <h4>1. Pases de factura en el conurbano</h4>
+                <div class="articles-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🔴 Política Nacional</div>
+                        <h4>Pases de factura en el Conurbano</h4>
                         <p>Intendentes reconfiguran alianzas silenciosas pensando en el armado legislativo del próximo año.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Clarín</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>2. Sesión caliente en La Plata</h4>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🔵 Legislatura</div>
+                        <h4>Sesión caliente en La Plata</h4>
                         <p>Fuerte cruce entre bloques por la distribución de fondos coparticipables a comunas opositoras.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Infobae</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>3. Operativo operativo</h4>
-                        <p>Reuniones cumbre en despachos oscuros para definir candidaturas territoriales sin hacer mucho ruido.</p>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟢 Economía</div>
+                        <h4>Presupuesto bajo la lupa</h4>
+                        <p>Concejales analizan la letra chica de partidas destinadas a obras públicas demoradas.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: La Nación</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>4. Presupuesto bajo la lupa</h4>
-                        <p>Concejales analizan letra chica de partidas destinadas a obras públicas demoradas.</p>
-                    </div>
-                    <div class="article-box-card">
-                        <h4>5. El teléfono descompuesto</h4>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟡 Gremios</div>
+                        <h4>El teléfono descompuesto</h4>
                         <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Página/12</div>
                     </div>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟠 Justicia</div>
+                        <h4>Operativo en la Rosada</h4>
+                        <p>Reuniones cumbre en despachos oscuros para definir candidaturas territoriales sin hacer ruido.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Ámbito</div>
+                    </div>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🟣 Provincia</div>
+                        <h4>La interna que no se ve</h4>
+                        <p>Movimientos silenciosos en el gabinete provincial que podrían cambiar el mapa político.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: El Día</div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(90deg, #102630, #1F4E5F); color: #ffffff; padding: 15px 25px; border-radius: 6px; margin-top: 25px; text-align: center; border-left: 5px solid var(--lima-color);">
+                    <p style="margin: 0; font-size: 13px; color: #e0f7fa;">📌 <strong style="color: var(--lima-color);">Resumen actualizado todos los días.</strong> Las noticias son un compilado de los principales medios nacionales y provinciales, con resumen propio de Capibara News.</p>
                 </div>
             </section>
         </main>
@@ -1235,45 +1301,45 @@
                 <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires.</p>
 
                 <div class="articles-grid">
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>1. La Matanza</h4>
-                        <p>Obras viales congeladas y reclamos barriales marcan el pulso de la semana en la zona oeste.</p>
+                        <p>Los vecinos de la zona oeste están que trinan: las calles parecen un campo de batalla y el municipio sigue mirando para otro lado. Reclamos por todos lados.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>2. La Plata</h4>
-                        <p>Tensión en el Casco Urbano por la reestructuración de los recorridos de transporte público.</p>
+                        <p>La capital bonaerense está en ebullición: la reestructuración del transporte público tiene a los vecinos de la cabeza. Nadie entiende los nuevos recorridos.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>3. Lomas de Zamora</h4>
-                        <p>Avanzan los operativos nocturnos de prevención vial en los principales corredores gastronómicos.</p>
+                        <p>La zona sur se puso las pilas con los operativos nocturnos, pero los vecinos piden más. La gastronomía mueve mucho, pero la seguridad no da tregua.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>4. General Pueyrredón</h4>
-                        <p>Mar del Plata calienta motores para la temporada alta con foco en la llegada de turismo de escapada.</p>
+                        <p>Mar del Plata ya está pensando en el verano. Los comerciantes se preparan para una temporada que pintaría mejor que la anterior. Expectativa total.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>5. Quilmes</h4>
-                        <p>Vecinos exigen refuerzos en la recolección de residuos tras las últimas jornadas de tormenta.</p>
+                        <p>Después de las últimas tormentas, la basura se acumuló en varios barrios y los vecinos explotaron. El municipio promete refuerzos, pero el olor ya es insoportable.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>6. Almirante Brown</h4>
-                        <p>Apertura de nuevas luminarias LED en accesos clave del parque industrial de Burzaco.</p>
+                        <p>Burzaco se moderniza: nuevas luminarias LED en el parque industrial. Los dueños de las fábricas celebran, pero los vecinos piden lo mismo para los barrios.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>7. Merlo</h4>
-                        <p>Fuerte debate en el Concejo Deliberante por el presupuesto asignado al mantenimiento hospitalario.</p>
+                        <p>El Concejo Deliberante está que arde. El presupuesto para hospitales está en el ojo de la tormenta. Los vecinos exigen respuestas y los concejales se agarran de los pelos.</p>
                     </div>
-                    <div class="article-box-card">
-                        <h4>8. Moreno</h4>
-                        <p>Lanzan programa de financiamiento y créditos blandos para pymes agroecológicas de la zona.</p>
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <h4>8. Ezeiza</h4>
+                        <p>El municipio lanzó créditos blandos para pymes agroecológicas. La idea es fomentar la producción local, aunque los vecinos piden que también se ocupen de la seguridad.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>9. Florencio Varela</h4>
-                        <p>Inauguran centro de salud comunitario enfocado en la atención pediátrica preventiva.</p>
+                        <p>Inauguraron un centro de salud comunitario con foco en pediatría. Los padres de la zona respiran un poco más tranquilos, aunque la atención sigue siendo lenta.</p>
                     </div>
-                    <div class="article-box-card">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
                         <h4>10. General San Martín</h4>
-                        <p>Planes de asfaltado y reparación de colectoras avanzan sobre las arterias comerciales principales.</p>
+                        <p>Las obras de asfaltado avanzan sobre las arterias comerciales principales. Los comerciantes están contentos, aunque el polvo y el ruido ya tienen a más de uno con los nervios de punta.</p>
                     </div>
                 </div>
             </section>
@@ -1283,29 +1349,54 @@
         <main id="vista-billetera" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Billetera</h2>
-                <p>Precios de los alimentos, paritarias y cómo cuidar el mango en la provincia sin volverse loco.</p>
+                <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara.</p>
 
-                <div class="articles-grid">
-                    <div class="article-box-card">
-                        <h4>1. El changuito en terapia</h4>
-                        <p>Relevamiento de precios en ferias barriales y mayoristas del conurbano para ganarle a la inflación.</p>
+                <div class="articles-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🍞 Canasta Básica</div>
+                        <h4>El plato que no llega</h4>
+                        <p>La canasta básica subió 39,6% interanual y el 80% de los argentinos gana menos de lo que necesita para cubrirla.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: El Destape / INDEC</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>2. Paritarias bonaerenses</h4>
-                        <p>Nuevos tramos de aumento salarial acordados para estatales y docentes en distrito provincial.</p>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">💵 Dólar</div>
+                        <h4>La brecha no se cierra</h4>
+                        <p>El dólar blue cotiza a $1.565 y la brecha con el oficial sigue en torno al 2%. El mercado mira de reojo la incertidumbre política.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Ámbito</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>3. Tarifas y boletas</h4>
-                        <p>Impacto de las últimas subas de servicios en comercios de cercanía y pymes zonales.</p>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🤝 Paritarias</div>
+                        <h4>El silencio de la Provincia</h4>
+                        <p>Estatales y docentes reclaman la reapertura de paritarias. El Gobierno bonaerense aún no presentó una oferta concreta para octubre.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Diario Democracia</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>4. Descuentos con Cuenta DNI</h4>
-                        <p>El cronograma de ahorro en carnicerías y verdulerías para aliviar el bolsillo el fin de semana.</p>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">💡 Tarifas</div>
+                        <h4>Luz y gas con aumento</h4>
+                        <p>Electricidad sube 1,75% y gas 1,40%. El tope de consumo subsidiado se amplió a 200 kWh para amortiguar el golpe.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Bloomberg Línea</div>
                     </div>
-                    <div class="article-box-card">
-                        <h4>5. Naftas y transporte</h4>
-                        <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">⛽ Combustibles</div>
+                        <h4>Nafta que no para</h4>
+                        <p>YPF, Shell y Axion aplicaron subas de entre 1% y 5%. La nafta súper ya supera los $2.000 por litro en CABA.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: Energía y Negocios</div>
                     </div>
+
+                    <div class="article-box-card" style="border-left-color: var(--lima-color); background: linear-gradient(135deg, #f1f8e9, #ffffff);">
+                        <div style="font-size: 10px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📱 Cuenta DNI</div>
+                        <h4>Descuentos de septiembre</h4>
+                        <p>Ferias al 40%, veterinarias al 30% los sábados, comercios de cercanía al 20% y farmacias al 10%.</p>
+                        <div style="font-size: 10px; color: var(--text-muted); font-style: italic; margin-top: 8px;">Fuente: BAE Negocios</div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(90deg, #102630, #1F4E5F); color: #ffffff; padding: 15px 25px; border-radius: 6px; margin-top: 25px; text-align: center; border-left: 5px solid var(--lima-color);">
+                    <p style="margin: 0; font-size: 13px; color: #e0f7fa;">📌 <strong style="color: var(--lima-color);">Resumen actualizado todos los días.</strong> Las noticias son un compilado de los principales medios nacionales y provinciales, con resumen propio de Capibara News.</p>
                 </div>
             </section>
         </main>
@@ -1320,7 +1411,7 @@
                 <div class="featured-pastizal-card">
                     <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
                     <h3>Denis Ferragut: "No somos políticos profesionales, somos gente de trabajo que quiere que el país produzca"</h3>
-                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News -29 de Septiembre 2026- | Cutral Co, Neuquén</div>
+                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 29 de Septiembre de 2026 | Cutral Co, Neuquén</div>
                     
                     <p><strong>En Cutral Co, en el corazón de Vaca Muerta, Denis Ferragut plantea construir una alternativa política desde el territorio.</strong> Psicólogo social, emprendedor y trabajador estatal, con experiencia en EPEN y como bombero voluntario, sostiene que el desarrollo de la región debe traducirse en trabajo, capacitación, servicios, producción y mayor valor agregado en origen. Desde IAFyP propone una mirada federal que parta de las necesidades concretas de las comunidades y se articule con otras provincias productivas.</p>
 
@@ -1363,28 +1454,33 @@
                     <h3 style="color: var(--text-muted);">Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
                     <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 24 de Julio de 2026</div>
                     <p> En un mano a mano picante, el referente de Junín habló del armado territorial, de la incertidumbre por la candidatura de Villarruel y de por qué el interior bonaerense ya no quiere ser un convidado de piedra.</p>
-                    <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.</p>
-                    
-                    <p><strong>—Norberto, te vemos en todos lados. ¿Qué está pasando en la 4ta?</strong></p>
-                    <p>—La 4ta se pone de pie. Nos cansamos de que nos miren como el patio trasero de la provincia. Acá hay laburo, hay producción y hay gente con ganas de cambiar la historia. Nosotros no venimos a improvisar.</p>
+                    <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.
 
-                    <p><strong>—La imagen que están usando dice "La 4ta Sección se pone de pie". ¿A qué te referís puntualmente?</strong></p>
-                    <p>—A que estamos organizando el territorio. Queremos una banca que nos represente de verdad. No un nombre de Buenos Aires que baja en una 4x4, saluda y se va. Queremos gente que viva acá, que sepa lo que es levantarse a las 6 de la mañana para laburar en el campo o en el comercio.</p>
+<p><strong>—Norberto, te vemos en todos lados. ¿Qué está pasando en la 4ta?</strong></p>
 
-                    <p><strong>—El nombre de Victoria Villarruel suena fuerte. ¿Es tu candidata?</strong></p>
-                    <p>—Mirá, yo soy un soldado del proyecto. Y te digo una cosa: Victoria es la única que puede poner de pie a la Argentina y a nuestra sección. Tiene el coraje, tiene la convicción y, sobre todo, tiene el orden. Hoy la gente busca eso: orden. Y nosotros con Norberto Delgado a la cabeza, con Victoria, representamos eso.</p>
+<p>—La 4ta se pone de pie. Nos cansamos de que nos miren como el patio trasero de la provincia. Acá hay laburo, hay producción y hay gente con ganas de cambiar la historia. Nosotros no venimos a improvisar.</p>
 
-                    <p><strong>—Pero hay un pequeño detalle: todavía no está confirmada su candidatura. ¿Cómo juega eso en el armado?</strong></p>
-                    <p>—(Se ríe) La política es dinámica, amigo. Hoy no está confirmado, mañana puede estarlo. Lo que sí te aseguro es que el armado está en marcha. Nosotros ya estamos caminando, tocando timbre y juntando voluntades. Si Villarruel decide dar el paso, va a encontrar una 4ta Sección totalmente organizada y lista para pelear. Si no, seguiremos trabajando por los vecinos. Pero el compromiso es con la gente.</p>
+<p><strong>—La imagen que están usando dice "La 4ta Sección se pone de pie". ¿A qué te referís puntualmente?</strong></p>
 
-                    <p><strong>—¿Y la relación con los intendentes de la zona?</strong></p>
-                    <p>—Hay de todo, como en la vida. Algunos se suben al proyecto, otros miran de costado. Pero el vecino común ya nos conoce. No somos una encuesta, somos la realidad de la calle.</p>
+<p>—A que estamos organizando el territorio. Queremos una banca que nos represente de verdad. No un nombre de Buenos Aires que baja en una 4x4, saluda y se va. Queremos gente que viva acá, que sepa lo que es levantarse a las 6 de la mañana para laburar en el campo o en el comercio.</p>
 
-                    <p><strong>La incógnita que todos se hacen: Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita en el tablero bonaerense, hombres como Norberto Delgado ya juegan su propio partido. En Junín, dicen, la 4ta Sección se está poniendo de pie. Y si el armado sigue creciendo, no sería descabellado ver ese eslogan convertido en una boleta real en los próximos comicios.<br>Lo único seguro es que la política bonaerense no duerme. Y en la 4ta, menos que menos.</strong></p>
+<p><strong>—El nombre de Victoria Villarruel suena fuerte. ¿Es tu candidata?</strong></p>
+
+<p>—Mirá, yo soy un soldado del proyecto. Y te digo una cosa: Victoria es la única que puede poner de pie a la Argentina y a nuestra sección. Tiene el coraje, tiene la convicción y, sobre todo, tiene el orden. Hoy la gente busca eso: orden. Y nosotros con Norberto Delgado a la cabeza, con Victoria, representamos eso.</p>
+
+<p><strong>—Pero hay un pequeño detalle: todavía no está confirmada su candidatura. ¿Cómo juega eso en el armado?</strong></p>
+
+<p>—(Se ríe) La política es dinámica, amigo. Hoy no está confirmado, mañana puede estarlo. Lo que sí te aseguro es que el armado está en marcha. Nosotros ya estamos caminando, tocando timbre y juntando voluntades. Si Villarruel decide dar el paso, va a encontrar una 4ta Sección totalmente organizada y lista para pelear. Si no, seguiremos trabajando por los vecinos. Pero el compromiso es con la gente.</p>
+
+<p><strong>—¿Y la relación con los intendentes de la zona?</strong></p>
+
+<p>—Hay de todo, como en la vida. Algunos se suben al proyecto, otros miran de costado. Pero el vecino común ya nos conoce. No somos una encuesta, somos la realidad de la calle.</p>
+
+<p><strong>La incógnita que todos se hacen:
+Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita en el tablero bonaerense, hombres como Norberto Delgado ya juegan su propio partido. En Junín, dicen, la 4ta Sección se está poniendo de pie. Y si el armado sigue creciendo, no sería descabellado ver ese eslogan convertido en una boleta real en los próximos comicios.<br>Lo único seguro es que la política bonaerense no duerme. Y en la 4ta, menos que menos.</strong></p>
                 </div>
 
-                <!-- ARTÍCULOS SECUNDARIOS (LOS QUE YA ESTABAN) -->
-                <div class="articles-grid" style="margin-top: 30px;">
+                <div class="articles-grid">
                     <div class="article-box-card">
                         <h4>1. El arte de esquivar pozos</h4>
                         <p>Crónica urbana sobre la odisea diaria de manejar en calles destruidas sin romper el tren delantero.</p>
@@ -1416,14 +1512,12 @@
                 <div class="date">Participación ciudadana bonaerense</div>
                 <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
 
-                <!-- PREGUNTA 1: Partido y Distrito -->
                 <div class="termometro-card">
                     <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
                     <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
                     <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
                 </div>
 
-                <!-- PREGUNTA 2: Salud Pública -->
                 <div class="termometro-card">
                     <h3>Pregunta 2: Salud Pública</h3>
                     <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
@@ -1439,7 +1533,6 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 3: Seguridad y Prevención -->
                 <div class="termometro-card">
                     <h3>Pregunta 3: Seguridad y Prevención</h3>
                     <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
@@ -1455,7 +1548,6 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 4: Educación y Escuelas -->
                 <div class="termometro-card">
                     <h3>Pregunta 4: Educación y Escuelas</h3>
                     <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
@@ -1471,7 +1563,6 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 5: Servicios y Obras Públicas -->
                 <div class="termometro-card">
                     <h3>Pregunta 5: Servicios y Obras Públicas</h3>
                     <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
@@ -1487,7 +1578,6 @@
                     </div>
                 </div>
 
-                <!-- BOTÓN DE VOTAR -->
                 <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
             </section>
         </main>
@@ -1498,7 +1588,6 @@
                 <h2 class="article-title">📌 Clasificados Vecinales</h2>
                 <p>El espacio donde los vecinos de la Provincia publican lo que necesitan. Vendé, comprá, alquilá, ofrecé servicios o buscá trabajo. Publicar tu aviso es fácil y económico.</p>
 
-                <!-- PLANTILLA DE REFERENCIA -->
                 <div class="clasificados-plantilla">
                     <strong>📝 Plantilla de referencia:</strong> Así va a verse tu aviso. Copiá este formato y completalo con tus datos.<br><br>
                     <strong>Categoría:</strong> (Venta / Alquiler / Servicios / Trabajo / Varios)<br>
@@ -1507,7 +1596,6 @@
                     <strong>Contacto:</strong> (Tu WhatsApp o mail para que te escriban)
                 </div>
 
-                <!-- FORMULARIO DE CARGA -->
                 <div class="clasificados-form">
                     <h3>Publicá tu aviso</h3>
                     <p>Completá el formulario y lo subimos a la página en menos de 24 horas. El costo es de $2.000 por 7 días. Te contactamos para coordinar el pago.</p>
@@ -1539,7 +1627,6 @@
                     </form>
                 </div>
 
-                <!-- AVISOS DESTACADOS (EJEMPLOS) -->
                 <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 10px;">Avisos destacados</h3>
                 <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Estos son los avisos que ya están publicados. Si querés el tuyo, completá el formulario de arriba.</p>
 
@@ -1578,10 +1665,9 @@
                 <h2 class="article-title">📢 Publicidad en Capibara News</h2>
                 <p>Si tenés un comercio, una pyme o una marca personal en la Provincia de Buenos Aires, este es tu lugar. Capibara News es el diario digital que crece día a día, con un enfoque federal y una audiencia fiel que busca información útil y sin vueltas.</p>
 
-                <!-- DATOS DE AUDIENCIA -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
                     <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.900+</div>
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.901+</div>
                         <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Suscriptores al Newsletter</div>
                     </div>
                     <div style="background: #f0f4f8; border-left: 4px solid var(--lima-color); padding: 20px; border-radius: 8px; text-align: center;">
@@ -1594,7 +1680,6 @@
                     </div>
                 </div>
 
-                <!-- FORMATOS DISPONIBLES -->
                 <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 15px;">Formatos Disponibles</h3>
 
                 <div class="articles-grid">
@@ -1616,11 +1701,18 @@
                     </div>
                 </div>
 
-                <!-- CTA DE CONTACTO -->
+                <div class="media-kit-download">
+                    <div>
+                        <h4>📄 Descargá nuestro Media Kit</h4>
+                        <p>Toda la información comercial en un solo PDF: audiencia, formatos, precios y contacto.</p>
+                    </div>
+                    <a href="media-kit.pdf" download>📥 Descargar Media Kit</a>
+                </div>
+
                 <div style="background: linear-gradient(135deg, #102630, #1F4E5F); color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 35px; text-align: center; border-left: 5px solid var(--lima-color);">
                     <h3 style="color: var(--lima-color); margin: 0 0 10px 0; text-transform: uppercase;">¿Querés anunciar con nosotros?</h3>
                     <p style="color: #e0f7fa; font-size: 14px; margin-bottom: 20px;">Escribinos y te enviamos el Media Kit completo con precios y disponibilidad.</p>
-                    <a href="mailto:capibaranewscontacto@outlook.com.ar?subject=Consulta%20de%20Publicidad" style="background-color: var(--lima-color); color: #113019; padding: 12px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; display: inline-block;">📩 Consultar Disponibilidad</a>
+                    <a href="mailto:hablaleacapibaranews@outlook.com?subject=Consulta%20de%20Publicidad" style="background-color: var(--lima-color); color: #113019; padding: 12px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; display: inline-block;">📩 Consultar Disponibilidad</a>
                 </div>
             </section>
         </main>
@@ -1637,7 +1729,7 @@
                 
                 <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin: 25px 0;">
                     <strong style="color: var(--primary-color); font-size: 15px;">📧 Correo Electrónico:</strong><br>
-                    <a href="mailto:capibaranewscontacto@outlook.com.ar" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">capibaranewscontacto@outlook.com.ar</a>
+                    <a href="mailto:hablaleacapibaranews@outlook.com" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">hablaleacapibaranews@outlook.com</a>
                 </div>
 
                 <p>Leemos todos los mensajes que llegan. Si la historia vale la pena, la hacemos tapa en el diario.</p>
@@ -1650,7 +1742,6 @@
                 <h2 class="article-title">El Vecindario</h2>
                 <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
 
-                <!-- BOTÓN DE PARTICIPACIÓN -->
                 <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
                     <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
                     <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
@@ -1658,21 +1749,18 @@
                 </div>
 
                 <div class="articles-grid">
-                    <!-- Nota 1 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color);">
                         <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
                         <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
                         <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
                     </div>
 
-                    <!-- Nota 2 -->
                     <div class="article-box-card" style="border-left-color: #ef4444;">
                         <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
                         <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
                         <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
                     </div>
 
-                    <!-- Nota 3 -->
                     <div class="article-box-card" style="border-left-color: var(--accent-color);">
                         <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
                         <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
@@ -1684,7 +1772,6 @@
 
         <!-- BARRA LATERAL DINÁMICA -->
         <aside>
-            <!-- BANNER FIJO LISTO PARA PROMOCIONAR -->
             <div class="promo-sticky-banner">
                 <span class="promo-badge">Espacio Disponible</span>
                 <h4>¡Tu Marca Acá!</h4>
@@ -1692,7 +1779,7 @@
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-            <!-- 1. Banners Estándar + Confesionario -->
+            <!-- SIDEBAR ESTÁNDAR (INICIO, LA ROSCA, MUNICIPIOS, CLASIFICADOS, PUBLICIDAD) -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -1702,25 +1789,20 @@
                     </a>
                 </div>
                 
-                <!-- AQUÍ ESTÁ LA IMAGEN QUE PEDISTE INSERTAR -->
                 <div class="ad-box">
-                    <div class="ad-title">Publicidad</div>
-                    <!-- Reemplazá "ESPACIO1.jpg" por el nombre exacto de tu archivo de imagen -->
-                    <img src="ESPACIO01.JPG" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+                    <div class="ad-title">Espacio Publicitario Premium</div>
+                    <img src="espacio02.jpg" alt="Publicidad 300x600" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
 
-                <!-- NUEVO BANNER 300x250 (ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
                     <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
                 </div>
 
-                <!-- CONFESIONARIO DEL CAPIBARA (JSONBIN) -->
                 <div class="confesionario-box">
                     <h4>💬 Confesionario del Capibara</h4>
                     <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
 
-                    <!-- Formulario -->
                     <div id="form-confesionario">
                         <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
                         <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
@@ -1730,13 +1812,11 @@
                 </div>
             </div>
 
-            <!-- 2. Banners Exclusivos LA ROSCA -->
-            <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
+            <!-- SIDEBAR CON NORBERTO (SOLO EL PASTIZAL) -->
+            <div id="sidebar-norberto" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
-                    <div class="ad-title">Patrocinio Político Exclusivo</div>
-                    <div class="large-placeholder-banner">
-                        ESPACIO 4<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
-                    </div>
+                    <div class="ad-title">Publicidad</div>
+                    <img src="espacio01.jpg" alt="Norberto Delgado - Victoria Villarruel" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
@@ -1744,27 +1824,12 @@
                 </div>
             </div>
 
-            <!-- 3. Banner Exclusivo LA BILLETERA -->
-            <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
+            <!-- SIDEBAR GENÉRICA (EL VECINDARIO, LA BILLETERA, EL TERMÓMETRO, CONTACTO) -->
+            <div id="sidebar-generic" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
-                    <div class="ad-title" style="color: var(--lima-color);">Sponsor Exclusivo de Sección</div>
-                    <div class="massive-placeholder-banner" style="padding: 50px 15px;">
-                        ESPACIO 6
-                        <span style="font-size: 12px; font-weight: normal; margin-top: 15px; color: #558b2f;">Formato Gigante (Half-Page) 300x600</span>
-                    </div>
-                </div>
-                <div class="ad-box">
-                    <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
-                </div>
-            </div>
-
-            <!-- 4. Banner Exclusivo EL VECINDARIO -->
-            <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">Patrocinio del Vecindario</div>
+                    <div class="ad-title">Patrocinio de Sección</div>
                     <div class="large-placeholder-banner">
-                        ESPACIO 5<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
+                        ESPACIO 300x400<br><small style="font-size: 12px; font-weight: normal;">Banner Premium</small>
                     </div>
                 </div>
                 <div class="ad-box">
@@ -1811,7 +1876,7 @@
                 <h4>Contáctenos</h4>
                 <ul>
                     <li><a onclick="cambiarVista('contacto')">Redacción</a></li>
-                    <li><a href="mailto:capibaranewscontacto@outlook.com.ar">Envío de material</a></li>
+                    <li><a href="mailto:hablaleacapibaranews@outlook.com">Envío de material</a></li>
                     <li><a onclick="cambiarVista('contacto')">Empleo / Pasantías</a></li>
                 </ul>
             </div>
@@ -1843,7 +1908,6 @@
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-        // Lógica del contador dinámico de suscriptores (Arranca en 37.654 y suma 5 por día desde el 9 de Julio de 2025)
         window.addEventListener('DOMContentLoaded', () => {
             const startDate = new Date('2025-07-09'); 
             const currentDate = new Date();
@@ -1851,7 +1915,7 @@
             const diffTime = Math.abs(currentDate - startDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
-            const baseSubscribers = 37654;
+            const baseSubscribers = 39901;
             const dailyGrowth = 5; 
             const totalSubscribers = baseSubscribers + (diffDays * dailyGrowth);
 
@@ -1878,21 +1942,17 @@
             }
 
             const sidebarStandard = document.getElementById('sidebar-standard');
-            const sidebarRosca = document.getElementById('sidebar-rosca');
-            const sidebarBilletera = document.getElementById('sidebar-billetera');
-            const sidebarVecindario = document.getElementById('sidebar-vecindario');
+            const sidebarNorberto = document.getElementById('sidebar-norberto');
+            const sidebarGeneric = document.getElementById('sidebar-generic');
 
             if(sidebarStandard) sidebarStandard.style.display = 'none';
-            if(sidebarRosca) sidebarRosca.style.display = 'none';
-            if(sidebarBilletera) sidebarBilletera.style.display = 'none';
-            if(sidebarVecindario) sidebarVecindario.style.display = 'none';
+            if(sidebarNorberto) sidebarNorberto.style.display = 'none';
+            if(sidebarGeneric) sidebarGeneric.style.display = 'none';
 
-            if (nombreVista === 'rosca') {
-                if(sidebarRosca) sidebarRosca.style.display = 'flex';
-            } else if (nombreVista === 'billetera') {
-                if(sidebarBilletera) sidebarBilletera.style.display = 'flex';
-            } else if (nombreVista === 'vecindario') {
-                if(sidebarVecindario) sidebarVecindario.style.display = 'flex';
+            if (nombreVista === 'pastizal') {
+                if(sidebarNorberto) sidebarNorberto.style.display = 'flex';
+            } else if (nombreVista === 'vecindario' || nombreVista === 'billetera' || nombreVista === 'termometro' || nombreVista === 'contacto') {
+                if(sidebarGeneric) sidebarGeneric.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
             }
@@ -1906,7 +1966,6 @@
             }
         }
 
-        // Lógica de selección de opciones de Encuesta (El Termómetro)
         function seleccionarOpcion(elemento, categoria, valor) {
             const contenedor = document.getElementById('grupo-' + categoria);
             const botones = contenedor.querySelectorAll('.pill-btn');
@@ -1929,7 +1988,6 @@
                 return;
             }
 
-            // Mostrar resultados simulados en barra de progreso
             document.querySelectorAll('.resultado-encuesta').forEach(res => {
                 res.style.display = 'block';
             });
@@ -1945,17 +2003,16 @@
                        .replace(/'/g, "&#039;");
         }
 
-        // Lógica del Newsletter con Netlify Forms
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form[name="newsletter"]');
             if (form) {
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const formData = new FormData(form);
-                    fetch('/', {
+                    fetch('https://formspree.io/f/xyezlerk', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(formData).toString()
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
                     })
                     .then(() => {
                         document.getElementById('newsletter-container').style.display = 'none';
@@ -1975,7 +2032,6 @@
       const JSONBIN_BIN_ID = '6aba8b7bffd5d1605338137d';
       const JSONBIN_URL = 'https://api.jsonbin.io/v3/b/' + JSONBIN_BIN_ID;
 
-      // Cargar comentarios al iniciar
       function cargarComentarios() {
         fetch(JSONBIN_URL + '/latest')
         .then(res => res.json())
@@ -2001,7 +2057,6 @@
         .catch(err => console.error('Error cargando comentarios:', err));
       }
 
-      // Enviar un comentario nuevo
       function enviarComentario() {
         const nombre = document.getElementById('conf-nombre').value.trim() || 'Anónimo';
         const red = document.getElementById('conf-red').value.trim();
@@ -2015,7 +2070,6 @@
         const ahora = new Date();
         const fecha = ahora.toLocaleDateString('es-AR') + ' ' + ahora.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
 
-        // Primero leemos los comentarios actuales
         fetch(JSONBIN_URL + '/latest')
         .then(res => res.json())
         .then(data => {
@@ -2027,7 +2081,6 @@
             fecha: fecha
           });
 
-          // Ahora guardamos la lista actualizada
           return fetch(JSONBIN_URL, {
             method: 'PUT',
             headers: {
@@ -2050,7 +2103,6 @@
         });
       }
 
-      // Cargar comentarios cuando la página esté lista
       window.addEventListener('load', cargarComentarios);
     </script>
 </body>
