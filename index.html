@@ -205,6 +205,259 @@
             font-weight: 500;
         }
 
+        /* SECCIÓN ÚLTIMA HORA */
+        .ultima-hora-section {
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d0f0f 100%);
+            border-top: 4px solid #e53935;
+            border-bottom: 4px solid #e53935;
+            padding: 20px 20px;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.2);
+        }
+        .ultima-hora-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .ultima-hora-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .ultima-hora-badge {
+            background-color: #e53935;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulseUltimaHora 1.5s infinite;
+        }
+        @keyframes pulseUltimaHora {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(229, 57, 53, 0);
+                transform: scale(1.03);
+            }
+        }
+        .ultima-hora-subtitle {
+            color: #ffcdd2;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-style: italic;
+        }
+        .ultima-hora-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .ultima-hora-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #7f1d1d;
+            border-left: 4px solid #e53935;
+            padding: 15px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #ffffff;
+        }
+        .ultima-hora-item:hover {
+            background: rgba(229, 57, 53, 0.12);
+            border-left-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(229, 57, 53, 0.25);
+        }
+        .ultima-hora-item-titulo {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.35;
+        }
+        .ultima-hora-item-meta {
+            font-size: 11px;
+            color: #ffcdd2;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .ultima-hora-item-meta .fuente {
+            color: #ff8a80;
+            font-weight: bold;
+        }
+        .ultima-hora-item-cta {
+            font-size: 11px;
+            color: #ff8a80;
+            font-weight: bold;
+            margin-top: 8px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ultima-hora-item:hover .ultima-hora-item-cta {
+            color: #ff5252;
+            text-decoration: underline;
+        }
+
+        /* MODAL ÚLTIMA HORA */
+        .modal-ultima-hora {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(16, 38, 48, 0.85);
+            z-index: 6000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInOverlay 0.25s ease;
+        }
+        .modal-ultima-hora.active {
+            display: flex;
+        }
+        .modal-ultima-hora-content {
+            background: var(--card-bg);
+            border-radius: 10px;
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border-top: 5px solid #e53935;
+            animation: slideUpModal 0.3s ease;
+        }
+        .modal-ultima-hora-header {
+            background: linear-gradient(90deg, #1a0a0a, #2d0f0f);
+            color: #fff;
+            padding: 20px 25px;
+            border-radius: 5px 5px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .modal-ultima-hora-header-left {
+            flex: 1;
+        }
+        .modal-ultima-hora-badge-mini {
+            background-color: #e53935;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .modal-ultima-hora-titulo {
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+            line-height: 1.35;
+            font-weight: bold;
+        }
+        .modal-ultima-hora-meta {
+            font-size: 12px;
+            color: #ffcdd2;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .modal-ultima-hora-meta .fuente {
+            color: #ff8a80;
+            font-weight: bold;
+        }
+        .modal-ultima-hora-close {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .modal-ultima-hora-close:hover {
+            background: #e53935;
+            border-color: #e53935;
+        }
+        .modal-ultima-hora-body {
+            padding: 25px 30px 30px 30px;
+        }
+        .modal-ultima-hora-resumen {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .modal-ultima-hora-resumen p {
+            margin-bottom: 15px;
+        }
+        .modal-ultima-hora-resumen p:last-child {
+            margin-bottom: 0;
+        }
+        .modal-ultima-hora-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed #cbd5e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .modal-ultima-hora-footer p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: left;
+        }
+        .modal-ultima-hora-footer a {
+            background-color: #e53935;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .modal-ultima-hora-footer a:hover {
+            background-color: #c62828;
+        }
+
         /* Barra de Navegación Principal */
         nav {
             background-color: var(--primary-color);
@@ -758,6 +1011,9 @@
             .billetera-hoy-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+            .ultima-hora-lista {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1377,8 +1633,19 @@
         <p>La realidad de la región, masticada y digerida</p>
     </header>
 
+    <!-- SECCIÓN ÚLTIMA HORA -->
+    <section class="ultima-hora-section" id="ultima-hora-section">
+        <div class="ultima-hora-container">
+            <div class="ultima-hora-header">
+                <span class="ultima-hora-badge">🔴 ÚLTIMA HORA</span>
+                <span class="ultima-hora-subtitle">Las noticias que están marcando la agenda</span>
+            </div>
+            <div class="ultima-hora-lista" id="ultima-hora-lista"></div>
+        </div>
+    </section>
+
     <!-- MENÚ DE NAVEGACIÓN -->
-        <nav>
+    <nav>
         <a id="nav-inicio" class="active" onclick="cambiarVista('inicio')">INICIO</a>
         <a id="nav-rosca" onclick="cambiarVista('rosca')">LA ROSCA</a>
         <a id="nav-municipios" onclick="cambiarVista('municipios')">MUNICIPIOS</a>
@@ -1995,7 +2262,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-            <!-- 1. Banners Estándar + Confesionario -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -2025,7 +2291,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- 2. Banners Exclusivos LA ROSCA -->
             <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -2043,7 +2308,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- 3. Banner Exclusivo LA BILLETERA -->
             <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -2062,7 +2326,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- 4. Banner Exclusivo EL VECINDARIO -->
             <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -2097,6 +2360,27 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         </div>
     </div>
 
+    <!-- MODAL ÚLTIMA HORA -->
+    <div class="modal-ultima-hora" id="modal-ultima-hora" onclick="cerrarModalUltimaHoraSiEsAfuera(event)">
+        <div class="modal-ultima-hora-content">
+            <div class="modal-ultima-hora-header">
+                <div class="modal-ultima-hora-header-left">
+                    <span class="modal-ultima-hora-badge-mini">🔴 ÚLTIMA HORA</span>
+                    <h3 class="modal-ultima-hora-titulo" id="modal-ultima-hora-titulo"></h3>
+                    <div class="modal-ultima-hora-meta" id="modal-ultima-hora-meta"></div>
+                </div>
+                <button class="modal-ultima-hora-close" onclick="cerrarModalUltimaHora()">✕</button>
+            </div>
+            <div class="modal-ultima-hora-body">
+                <div class="modal-ultima-hora-resumen" id="modal-ultima-hora-resumen"></div>
+                <div class="modal-ultima-hora-footer">
+                    <p>📝 Resumen de Capibara News. Fuente original citada arriba.</p>
+                    <a id="modal-ultima-hora-link" href="#" target="_blank" rel="noopener noreferrer">Leer fuente original →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="infobae-footer">
         <div class="infobae-footer-container">
@@ -2117,11 +2401,11 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h4>Secciones</h4>
                 <ul>
                     <li><a onclick="cambiarVista('inicio')">Inicio</a></li>
-                    <li><a onclick="cambiarVista('vecindario')">El Vecindario</a></li>
                     <li><a onclick="cambiarVista('rosca')">La Rosca</a></li>
                     <li><a onclick="cambiarVista('municipios')">Municipios</a></li>
                     <li><a onclick="cambiarVista('billetera')">La Billetera</a></li>
                     <li><a onclick="cambiarVista('pastizal')">El Pastizal</a></li>
+                    <li><a onclick="cambiarVista('vecindario')">El Vecindario</a></li>
                     <li><a onclick="cambiarVista('termometro')">El Termómetro</a></li>
                     <li><a onclick="cambiarVista('clasificados')">Clasificados</a></li>
                     <li><a onclick="cambiarVista('publicidad')">Publicidad</a></li>
@@ -2164,7 +2448,122 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
+        // =====================================================
+        // ÚLTIMA HORA - NOTICIAS URGENTES
+        // Para activar/desactivar: cambiar "activa: true/false"
+        // Para agregar nueva: copiar un bloque y editarlo
+        // Se muestran las 3 primeras con activa: true
+        // =====================================================
+        const ultimasNoticias = [
+            {
+                id: "ultima-1",
+                titulo: "El calvario de trabajadores y jubilados endeudados: la trama de la usura y sus cómplices",
+                fuente: "Infobae",
+                fecha: "30/09/2026",
+                resumen: `<p>Un informe judicial reveló cómo una red de usureros opera impunemente en distintos barrios del conurbano bonaerense, cobrando tasas de interés que superan el 200% mensual. Las víctimas son en su mayoría trabajadores informales y jubilados que no pueden acceder al sistema bancario tradicional.</p>
+                <p>Según fuentes del Ministerio Público, la trama involucra a prestamistas que actúan con la complicidad de algunos comercios y hasta de efectivos policiales que "miran para otro lado" a cambio de coimas. Los allanamientos realizados en las últimas semanas dejaron al descubierto una estructura que maneja millones de pesos en efectivo.</p>
+                <p>Los damnificados denuncian que las amenazas y extorsiones son moneda corriente. Muchos han perdido sus viviendas y otros viven con el temor permanente de represalias. Desde el gobierno bonaerense prometieron una investigación a fondo, pero las víctimas exigen respuestas concretas y protección real.</p>`,
+                link: "https://www.infobae.com/",
+                activa: true
+            },
+            {
+                id: "ultima-2",
+                titulo: "Fuerte aumento en las tarifas de luz y gas golpea el bolsillo de los bonaerenses",
+                fuente: "Clarín",
+                fecha: "30/09/2026",
+                resumen: `<p>El ENRE y el ENARGAS oficializaron nuevos cuadros tarifarios que impactarán en las boletas de octubre. El aumento promedio es del 1,75% para electricidad y 1,40% para gas, pero en algunos casos puntuales las subas superan el 4%.</p>
+                <p>Desde las asociaciones de consumidores advirtieron que el impacto será significativo en los hogares de ingresos medios y bajos, que ya venían soportando una carga tarifaria elevada. "Es un ajuste más sobre los que menos tienen", señalaron desde la Defensoría del Pueblo bonaerense.</p>
+                <p>El gobierno provincial anunció que ampliará el tope de consumo subsidiado para amortiguar el golpe, pero los especialistas consideran que la medida es insuficiente frente a la inflación acumulada.</p>`,
+                link: "https://www.clarin.com/",
+                activa: true
+            },
+            {
+                id: "ultima-3",
+                titulo: "Alerta por fuertes tormentas en el conurbano: suspenden clases y servicios",
+                fuente: "La Nación",
+                fecha: "30/09/2026",
+                resumen: `<p>El Servicio Meteorológico Nacional emitió un alerta rojo por tormentas severas para gran parte del conurbano bonaerense. Se esperan lluvias intensas, ráfagas de viento de hasta 100 km/h y posible caída de granizo durante las próximas 24 horas.</p>
+                <p>El gobierno provincial decidió suspender las clases en todos los niveles educativos y pidió a la población que evite salir de sus casas. También se suspendieron los servicios de transporte en zonas anegadas y se activaron los protocolos de emergencia en los municipios más afectados.</p>
+                <p>Defensa Civil recomendó a los vecinos asegurar objetos que puedan volar, no circular por calles inundadas y tener a mano números de emergencia. Los equipos de rescate ya están desplegados en puntos estratégicos del conurbano.</p>`,
+                link: "https://www.lanacion.com.ar/",
+                activa: true
+            },
+            // NOTICIA DE EJEMPLO DESACTIVADA (para que veas cómo se ve una apagada)
+            {
+                id: "ultima-4",
+                titulo: "Noticia de ejemplo desactivada - no aparece porque activa: false",
+                fuente: "Ejemplo",
+                fecha: "29/09/2026",
+                resumen: `<p>Esta noticia no se muestra porque tiene activa: false. Podés activarla cambiando a true.</p>`,
+                link: "https://www.ejemplo.com/",
+                activa: false
+            }
+        ];
+
+        // =====================================================
+        // RENDERIZADO DE ÚLTIMA HORA
+        // =====================================================
+        function renderizarUltimaHora() {
+            const lista = document.getElementById('ultima-hora-lista');
+            if (!lista) return;
+
+            const noticiasActivas = ultimasNoticias.filter(n => n.activa === true).slice(0, 3);
+
+            if (noticiasActivas.length === 0) {
+                document.getElementById('ultima-hora-section').style.display = 'none';
+                return;
+            }
+
+            lista.innerHTML = '';
+            noticiasActivas.forEach(n => {
+                const item = document.createElement('div');
+                item.className = 'ultima-hora-item';
+                item.onclick = () => abrirModalUltimaHora(n.id);
+                item.innerHTML = `
+                    <p class="ultima-hora-item-titulo">${escapeHtml(n.titulo)}</p>
+                    <div class="ultima-hora-item-meta">
+                        <span class="fuente">📰 ${escapeHtml(n.fuente)}</span>
+                        <span>📅 ${escapeHtml(n.fecha)}</span>
+                    </div>
+                    <span class="ultima-hora-item-cta">🔍 Leer resumen completo →</span>
+                `;
+                lista.appendChild(item);
+            });
+        }
+
+        function abrirModalUltimaHora(id) {
+            const noticia = ultimasNoticias.find(n => n.id === id);
+            if (!noticia) return;
+
+            document.getElementById('modal-ultima-hora-titulo').textContent = noticia.titulo;
+            document.getElementById('modal-ultima-hora-meta').innerHTML = `
+                <span class="fuente">📰 ${escapeHtml(noticia.fuente)}</span>
+                <span>📅 ${escapeHtml(noticia.fecha)}</span>
+            `;
+            document.getElementById('modal-ultima-hora-resumen').innerHTML = noticia.resumen;
+            document.getElementById('modal-ultima-hora-link').href = noticia.link;
+
+            document.getElementById('modal-ultima-hora').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModalUltimaHora() {
+            document.getElementById('modal-ultima-hora').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function cerrarModalUltimaHoraSiEsAfuera(event) {
+            if (event.target.id === 'modal-ultima-hora') {
+                cerrarModalUltimaHora();
+            }
+        }
+
+        // =====================================================
+        // INICIALIZACIÓN
+        // =====================================================
         window.addEventListener('DOMContentLoaded', () => {
+            renderizarUltimaHora();
+            
             const startDate = new Date('2025-07-09'); 
             const currentDate = new Date();
             
@@ -2290,7 +2689,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         // NOTICIAS POR CATEGORÍA (CURADAS A MANO)
         // =====================================================
         const noticiasPorDistrito = {
-            // MUNICIPIOS
             "La Matanza": [
                 { titulo: "Obras viales congeladas en la zona oeste", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
                 { titulo: "Reclamos barriales por falta de agua", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
@@ -2361,7 +2759,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "Obras de cloacas en José León Suárez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
                 { titulo: "Inauguran polideportivo municipal", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
-            // LA ROSCA
             "Pases de factura en el conurbano": [
                 { titulo: "Intendentes rearman alianzas pensando en 2027", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
                 { titulo: "Cumbre secreta en La Matanza por el armado legislativo", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
@@ -2397,7 +2794,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "El problema de la comunicación política", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
                 { titulo: "Falta de diálogo entre Nación y Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
-            // LA BILLETERA
             "El changuito en terapia": [
                 { titulo: "Relevamiento de precios en ferias barriales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
                 { titulo: "Mayoristas del conurbano y la inflación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
@@ -2434,10 +2830,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "Subas que golpean al bolsillo", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ]
         };
-
-        // =====================================================
-        // FUNCIONES DEL MODAL
-        // =====================================================
 
         function abrirModalDistrito(nombre) {
             const modal = document.getElementById('modal-distrito');
@@ -2488,6 +2880,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
+                cerrarModalUltimaHora();
                 cerrarModalDistrito();
             }
         });
