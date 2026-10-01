@@ -16,10 +16,6 @@
             --text-muted: #607D8B;          
         }
 
-               html {
-            overflow-x: hidden;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -28,6 +24,7 @@
             color: var(--text-color);
             line-height: 1.6;
         }
+
         .top-bar {
             background-color: #102630;
             color: #ffffff;
@@ -175,7 +172,7 @@
             font-weight: 500;
         }
 
-               /* MARQUESINA PROMOCIONAL (arriba, ancho completo) */
+        /* MARQUESINA PROMOCIONAL */
         .marquesina-promo {
             background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
             border-top: 3px solid var(--lima-color);
@@ -186,11 +183,8 @@
             align-items: center;
             height: 90px;
             position: relative;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
         }
-        .marquesina-promo .marquesina-foto {
+        .marquesina-foto {
             flex-shrink: 0;
             width: 90px;
             height: 90px;
@@ -211,12 +205,12 @@
             position: relative;
             z-index: 2;
         }
-        .marquesina-promo .marquesina-foto img {
+        .marquesina-foto img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .marquesina-promo .marquesina-texto-container {
+        .marquesina-texto-container {
             flex: 1;
             overflow: hidden;
             position: relative;
@@ -224,7 +218,7 @@
             display: flex;
             align-items: center;
         }
-        .marquesina-promo .marquesina-texto {
+        .marquesina-texto {
             display: inline-block;
             white-space: nowrap;
             animation: desplazarMarquesina 25s linear infinite;
@@ -233,10 +227,9 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            position: absolute;
-            left: 0;
+            padding-left: 100%;
         }
-        .marquesina-promo .marquesina-texto span {
+        .marquesina-texto span {
             color: var(--lima-color);
             margin: 0 15px;
         }
@@ -245,12 +238,13 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-100%);
             }
         }
         .marquesina-promo:hover .marquesina-texto {
             animation-play-state: paused;
         }
+
         @media (max-width: 600px) {
             .marquesina-promo {
                 height: 70px;
@@ -960,97 +954,6 @@
             font-style: italic;
         }
 
-                /* MARQUESINA INTERNA (dentro del content-card) */
-        .marquesina-interna {
-            display: flex;
-            align-items: center;
-            height: 90px;
-            background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
-            border-top: 3px solid var(--lima-color);
-            border-bottom: 3px solid var(--lima-color);
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-        .marquesina-interna .marquesina-foto {
-            flex-shrink: 0;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #285467, #102630);
-            border-right: 3px solid var(--lima-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #b0bec5;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .marquesina-interna .marquesina-foto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .marquesina-interna .marquesina-texto-container {
-            flex: 1;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .marquesina-interna .marquesina-texto {
-            display: inline-block;
-            white-space: nowrap;
-            animation: desplazarMarquesinaInterna 25s linear infinite;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: absolute;
-            left: 0;
-        }
-        .marquesina-interna .marquesina-texto span {
-            color: var(--lima-color);
-            margin: 0 15px;
-        }
-        @keyframes desplazarMarquesinaInterna {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .marquesina-interna:hover .marquesina-texto {
-            animation-play-state: paused;
-        }
-
-        @media (max-width: 600px) {
-            .marquesina-interna {
-                height: 70px;
-            }
-            .marquesina-interna .marquesina-foto {
-                width: 70px;
-                height: 70px;
-                font-size: 8px;
-                padding: 6px;
-            }
-            .marquesina-interna .marquesina-texto {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-        }
         /* MODALES */
         .modal-overlay {
             display: none;
@@ -1941,13 +1844,13 @@
     </header>
 
     <!-- MARQUESINA PROMOCIONAL -->
-       <div class="marquesina-promo">
-        <div class="marquesina-foto">
+    <div class="marquesina-promo">
+        <div class="marquesina-foto" id="marquesina-foto">
             ESPACIO<br>DISPONIBLE
         </div>
         <div class="marquesina-texto-container">
             <div class="marquesina-texto">
-                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ... (más)
+                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span>
             </div>
         </div>
     </div>
@@ -2023,17 +1926,13 @@
                     <div class="muro-confesionario" id="muro-confesionario"></div>
                 </div>
 
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
+                <div class="content-ad-banner" style="margin-top: 40px; background: linear-gradient(90deg, #163844, #102630);">
+                    <div>
+                        <h4>📢 ¡Patrociná las notas principales!</h4>
+                        <p>Tu marca visible en la portada del diario de mayor crecimiento.</p>
+                    </div>
+                    <a class="content-ad-btn" onclick="cambiarVista('publicidad')">Consultar</a>
+                </div>
             </article>
         </main>
 
@@ -2065,18 +1964,6 @@
                         <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
                     </div>
                 </div>
-
-               <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
 
@@ -2200,18 +2087,6 @@
                         <p>Planes de asfaltado y reparación de colectoras avanzan sobre las arterias comerciales principales.</p>
                     </div>
                 </div>
-
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
         
@@ -2295,18 +2170,6 @@
                         <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
                     </div>
                 </div>
-
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
 
@@ -2417,17 +2280,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                         <p>Reflexiones sobre los espacios verdes que se pierden y las torres que crecen sin planificación.</p>
                     </div>
                 </div>
-<!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
 
