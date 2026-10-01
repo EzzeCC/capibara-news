@@ -25,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* Barra Superior */
         .top-bar {
             background-color: #102630;
             color: #ffffff;
@@ -45,7 +44,6 @@
             flex-wrap: wrap;
         }
 
-        /* Widget del Clima */
         .weather-widget {
             position: relative;
             display: flex;
@@ -106,7 +104,6 @@
             border-bottom: none;
         }
 
-        /* Widget del Dólar */
         .dolar-widget {
             display: flex;
             align-items: center;
@@ -127,35 +124,6 @@
             color: var(--lima-color);
         }
 
-        /* Temas del Día */
-        .trending-container {
-            display: flex;
-            align-items: center;
-            overflow-x: auto;
-            white-space: nowrap;
-            gap: 15px;
-        }
-        .trending-label {
-            background-color: var(--lima-color);
-            color: #113019;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-size: 11px;
-        }
-        .trending-container a {
-            color: #b0bec5;
-            text-decoration: none;
-            transition: color 0.2s;
-            cursor: pointer;
-        }
-        .trending-container a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
-        }
-
-        /* Buscador de Municipios */
         .search-municipio-container {
             display: flex;
             align-items: center;
@@ -183,7 +151,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Cabecera */
         header {
             background-color: var(--card-bg);
             border-bottom: 3px solid var(--accent-color);
@@ -205,7 +172,7 @@
             font-weight: 500;
         }
 
-        /* SECCIÓN ÚLTIMA HORA (fondo azul petróleo, badge rojo pulsante) */
+        /* SECCIÓN ÚLTIMA HORA */
         .ultima-hora-section {
             background: linear-gradient(135deg, #102630 0%, #163844 100%);
             border-top: 4px solid var(--lima-color);
@@ -311,7 +278,6 @@
             text-decoration: underline;
         }
 
-        /* MODAL ÚLTIMA HORA */
         .modal-ultima-hora {
             display: none;
             position: fixed;
@@ -458,7 +424,6 @@
             background-color: #c62828;
         }
 
-        /* Barra de Navegación Principal */
         nav {
             background-color: var(--primary-color);
             padding: 0 10px;
@@ -483,7 +448,6 @@
             color: var(--accent-color);
         }
 
-        /* Franja de Newsletter con Contador */
         .newsletter-section {
             background-color: var(--lima-color);
             color: #1a330b;
@@ -554,7 +518,6 @@
             border-left: 4px solid var(--lima-color);
         }
 
-        /* Contenedor Principal */
         .container {
             display: flex;
             max-width: 1200px;
@@ -789,7 +752,7 @@
             }
         }
 
-        /* TARJETAS CLICKEABLES (MUNICIPIOS, ROSCA, BILLETERA) */
+        /* TARJETAS CLICKEABLES */
         .article-box-card.clickable-municipio {
             cursor: pointer;
             position: relative;
@@ -816,7 +779,7 @@
             opacity: 1;
         }
 
-        /* RECUADRO DESTACADO LA BILLETERA HOY */
+        /* RECUADRO LA BILLETERA HOY */
         .billetera-hoy {
             background: linear-gradient(135deg, #102630 0%, #1F4E5F 100%);
             border-radius: 10px;
@@ -902,7 +865,7 @@
             font-style: italic;
         }
 
-        /* MODAL DE NOTICIAS POR DISTRITO */
+        /* MODALES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -1165,7 +1128,6 @@
             }
         }
 
-        /* EL PASTIZAL */
         .featured-pastizal-card {
             background: linear-gradient(135deg, #f1f8e9, #ffffff);
             border: 1px solid #c8e6c9;
@@ -1198,7 +1160,6 @@
             margin-bottom: 15px;
         }
 
-        /* MURO DE COMENTARIOS */
         .fotolog-wall {
             margin-top: 35px;
             border-top: 2px dashed #cbd5e1;
@@ -1410,6 +1371,32 @@
             font-size: 13px;
         }
 
+        /* NUEVO PLACEHOLDER 300x600 */
+        .placeholder-banner-600 {
+            background: linear-gradient(135deg, #fff7e8, #ffe9c7);
+            border: 3px dashed #d97706;
+            padding: 80px 15px;
+            color: #78350f;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .placeholder-banner-600 small {
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 8px;
+            color: #92400e;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
         .large-placeholder-banner {
             background: #e8f4f8;
             border: 2px dashed var(--primary-color);
@@ -1497,7 +1484,6 @@
             background-color: #7cb342;
         }
 
-        /* FOOTER */
         .infobae-footer {
             background-color: #102630;
             color: #b0bec5;
@@ -1886,7 +1872,6 @@
                 <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
                 <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
 
-                <!-- MAPA ESTILIZADO DE LOS 10 DISTRITOS -->
                 <div class="mapa-distritos-wrapper">
                     <h3 class="mapa-distritos-titulo">🗺️ Mapa Interactivo de Distritos</h3>
                     <p class="mapa-distritos-subtitulo">Hacé click en cada distrito para ver las 5 noticias más relevantes</p>
@@ -2463,7 +2448,17 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
+            <!-- SIDEBAR ESTÁNDAR (Inicio, Municipios, Pastizal, Termómetro, Clasificados, Publicidad) -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
+                <div class="ad-box">
+                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
+                    <div class="placeholder-banner-600">
+                        ÚLTIMO ESPACIO<br>DISPONIBLE
+                        <small>300x600 · Publicidad Premium</small>
+                    </div>
+                </div>
+
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -2492,7 +2487,17 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
+            <!-- SIDEBAR LA ROSCA -->
             <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
+                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
+                <div class="ad-box">
+                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
+                    <div class="placeholder-banner-600">
+                        ÚLTIMO ESPACIO<br>DISPONIBLE
+                        <small>300x600 · Publicidad Premium</small>
+                    </div>
+                </div>
+
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -2509,7 +2514,17 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
+            <!-- SIDEBAR LA BILLETERA -->
             <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
+                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
+                <div class="ad-box">
+                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
+                    <div class="placeholder-banner-600">
+                        ÚLTIMO ESPACIO<br>DISPONIBLE
+                        <small>300x600 · Publicidad Premium</small>
+                    </div>
+                </div>
+
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -2527,7 +2542,17 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
+            <!-- SIDEBAR EL VECINDARIO -->
             <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
+                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
+                <div class="ad-box">
+                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
+                    <div class="placeholder-banner-600">
+                        ÚLTIMO ESPACIO<br>DISPONIBLE
+                        <small>300x600 · Publicidad Premium</small>
+                    </div>
+                </div>
+
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
                     <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
@@ -2541,6 +2566,36 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
                     <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+            </div>
+
+            <!-- SIDEBAR CONTACTO (SIN EL NUEVO BANNER) -->
+            <div id="sidebar-contacto" style="display: none; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title">Publicidad Destacada</div>
+                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+                </div>
+                
+                <div class="ad-box">
+                    <div class="ad-title">Publicidad</div>
+                    <img src="espacio02.jpg" alt="Denis Ferragut - IAFyP" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+                </div>
+
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">ULTIMOS DISPONIBLES!<br><small>300x250</small></div>
+                </div>
+
+                <div class="confesionario-box">
+                    <h4>💬 Confesionario del Capibara</h4>
+                    <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
+
+                    <div id="form-confesionario">
+                        <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
+                        <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
+                        <textarea id="conf-texto" class="conf-textarea" placeholder="Escribí tu comentario acá..." maxlength="500"></textarea>
+                        <button type="button" class="conf-btn" onclick="enviarComentario()">📩 Enviar al Muro</button>
+                    </div>
                 </div>
             </div>
 
@@ -2649,7 +2704,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-        // ÚLTIMA HORA
         const ultimasNoticias = [
             {
                 id: "ultima-1",
@@ -2780,11 +2834,13 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             const sidebarRosca = document.getElementById('sidebar-rosca');
             const sidebarBilletera = document.getElementById('sidebar-billetera');
             const sidebarVecindario = document.getElementById('sidebar-vecindario');
+            const sidebarContacto = document.getElementById('sidebar-contacto');
 
             if(sidebarStandard) sidebarStandard.style.display = 'none';
             if(sidebarRosca) sidebarRosca.style.display = 'none';
             if(sidebarBilletera) sidebarBilletera.style.display = 'none';
             if(sidebarVecindario) sidebarVecindario.style.display = 'none';
+            if(sidebarContacto) sidebarContacto.style.display = 'none';
 
             if (nombreVista === 'rosca') {
                 if(sidebarRosca) sidebarRosca.style.display = 'flex';
@@ -2792,6 +2848,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 if(sidebarBilletera) sidebarBilletera.style.display = 'flex';
             } else if (nombreVista === 'vecindario') {
                 if(sidebarVecindario) sidebarVecindario.style.display = 'flex';
+            } else if (nombreVista === 'contacto') {
+                if(sidebarContacto) sidebarContacto.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
             }
