@@ -172,6 +172,95 @@
             font-weight: 500;
         }
 
+        /* MARQUESINA PROMOCIONAL */
+        .marquesina-promo {
+            background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
+            border-top: 3px solid var(--lima-color);
+            border-bottom: 3px solid var(--lima-color);
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 90px;
+            position: relative;
+        }
+        .marquesina-foto {
+            flex-shrink: 0;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #285467, #102630);
+            border-right: 3px solid var(--lima-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b0bec5;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            padding: 8px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+        .marquesina-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .marquesina-texto-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .marquesina-texto {
+            display: inline-block;
+            white-space: nowrap;
+            animation: desplazarMarquesina 25s linear infinite;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-left: 100%;
+        }
+        .marquesina-texto span {
+            color: var(--lima-color);
+            margin: 0 15px;
+        }
+        @keyframes desplazarMarquesina {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .marquesina-promo:hover .marquesina-texto {
+            animation-play-state: paused;
+        }
+
+        @media (max-width: 600px) {
+            .marquesina-promo {
+                height: 70px;
+            }
+            .marquesina-foto {
+                width: 70px;
+                height: 70px;
+                font-size: 8px;
+                padding: 6px;
+            }
+            .marquesina-texto {
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+        }
+
         /* SECCIÓN ÚLTIMA HORA */
         .ultima-hora-section {
             background: linear-gradient(135deg, #102630 0%, #163844 100%);
@@ -1754,6 +1843,18 @@
         <p>La realidad de la región, masticada y digerida</p>
     </header>
 
+    <!-- MARQUESINA PROMOCIONAL -->
+    <div class="marquesina-promo">
+        <div class="marquesina-foto" id="marquesina-foto">
+            ESPACIO<br>DISPONIBLE
+        </div>
+        <div class="marquesina-texto-container">
+            <div class="marquesina-texto">
+                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span>
+            </div>
+        </div>
+    </div>
+
     <!-- SECCIÓN ÚLTIMA HORA -->
     <section class="ultima-hora-section" id="ultima-hora-section">
         <div class="ultima-hora-container">
@@ -2448,9 +2549,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-            <!-- SIDEBAR ESTÁNDAR (Inicio, Municipios, Pastizal, Termómetro, Clasificados, Publicidad) -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
-                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
                     <div class="placeholder-banner-600">
@@ -2487,9 +2586,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR LA ROSCA -->
             <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
                     <div class="placeholder-banner-600">
@@ -2514,9 +2611,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR LA BILLETERA -->
             <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
                     <div class="placeholder-banner-600">
@@ -2542,9 +2637,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR EL VECINDARIO -->
             <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
-                <!-- NUEVO BANNER 300x600 (ÚLTIMO ESPACIO DISPONIBLE) -->
                 <div class="ad-box">
                     <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
                     <div class="placeholder-banner-600">
@@ -2569,7 +2662,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <!-- SIDEBAR CONTACTO (SIN EL NUEVO BANNER) -->
             <div id="sidebar-contacto" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
@@ -2704,7 +2796,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-                const ultimasNoticias = [
+        const ultimasNoticias = [
             {
                 id: "ultima-1",
                 titulo: "La Corte Suprema habilitó la venta de tierras a extranjeros y desató una crisis política",
