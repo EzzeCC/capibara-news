@@ -3029,41 +3029,25 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-                const ultimasNoticias = [
-            {
-                id: "ultima-1",
-                titulo: "Murió Ricardo Soulé, líder de Vox Dei y autor de 'Presente', a los 76 años",
-                fuente: "El Destape",
-                fecha: "02/10/2026",
-                resumen: `<p>El rock argentino está de luto. Ricardo Soulé, fundador, guitarrista, cantante y principal compositor de Vox Dei, falleció este viernes a los 76 años. Su hija Vicky confirmó la noticia y detalló que el músico se encontraba internado en un sanatorio de Quilmes tras haber anunciado el 11 de septiembre que se retiraba temporalmente de los escenarios por un problema de salud.</p>
-                <p>Soulé fue una de las figuras fundamentales de la primera generación del rock nacional. Fundó Vox Dei en 1967 en Quilmes junto a Willy Quiroga, Rubén Basoalto y Juan Carlos "Yody" Godoy. En 1970 publicaron "Caliente" y al año siguiente lanzaron "La Biblia", considerada la primera ópera rock argentina y una de las obras cumbres del rock en español.</p>
-                <p>Entre sus composiciones más recordadas se encuentra "Presente (El momento en que estás)", un himno intergeneracional que compuso a los 17 años. Su familia planea velarlo en la Municipalidad de Quilmes, localidad donde transcurrió gran parte de su vida.</p>`,
-                link: "https://www.eldestapeweb.com/cultura/murio-ricardo-soule-cantante-vox-dei-76-anos-202610213646",
-                activa: true
-            },
-            {
-                id: "ultima-2",
-                titulo: "La Corte Suprema habilitó la venta de tierras a extranjeros y la oposición impulsa una sesión especial para voltear el DNU 70",
-                fuente: "La Nación",
-                fecha: "02/10/2026",
-                resumen: `<p>La Corte Suprema de Justicia, con las firmas de Horacio Rosatti, Carlos Rosenkrantz y Ricardo Lorenzetti, revocó la medida cautelar que frenaba la derogación de la Ley de Tierras. El fallo se basó en un aspecto procesal: consideró que el Centro de Ex Combatientes Islas Malvinas La Plata (CECIM) no tenía legitimación para actuar como demandante.</p>
-                <p>El tribunal intentó despegarse de la polémica mediante un comunicado en el que aclaró que "solo se decidió un aspecto procesal" y que "la controversia referida a la ley de tierras no ha sido resuelta en este caso". Sin embargo, el fallo dejó vigente el artículo 154 del DNU 70/23, que elimina los límites a la compra de tierras por parte de extranjeros.</p>
-                <p>La decisión generó un fuerte rechazo social y político. Elisa Carrió denunció penalmente a Javier Milei y diputados de la oposición, como Esteban Paulón y Nicolás del Caño, reclamaron una sesión especial en la Cámara baja para derogar el DNU 70/23. El Senado ya había rechazado el decreto en marzo de 2024, pero quedó vigente porque la oposición no consiguió el número suficiente en Diputados.</p>`,
-                link: "https://www.lanacion.com.ar/politica/la-oposicion-critico-el-fallo-de-la-corte-suprema-que-elimino-el-limite-a-la-venta-de-tierras-a-nid29092026/",
-                activa: true
-            },
-            {
-                id: "ultima-3",
-                titulo: "Docentes bonaerenses paran contra la violencia escolar con alto acatamiento en toda la Provincia",
-                fuente: "El Fuerte Diario",
-                fecha: "02/10/2026",
-                resumen: `<p>Con un alto acatamiento en escuelas públicas, los docentes de la provincia de Buenos Aires llevaron adelante este jueves un paro de 24 horas contra la violencia dentro de las aulas. La medida fue convocada por los gremios integrantes del Frente de Unidad Docente Bonaerense (FUDB), AMET, FEB, SUTEBA y UDOCBA.</p>
-                <p>La medida de fuerza se realizó en reclamo de "medidas urgentes y concretas de consenso social" frente a los hechos de violencia ocurridos contra docentes en los últimos días. En Coronel Rosales, el 90% de los docentes se adhirió a la protesta y se expusieron 3 casos ante la Policía Comunal.</p>
-                <p>Los gremios denunciaron situaciones de agresión física y hostigamiento digital en varios distritos, incluyendo San Miguel, Hurlingham, Florencio Varela, Ensenada, Almirante Brown y Trenque Lauquen. "No vamos a naturalizar las violencias por eso vamos a realizar diferentes actividades distritales para visibilizar y reclamar urgentes soluciones", expresaron desde SUTEBA.</p>`,
-                link: "https://elfuertediario.com.ar/2026/10/02/",
-                activa: true
-            }
-        ];
+                      // ===== ÚLTIMA HORA - AHORA LEE DESDE JSONBIN =====
+        const JSONBIN_ULTIMA_HORA_BIN_ID = "6ac004cfac6210605a0d8d79";
+        const JSONBIN_ULTIMA_HORA_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_ULTIMA_HORA_BIN_ID;
+        let ultimasNoticias = [];
+
+        function cargarNoticiasDesdeJSONBin() {
+            return fetch(JSONBIN_ULTIMA_HORA_URL + '/latest')
+                .then(res => res.json())
+                .then(data => {
+                    ultimasNoticias = (data.record && data.record.noticias) ? data.record.noticias : [];
+                    return ultimasNoticias;
+                })
+                .catch(err => {
+                    console.error('Error cargando noticias de Última Hora:', err);
+                    ultimasNoticias = [];
+                    return [];
+                });
+        }
+        // ==================================================
 
         function renderizarUltimaHora() {
             const lista = document.getElementById('ultima-hora-lista');
@@ -3120,8 +3104,11 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            renderizarUltimaHora();
+               window.addEventListener('DOMContentLoaded', () => {
+            cargarNoticiasDesdeJSONBin().then(() => {
+                renderizarUltimaHora();
+            });
+            ...
             
             const startDate = new Date('2025-07-09'); 
             const currentDate = new Date();
