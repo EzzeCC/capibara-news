@@ -3029,7 +3029,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-                      // ===== ÚLTIMA HORA - AHORA LEE DESDE JSONBIN =====
+                              // ===== ÚLTIMA HORA - LEE DESDE JSONBIN =====
         const JSONBIN_ULTIMA_HORA_BIN_ID = "6ac004cfac6210605a0d8d79";
         const JSONBIN_ULTIMA_HORA_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_ULTIMA_HORA_BIN_ID;
         let ultimasNoticias = [];
@@ -3047,8 +3047,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     return [];
                 });
         }
-        // ==================================================
-
+        // ============================================
         function renderizarUltimaHora() {
             const lista = document.getElementById('ultima-hora-lista');
             if (!lista) return;
@@ -3106,8 +3105,10 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
                window.addEventListener('DOMContentLoaded', () => {
             cargarNoticiasDesdeJSONBin().then(() => {
+                            cargarNoticiasDesdeJSONBin().then(() => {
                 renderizarUltimaHora();
-            });
+            
+             });
             ...
             
             const startDate = new Date('2025-07-09'); 
