@@ -16,10 +16,6 @@
             --text-muted: #607D8B;          
         }
 
-               html {
-            overflow-x: hidden;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -28,6 +24,8 @@
             color: var(--text-color);
             line-height: 1.6;
         }
+
+        /* Barra Superior */
         .top-bar {
             background-color: #102630;
             color: #ffffff;
@@ -47,6 +45,7 @@
             flex-wrap: wrap;
         }
 
+        /* Widget del Clima */
         .weather-widget {
             position: relative;
             display: flex;
@@ -107,6 +106,7 @@
             border-bottom: none;
         }
 
+        /* Widget del Dólar */
         .dolar-widget {
             display: flex;
             align-items: center;
@@ -127,6 +127,35 @@
             color: var(--lima-color);
         }
 
+        /* Temas del Día */
+        .trending-container {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 15px;
+        }
+        .trending-label {
+            background-color: var(--lima-color);
+            color: #113019;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+        .trending-container a {
+            color: #b0bec5;
+            text-decoration: none;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .trending-container a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Buscador de Municipios */
         .search-municipio-container {
             display: flex;
             align-items: center;
@@ -154,6 +183,7 @@
             border-color: var(--accent-color);
         }
 
+        /* Cabecera */
         header {
             background-color: var(--card-bg);
             border-bottom: 3px solid var(--accent-color);
@@ -175,350 +205,7 @@
             font-weight: 500;
         }
 
-               /* MARQUESINA PROMOCIONAL (arriba, ancho completo) */
-        .marquesina-promo {
-            background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
-            border-top: 3px solid var(--lima-color);
-            border-bottom: 3px solid var(--lima-color);
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            height: 90px;
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-        .marquesina-promo .marquesina-foto {
-            flex-shrink: 0;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #285467, #102630);
-            border-right: 3px solid var(--lima-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #b0bec5;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            padding: 8px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 2;
-        }
-        .marquesina-promo .marquesina-foto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .marquesina-promo .marquesina-texto-container {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-        .marquesina-promo .marquesina-texto {
-            display: inline-block;
-            white-space: nowrap;
-            animation: desplazarMarquesina 25s linear infinite;
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: absolute;
-            left: 0;
-        }
-        .marquesina-promo .marquesina-texto span {
-            color: var(--lima-color);
-            margin: 0 15px;
-        }
-        @keyframes desplazarMarquesina {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .marquesina-promo:hover .marquesina-texto {
-            animation-play-state: paused;
-        }
-        @media (max-width: 600px) {
-            .marquesina-promo {
-                height: 70px;
-            }
-            .marquesina-foto {
-                width: 70px;
-                height: 70px;
-                font-size: 8px;
-                padding: 6px;
-            }
-            .marquesina-texto {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-        }
-
-        /* SECCIÓN ÚLTIMA HORA */
-        .ultima-hora-section {
-            background: linear-gradient(135deg, #102630 0%, #163844 100%);
-            border-top: 4px solid var(--lima-color);
-            border-bottom: 4px solid var(--lima-color);
-            padding: 20px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .ultima-hora-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .ultima-hora-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        .ultima-hora-badge {
-            background-color: #e53935;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            animation: pulseUltimaHora 1.5s infinite;
-        }
-        @keyframes pulseUltimaHora {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 0 12px rgba(229, 57, 53, 0);
-                transform: scale(1.03);
-            }
-        }
-        .ultima-hora-subtitle {
-            color: #b0bec5;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-style: italic;
-        }
-        .ultima-hora-lista {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        .ultima-hora-item {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid #285467;
-            border-left: 4px solid var(--lima-color);
-            padding: 15px 18px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            color: #ffffff;
-        }
-        .ultima-hora-item:hover {
-            background: rgba(139, 195, 74, 0.12);
-            border-left-color: var(--lima-color);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(139, 195, 74, 0.2);
-        }
-        .ultima-hora-item-titulo {
-            font-size: 15px;
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-            line-height: 1.35;
-        }
-        .ultima-hora-item-meta {
-            font-size: 11px;
-            color: #b0bec5;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .ultima-hora-item-meta .fuente {
-            color: var(--lima-color);
-            font-weight: bold;
-        }
-        .ultima-hora-item-cta {
-            font-size: 11px;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-top: 8px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .ultima-hora-item:hover .ultima-hora-item-cta {
-            color: var(--lima-color);
-            text-decoration: underline;
-        }
-
-        .modal-ultima-hora {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(16, 38, 48, 0.85);
-            z-index: 6000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            animation: fadeInOverlay 0.25s ease;
-        }
-        .modal-ultima-hora.active {
-            display: flex;
-        }
-        .modal-ultima-hora-content {
-            background: var(--card-bg);
-            border-radius: 10px;
-            max-width: 750px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            border-top: 5px solid #e53935;
-            animation: slideUpModal 0.3s ease;
-        }
-        .modal-ultima-hora-header {
-            background: linear-gradient(90deg, #102630, #163844);
-            color: #fff;
-            padding: 20px 25px;
-            border-radius: 5px 5px 0 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        .modal-ultima-hora-header-left {
-            flex: 1;
-        }
-        .modal-ultima-hora-badge-mini {
-            background-color: #e53935;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 3px 10px;
-            border-radius: 3px;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .modal-ultima-hora-titulo {
-            margin: 0;
-            font-size: 20px;
-            color: #ffffff;
-            line-height: 1.35;
-            font-weight: bold;
-        }
-        .modal-ultima-hora-meta {
-            font-size: 12px;
-            color: #b0bec5;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            margin-top: 8px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .modal-ultima-hora-meta .fuente {
-            color: var(--lima-color);
-            font-weight: bold;
-        }
-        .modal-ultima-hora-close {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #fff;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            line-height: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background 0.2s;
-            flex-shrink: 0;
-        }
-        .modal-ultima-hora-close:hover {
-            background: #e53935;
-            border-color: #e53935;
-        }
-        .modal-ultima-hora-body {
-            padding: 25px 30px 30px 30px;
-        }
-        .modal-ultima-hora-resumen {
-            font-size: 15px;
-            color: var(--text-color);
-            line-height: 1.7;
-            text-align: justify;
-        }
-        .modal-ultima-hora-resumen p {
-            margin-bottom: 15px;
-        }
-        .modal-ultima-hora-resumen p:last-child {
-            margin-bottom: 0;
-        }
-        .modal-ultima-hora-footer {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 2px dashed #cbd5e1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .modal-ultima-hora-footer p {
-            margin: 0;
-            font-size: 12px;
-            color: var(--text-muted);
-            font-style: italic;
-            text-align: left;
-        }
-        .modal-ultima-hora-footer a {
-            background-color: #e53935;
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 12px;
-            white-space: nowrap;
-            transition: background 0.2s;
-        }
-        .modal-ultima-hora-footer a:hover {
-            background-color: #c62828;
-        }
-
+        /* Barra de Navegación Principal */
         nav {
             background-color: var(--primary-color);
             padding: 0 10px;
@@ -543,6 +230,7 @@
             color: var(--accent-color);
         }
 
+        /* Franja de Newsletter con Contador */
         .newsletter-section {
             background-color: var(--lima-color);
             color: #1a330b;
@@ -613,6 +301,7 @@
             border-left: 4px solid var(--lima-color);
         }
 
+        /* Contenedor Principal */
         .container {
             display: flex;
             max-width: 1200px;
@@ -693,498 +382,6 @@
             margin: 0;
             color: var(--text-muted);
             text-align: left;
-        }
-
-        /* MAPA ESTILIZADO DE MUNICIPIOS */
-        .mapa-distritos-wrapper {
-            background: linear-gradient(135deg, #102630 0%, #1F4E5F 100%);
-            border-radius: 10px;
-            padding: 25px 20px 30px 20px;
-            margin-bottom: 30px;
-            border-left: 6px solid var(--lima-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        .mapa-distritos-wrapper::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: radial-gradient(circle at 20% 30%, rgba(139,195,74,0.08) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 70%, rgba(79,195,247,0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .mapa-distritos-titulo {
-            color: var(--lima-color);
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 0 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        .mapa-distritos-subtitulo {
-            color: #b0bec5;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 0 25px 0;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-        .mapa-canvas {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            height: 480px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.03);
-            border: 1px dashed #285467;
-            border-radius: 8px;
-            z-index: 1;
-        }
-        .mapa-region {
-            position: absolute;
-            font-size: 9px;
-            color: #4a6677;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            pointer-events: none;
-            user-select: none;
-        }
-        .mapa-punto {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            z-index: 5;
-        }
-        .mapa-punto-circulo {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1F4E5F, #163844);
-            border: 2px solid var(--lima-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #ffffff;
-            font-size: 14px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .mapa-punto:hover .mapa-punto-circulo {
-            background: var(--lima-color);
-            color: #113019;
-            transform: scale(1.15);
-            box-shadow: 0 0 0 6px rgba(139,195,74,0.2), 0 6px 20px rgba(139,195,74,0.4);
-        }
-        .mapa-punto-label {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 6px;
-            font-size: 11px;
-            color: #e0f7fa;
-            white-space: nowrap;
-            font-weight: 600;
-            text-align: center;
-            pointer-events: none;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-            transition: color 0.2s;
-        }
-        .mapa-punto:hover .mapa-punto-label {
-            color: var(--lima-color);
-        }
-        .mapa-punto-pulse {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--lima-color);
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .mapa-punto:hover .mapa-punto-pulse {
-            animation: mapaPulse 1.5s infinite;
-        }
-        @keyframes mapaPulse {
-            0% {
-                opacity: 0.6;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(2.2);
-            }
-        }
-        @media (max-width: 600px) {
-            .mapa-canvas {
-                height: 520px;
-            }
-            .mapa-punto-circulo {
-                width: 36px;
-                height: 36px;
-                font-size: 12px;
-            }
-            .mapa-punto-label {
-                font-size: 10px;
-            }
-            .mapa-distritos-titulo {
-                font-size: 16px;
-            }
-        }
-
-        /* TARJETAS CLICKEABLES */
-        .article-box-card.clickable-municipio {
-            cursor: pointer;
-            position: relative;
-            border-left-width: 5px;
-        }
-        .article-box-card.clickable-municipio:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(31, 78, 95, 0.2);
-            border-left-color: var(--lima-color);
-        }
-        .article-box-card.clickable-municipio::after {
-            content: "🔍 Ver 5 noticias";
-            position: absolute;
-            bottom: 8px;
-            right: 12px;
-            font-size: 10px;
-            color: var(--accent-color);
-            font-weight: bold;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .article-box-card.clickable-municipio:hover::after {
-            opacity: 1;
-        }
-
-        /* RECUADRO LA BILLETERA HOY */
-        .billetera-hoy {
-            background: linear-gradient(135deg, #102630 0%, #1F4E5F 100%);
-            border-radius: 10px;
-            padding: 25px 30px;
-            margin-bottom: 30px;
-            border-left: 6px solid var(--lima-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            color: #ffffff;
-        }
-        .billetera-hoy-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed #285467;
-        }
-        .billetera-hoy-header h3 {
-            margin: 0;
-            color: var(--lima-color);
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .billetera-hoy-fecha {
-            background: var(--lima-color);
-            color: #113019;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .billetera-hoy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
-        .billetera-dato {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid #285467;
-            border-radius: 8px;
-            padding: 12px 15px;
-            text-align: center;
-            transition: background 0.2s, border-color 0.2s;
-        }
-        .billetera-dato:hover {
-            background: rgba(139, 195, 74, 0.12);
-            border-color: var(--lima-color);
-        }
-        .billetera-dato .dato-label {
-            font-size: 10px;
-            color: #b0bec5;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-        .billetera-dato .dato-valor {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--lima-color);
-            line-height: 1.2;
-        }
-        .billetera-dato .dato-sub {
-            font-size: 10px;
-            color: #8ba8b5;
-            margin-top: 3px;
-        }
-        .billetera-hoy-footer {
-            margin-top: 18px;
-            padding-top: 12px;
-            border-top: 1px dashed #285467;
-            font-size: 10px;
-            color: #8ba8b5;
-            text-align: center;
-            font-style: italic;
-        }
-
-                /* MARQUESINA INTERNA (dentro del content-card) */
-        .marquesina-interna {
-            display: flex;
-            align-items: center;
-            height: 90px;
-            background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
-            border-top: 3px solid var(--lima-color);
-            border-bottom: 3px solid var(--lima-color);
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-        .marquesina-interna .marquesina-foto {
-            flex-shrink: 0;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #285467, #102630);
-            border-right: 3px solid var(--lima-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #b0bec5;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .marquesina-interna .marquesina-foto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .marquesina-interna .marquesina-texto-container {
-            flex: 1;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .marquesina-interna .marquesina-texto {
-            display: inline-block;
-            white-space: nowrap;
-            animation: desplazarMarquesinaInterna 25s linear infinite;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: absolute;
-            left: 0;
-        }
-        .marquesina-interna .marquesina-texto span {
-            color: var(--lima-color);
-            margin: 0 15px;
-        }
-        @keyframes desplazarMarquesinaInterna {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .marquesina-interna:hover .marquesina-texto {
-            animation-play-state: paused;
-        }
-
-        @media (max-width: 600px) {
-            .marquesina-interna {
-                height: 70px;
-            }
-            .marquesina-interna .marquesina-foto {
-                width: 70px;
-                height: 70px;
-                font-size: 8px;
-                padding: 6px;
-            }
-            .marquesina-interna .marquesina-texto {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-        }
-        /* MODALES */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(16, 38, 48, 0.75);
-            z-index: 5000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            animation: fadeInOverlay 0.25s ease;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        @keyframes fadeInOverlay {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .modal-content {
-            background: var(--card-bg);
-            border-radius: 10px;
-            max-width: 700px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            border-top: 5px solid var(--lima-color);
-            animation: slideUpModal 0.3s ease;
-        }
-        @keyframes slideUpModal {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .modal-header {
-            background: linear-gradient(90deg, #102630, var(--primary-color));
-            color: #fff;
-            padding: 20px 25px;
-            border-radius: 5px 5px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .modal-header h3 {
-            margin: 0;
-            font-size: 20px;
-            color: var(--lima-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .modal-close {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #fff;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            line-height: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background 0.2s;
-        }
-        .modal-close:hover {
-            background: var(--lima-color);
-            color: #113019;
-            border-color: var(--lima-color);
-        }
-        .modal-body {
-            padding: 20px 25px 25px 25px;
-        }
-        .modal-body > p {
-            font-size: 13px;
-            color: var(--text-muted);
-            text-align: left;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        .noticia-item {
-            background: #fdfdfe;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-        }
-        .noticia-item:hover {
-            transform: translateX(5px);
-            border-left-color: var(--lima-color);
-            box-shadow: 0 4px 12px rgba(31, 78, 95, 0.1);
-        }
-        .noticia-titulo {
-            font-size: 15px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 0 0 6px 0;
-            line-height: 1.3;
-        }
-        .noticia-meta {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .noticia-meta .fuente {
-            color: var(--lima-color);
-            font-weight: bold;
-        }
-        .noticia-link-arrow {
-            font-size: 11px;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-top: 6px;
-            display: block;
-        }
-        .noticia-item:hover .noticia-link-arrow {
-            color: var(--lima-color);
-            text-decoration: underline;
         }
 
         /* EL TERMÓMETRO */
@@ -1305,15 +502,9 @@
             .opciones-pill-container {
                 grid-template-columns: 1fr 1fr;
             }
-            .billetera-hoy-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .ultima-hora-lista {
-                grid-template-columns: 1fr;
-            }
         }
 
+        /* EL PASTIZAL */
         .featured-pastizal-card {
             background: linear-gradient(135deg, #f1f8e9, #ffffff);
             border: 1px solid #c8e6c9;
@@ -1346,6 +537,7 @@
             margin-bottom: 15px;
         }
 
+        /* MURO DE COMENTARIOS */
         .fotolog-wall {
             margin-top: 35px;
             border-top: 2px dashed #cbd5e1;
@@ -1404,6 +596,80 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* BANNER DOBLE EN INICIO (PASTIZAL + CAPI VIAJERO) */
+        .banner-doble-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 25px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .banner-mitad {
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .banner-mitad-pastizal {
+            background: linear-gradient(135deg, #102630, #1F4E5F);
+            border-right: 3px solid var(--lima-color);
+        }
+        .banner-mitad-capi {
+            background: linear-gradient(135deg, #1F4E5F, #102630);
+            border-left: 3px solid var(--accent-color);
+        }
+        .banner-mitad h4 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .banner-mitad-pastizal h4 {
+            color: var(--lima-color);
+        }
+        .banner-mitad-capi h4 {
+            color: var(--accent-color);
+        }
+        .banner-mitad p {
+            margin: 0;
+            font-size: 11.5px;
+            color: #e0f7fa;
+            text-align: left;
+            line-height: 1.4;
+        }
+        .banner-mitad .content-ad-btn {
+            align-self: flex-start;
+            font-size: 11px;
+            padding: 7px 13px;
+        }
+        .banner-mitad-pastizal .content-ad-btn {
+            background-color: var(--lima-color);
+            color: #113019;
+        }
+        .banner-mitad-capi .content-ad-btn {
+            background-color: var(--accent-color);
+            color: #102630;
+        }
+        .banner-mitad-capi .content-ad-btn:hover {
+            background-color: #81d4fa;
+        }
+        @media (max-width: 700px) {
+            .banner-doble-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .banner-mitad-pastizal {
+                border-right: none;
+                border-bottom: 3px solid var(--lima-color);
+            }
+            .banner-mitad-capi {
+                border-left: none;
+                border-top: 3px solid var(--accent-color);
+            }
         }
 
         .content-ad-banner {
@@ -1557,32 +823,6 @@
             font-size: 13px;
         }
 
-        /* NUEVO PLACEHOLDER 300x600 */
-        .placeholder-banner-600 {
-            background: linear-gradient(135deg, #fff7e8, #ffe9c7);
-            border: 3px dashed #d97706;
-            padding: 80px 15px;
-            color: #78350f;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 1.4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .placeholder-banner-600 small {
-            font-size: 12px;
-            font-weight: normal;
-            margin-top: 8px;
-            color: #92400e;
-            text-transform: none;
-            letter-spacing: 0;
-        }
-
         .large-placeholder-banner {
             background: #e8f4f8;
             border: 2px dashed var(--primary-color);
@@ -1670,6 +910,7 @@
             background-color: #7cb342;
         }
 
+        /* FOOTER */
         .infobae-footer {
             background-color: #102630;
             color: #b0bec5;
@@ -1770,175 +1011,6 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-                /* BOTÓN DE INSTAGRAM */
-        .instagram-box {
-            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-            border-radius: 10px;
-            padding: 20px 15px;
-            text-align: center;
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(253, 29, 29, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-        .instagram-box::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .instagram-box .instagram-icon {
-            font-size: 32px;
-            margin-bottom: 5px;
-            position: relative;
-            z-index: 1;
-        }
-        .instagram-box h4 {
-            margin: 0 0 4px 0;
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
-        }
-        .instagram-box p {
-            margin: 0 0 12px 0;
-            font-size: 13px;
-            font-weight: bold;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
-            text-align: center;
-        }
-        .instagram-btn {
-            display: inline-block;
-            background: #ffffff;
-            color: #833ab4;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .instagram-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-        }
-
-        /* CLASIFICADOS */
-        .clasificados-form {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid var(--lima-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 25px;
-        }
-        .clasificados-form h3 {
-            margin: 0 0 5px 0;
-            color: var(--primary-color);
-            font-size: 20px;
-        }
-        .clasificados-form p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-        .clasificados-form input, .clasificados-form select, .clasificados-form textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-bottom: 12px;
-            outline: none;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-        .clasificados-form input:focus, .clasificados-form select:focus, .clasificados-form textarea:focus {
-            border-color: var(--primary-color);
-        }
-        .clasificados-form button {
-            background-color: var(--lima-color);
-            color: #113019;
-            border: none;
-            padding: 12px 25px;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .clasificados-form button:hover {
-            background-color: #7cb342;
-        }
-        .clasificados-plantilla {
-            background: #fffbeb;
-            border: 1px dashed #f59e0b;
-            border-radius: 6px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: #78350f;
-        }
-        .clasificados-plantilla strong {
-            color: #b45309;
-        }
-        .clasificados-lista {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .clasificado-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid var(--lima-color);
-            padding: 20px;
-            border-radius: 6px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .clasificado-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(31, 78, 95, 0.1);
-        }
-        .clasificado-categoria {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: var(--lima-color);
-            margin-bottom: 8px;
-        }
-        .clasificado-titulo {
-            font-size: 16px;
-            color: var(--primary-color);
-            margin: 0 0 8px 0;
-            font-weight: bold;
-        }
-        .clasificado-desc {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin: 0 0 10px 0;
-        }
-        .clasificado-contacto {
-            font-size: 12px;
-            color: var(--text-color);
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -1967,6 +1039,13 @@
                     Dólar Hoy: <strong>$1.250 / $1.270</strong>
                 </div>
             </a>
+
+            <div class="trending-container">
+                <span class="trending-label">Temas del Día</span>
+                <a onclick="cambiarVista('rosca')">Bacheazo en la esquina</a>
+                <a onclick="cambiarVista('billetera')">Suba de boleta de luz</a>
+                <a onclick="cambiarVista('municipios')">Elecciones en el Conurbano</a>
+            </div>
         </div>
         
         <div class="search-municipio-container">
@@ -2007,47 +1086,24 @@
         <p>La realidad de la región, masticada y digerida</p>
     </header>
 
-    <!-- MARQUESINA PROMOCIONAL -->
-       <div class="marquesina-promo">
-        <div class="marquesina-foto">
-            ESPACIO<br>DISPONIBLE
-        </div>
-        <div class="marquesina-texto-container">
-            <div class="marquesina-texto">
-                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ... (más)
-            </div>
-        </div>
-    </div>
-
-    <!-- SECCIÓN ÚLTIMA HORA -->
-    <section class="ultima-hora-section" id="ultima-hora-section">
-        <div class="ultima-hora-container">
-            <div class="ultima-hora-header">
-                <span class="ultima-hora-badge">🔴 ÚLTIMA HORA</span>
-                <span class="ultima-hora-subtitle">Las noticias que están marcando la agenda</span>
-            </div>
-            <div class="ultima-hora-lista" id="ultima-hora-lista"></div>
-        </div>
-    </section>
-
-    <!-- MENÚ DE NAVEGACIÓN -->
+    <!-- MENÚ DE NAVEGACIÓN (orden actualizado: Capi Viajero entre Municipios y Billetera) -->
     <nav>
         <a id="nav-inicio" class="active" onclick="cambiarVista('inicio')">INICIO</a>
+        <a id="nav-vecindario" onclick="cambiarVista('vecindario')">EL VECINDARIO</a>
         <a id="nav-rosca" onclick="cambiarVista('rosca')">LA ROSCA</a>
         <a id="nav-municipios" onclick="cambiarVista('municipios')">MUNICIPIOS</a>
+        <a id="nav-capiviajero" onclick="cambiarVista('capiviajero')">EL CAPI VIAJERO</a>
         <a id="nav-billetera" onclick="cambiarVista('billetera')">LA BILLETERA</a>
         <a id="nav-pastizal" onclick="cambiarVista('pastizal')">EL PASTIZAL</a>
-        <a id="nav-vecindario" onclick="cambiarVista('vecindario')">EL VECINDARIO</a>
         <a id="nav-termometro" onclick="cambiarVista('termometro')">EL TERMÓMETRO</a>
-        <a id="nav-clasificados" onclick="cambiarVista('clasificados')">CLASIFICADOS</a>
         <a id="nav-publicidad" onclick="cambiarVista('publicidad')">PUBLICIDAD</a>
         <a id="nav-contacto" onclick="cambiarVista('contacto')">CONTACTO</a>
     </nav>
-    <!-- FRANJA DE SUSCRIPCIÓN -->
+    <!-- FRANJA DE SUSCRIPCIÓN CON CONTADOR DINÁMICO -->
     <section class="newsletter-section">
         <h3>Suscribite a nuestro Newsletter</h3>
         <div class="newsletter-counter-badge">
-            👥 <span id="subscriber-counter">39.908</span> suscriptores
+            👥 <span id="subscriber-counter">37.654</span> suscriptores
         </div>
         <div class="newsletter-form" id="newsletter-container">
             <form name="newsletter" method="POST" data-netlify="true" style="display: flex; width: 100%;">
@@ -2075,14 +1131,27 @@
                 
                 <p>Nuestro compromiso es simple: traerte la información de lo que pasa en tu distrito, en tu barrio y en tu región sin vueltas. Queremos ser ese puente entre los grandes temas provinciales y tu cuadra, con un enfoque federal real, útil y con la dosis justa de humor ácido que la coyuntura merece.</p>
 
-                <div class="content-ad-banner">
-                    <div>
-                        <h4>✨ En exclusiva en nuestra sección El Pastizal</h4>
-                        <p>¡Ya está disponible la nota del Capibara Viajero en Neuquén! Conocé a Denis Ferragut y su propuesta de Integración Argentina Federal y Productiva desde Cutral Co.</p>
+                <!-- BANNER DOBLE: MITAD EL PASTIZAL / MITAD EL CAPI VIAJERO -->
+                <div class="banner-doble-wrapper">
+                    <!-- Mitad Izquierda: EL PASTIZAL -->
+                    <div class="banner-mitad banner-mitad-pastizal">
+                        <div>
+                            <h4>✨ El Pastizal</h4>
+                            <p><strong>Norberto Delgado, el armador de la 4ta:</strong> 'Victoria es la única que puede poner de pie a la Provincia'</p>
+                        </div>
+                        <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Ver nota en El Pastizal</a>
                     </div>
-                    <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Leer la entrevista completa</a>
+                    <!-- Mitad Derecha: EL CAPI VIAJERO -->
+                    <div class="banner-mitad banner-mitad-capi">
+                        <div>
+                            <h4>🧳 El Capi Viajero</h4>
+                            <p><strong>Denis Ferragut:</strong> "No somos políticos profesionales, somos gente de trabajo que quiere que el país produzca" — desde Cutral Co, Neuquén</p>
+                        </div>
+                        <a class="content-ad-btn" onclick="cambiarVista('capiviajero')">Ver nota en El Capi Viajero</a>
+                    </div>
                 </div>
 
+                <!-- SECCIÓN DEL MURO DE COMENTARIOS EN INICIO -->
                 <div class="fotolog-wall">
                     <h3>💬 El Muro de Capibara News</h3>
                     <p>Acá se van acumulando en tiempo real las opiniones, confesiones y preguntas que mandan los lectores desde el panel lateral.</p>
@@ -2090,17 +1159,14 @@
                     <div class="muro-confesionario" id="muro-confesionario"></div>
                 </div>
 
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
+                <!-- BARRA COMERCIAL REUBICADA ABAJO DE TODO EN PORTADA -->
+                <div class="content-ad-banner" style="margin-top: 40px; background: linear-gradient(90deg, #163844, #102630);">
+                    <div>
+                        <h4>📢 ¡Patrociná las notas principales!</h4>
+                        <p>Tu marca visible en la portada del diario de mayor crecimiento.</p>
+                    </div>
+                    <a class="content-ad-btn" onclick="cambiarVista('publicidad')">Consultar</a>
+                </div>
             </article>
         </main>
 
@@ -2108,42 +1174,30 @@
         <main id="vista-rosca" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">La Rosca</h2>
-                <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
+                <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas.</p>
 
                 <div class="articles-grid">
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Pases de factura en el conurbano')">
+                    <div class="article-box-card">
                         <h4>1. Pases de factura en el conurbano</h4>
                         <p>Intendentes reconfiguran alianzas silenciosas pensando en el armado legislativo del próximo año.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Sesión caliente en La Plata')">
+                    <div class="article-box-card">
                         <h4>2. Sesión caliente en La Plata</h4>
                         <p>Fuerte cruce entre bloques por la distribución de fondos coparticipables a comunas opositoras.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Operativo operativo')">
+                    <div class="article-box-card">
                         <h4>3. Operativo operativo</h4>
                         <p>Reuniones cumbre en despachos oscuros para definir candidaturas territoriales sin hacer mucho ruido.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Presupuesto bajo la lupa')">
+                    <div class="article-box-card">
                         <h4>4. Presupuesto bajo la lupa</h4>
                         <p>Concejales analizan letra chica de partidas destinadas a obras públicas demoradas.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El teléfono descompuesto')">
+                    <div class="article-box-card">
                         <h4>5. El teléfono descompuesto</h4>
                         <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
                     </div>
                 </div>
-
-               <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
 
@@ -2151,240 +1205,63 @@
         <main id="vista-municipios" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
-                <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
-
-                <div class="mapa-distritos-wrapper">
-                    <h3 class="mapa-distritos-titulo">🗺️ Mapa Interactivo de Distritos</h3>
-                    <p class="mapa-distritos-subtitulo">Hacé click en cada distrito para ver las 5 noticias más relevantes</p>
-                    
-                    <div class="mapa-canvas">
-                        <span class="mapa-region" style="top: 8%; left: 5%;">Zona Norte</span>
-                        <span class="mapa-region" style="top: 45%; left: 5%;">Zona Oeste</span>
-                        <span class="mapa-region" style="top: 65%; left: 35%;">Zona Sur</span>
-                        <span class="mapa-region" style="top: 90%; left: 65%;">Interior / Costa</span>
-
-                        <div class="mapa-punto" style="top: 15%; left: 65%;" onclick="abrirModalDistrito('Tigre')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">T</div>
-                            <div class="mapa-punto-label">Tigre</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 20%; left: 45%;" onclick="abrirModalDistrito('San Isidro')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">SI</div>
-                            <div class="mapa-punto-label">San Isidro</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 28%; left: 58%;" onclick="abrirModalDistrito('General San Martín')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">SM</div>
-                            <div class="mapa-punto-label">San Martín</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 42%; left: 38%;" onclick="abrirModalDistrito('Morón')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">MO</div>
-                            <div class="mapa-punto-label">Morón</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 50%; left: 22%;" onclick="abrirModalDistrito('Merlo')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">ME</div>
-                            <div class="mapa-punto-label">Merlo</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 55%; left: 38%;" onclick="abrirModalDistrito('La Matanza')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LM</div>
-                            <div class="mapa-punto-label">La Matanza</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 68%; left: 52%;" onclick="abrirModalDistrito('Lomas de Zamora')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LZ</div>
-                            <div class="mapa-punto-label">Lomas de Zamora</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 72%; left: 68%;" onclick="abrirModalDistrito('Quilmes')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">Q</div>
-                            <div class="mapa-punto-label">Quilmes</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 85%; left: 55%;" onclick="abrirModalDistrito('La Plata')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LP</div>
-                            <div class="mapa-punto-label">La Plata</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 88%; left: 82%;" onclick="abrirModalDistrito('General Pueyrredón')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">GP</div>
-                            <div class="mapa-punto-label">Gral. Pueyrredón</div>
-                        </div>
-                    </div>
-                </div>
+                <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires.</p>
 
                 <div class="articles-grid">
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Matanza')">
+                    <div class="article-box-card">
                         <h4>1. La Matanza</h4>
                         <p>Obras viales congeladas y reclamos barriales marcan el pulso de la semana en la zona oeste.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Plata')">
+                    <div class="article-box-card">
                         <h4>2. La Plata</h4>
                         <p>Tensión en el Casco Urbano por la reestructuración de los recorridos de transporte público.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Lomas de Zamora')">
+                    <div class="article-box-card">
                         <h4>3. Lomas de Zamora</h4>
                         <p>Avanzan los operativos nocturnos de prevención vial en los principales corredores gastronómicos.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General Pueyrredón')">
+                    <div class="article-box-card">
                         <h4>4. General Pueyrredón</h4>
                         <p>Mar del Plata calienta motores para la temporada alta con foco en la llegada de turismo de escapada.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Quilmes')">
+                    <div class="article-box-card">
                         <h4>5. Quilmes</h4>
                         <p>Vecinos exigen refuerzos en la recolección de residuos tras las últimas jornadas de tormenta.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Almirante Brown')">
+                    <div class="article-box-card">
                         <h4>6. Almirante Brown</h4>
                         <p>Apertura de nuevas luminarias LED en accesos clave del parque industrial de Burzaco.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Merlo')">
+                    <div class="article-box-card">
                         <h4>7. Merlo</h4>
                         <p>Fuerte debate en el Concejo Deliberante por el presupuesto asignado al mantenimiento hospitalario.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Moreno')">
+                    <div class="article-box-card">
                         <h4>8. Moreno</h4>
                         <p>Lanzan programa de financiamiento y créditos blandos para pymes agroecológicas de la zona.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Florencio Varela')">
+                    <div class="article-box-card">
                         <h4>9. Florencio Varela</h4>
                         <p>Inauguran centro de salud comunitario enfocado en la atención pediátrica preventiva.</p>
                     </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General San Martín')">
+                    <div class="article-box-card">
                         <h4>10. General San Martín</h4>
                         <p>Planes de asfaltado y reparación de colectoras avanzan sobre las arterias comerciales principales.</p>
                     </div>
                 </div>
-
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
-            </section>
-        </main>
-        
-        <!-- VISTA 4: LA BILLETERA -->
-        <main id="vista-billetera" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">La Billetera</h2>
-                <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
-
-                <div class="billetera-hoy">
-                    <div class="billetera-hoy-header">
-                        <h3>📊 La Billetera Hoy</h3>
-                        <span class="billetera-hoy-fecha">Semana del 30/09 al 06/10</span>
-                    </div>
-                    <div class="billetera-hoy-grid">
-                        <div class="billetera-dato">
-                            <div class="dato-label">🍞 Canasta Básica Total</div>
-                            <div class="dato-valor">$1.160.780</div>
-                            <div class="dato-sub">Familia tipo</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">🍽️ Canasta Alimentaria</div>
-                            <div class="dato-valor">+39,6%</div>
-                            <div class="dato-sub">Interanual</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">📈 Inflación mensual</div>
-                            <div class="dato-valor">~2,0%</div>
-                            <div class="dato-sub">Sept. (proyectada)</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">💵 Dólar Blue</div>
-                            <div class="dato-valor">$1.560</div>
-                            <div class="dato-sub">Venta</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">🥩 Asado (kg)</div>
-                            <div class="dato-valor">~$23.000</div>
-                            <div class="dato-sub">Media res</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">💡 Tarifas</div>
-                            <div class="dato-valor">+1,75%</div>
-                            <div class="dato-sub">Luz (gas +1,40%)</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">📉 Pobreza</div>
-                            <div class="dato-valor">32,3%</div>
-                            <div class="dato-sub">1er semestre 2026</div>
-                        </div>
-                        <div class="billetera-dato">
-                            <div class="dato-label">📊 Indigencia</div>
-                            <div class="dato-valor">7,5%</div>
-                            <div class="dato-sub">1er semestre 2026</div>
-                        </div>
-                    </div>
-                    <div class="billetera-hoy-footer">
-                        📌 Datos actualizados semanalmente. Fuente: INDEC, ENReGE, medios nacionales.
-                    </div>
-                </div>
-
-                <div class="articles-grid">
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El changuito en terapia')">
-                        <h4>1. El changuito en terapia</h4>
-                        <p>Relevamiento de precios en ferias barriales y mayoristas del conurbano para ganarle a la inflación.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Paritarias bonaerenses')">
-                        <h4>2. Paritarias bonaerenses</h4>
-                        <p>Nuevos tramos de aumento salarial acordados para estatales y docentes en distrito provincial.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Tarifas y boletas')">
-                        <h4>3. Tarifas y boletas</h4>
-                        <p>Impacto de las últimas subas de servicios en comercios de cercanía y pymes zonales.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Descuentos con Cuenta DNI')">
-                        <h4>4. Descuentos con Cuenta DNI</h4>
-                        <p>El cronograma de ahorro en carnicerías y verdulerías para aliviar el bolsillo el fin de semana.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Naftas y transporte')">
-                        <h4>5. Naftas y transporte</h4>
-                        <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
-                    </div>
-                </div>
-
-                <!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
 
-        <!-- VISTA 5: EL PASTIZAL -->
-        <main id="vista-pastizal" class="page-view">
+        <!-- VISTA NUEVA: EL CAPI VIAJERO (reemplaza a Clasificados) -->
+        <main id="vista-capiviajero" class="page-view">
             <section class="content-card">
-                <h2 class="article-title">El Pastizal</h2>
-                <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
+                <h2 class="article-title">🧳 El Capi Viajero</h2>
+                <div class="date">Noticias fuera de Buenos Aires</div>
+                <p><strong>Acá el Capibara cruza las fronteras de la Provincia y alza la voz.</strong> Historias, entrevistas y realidades de todo el país que no salen en los medios porteños. Porque la Argentina profunda también tiene cosas para decir, y desde acá le damos micrófono. <strong style="color: var(--lima-color);">¡El Capi Viajero ya está en marcha!</strong></p>
 
+                <!-- NOTA DENIS FERRAGUT (MOVIDA DESDE EL PASTIZAL) -->
                 <div class="featured-pastizal-card">
-                    <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
+                    <span class="featured-pastizal-badge">⭐ Nota Destacada / El Capi Viajero</span>
                     <h3>Denis Ferragut: "No somos políticos profesionales, somos gente de trabajo que quiere que el país produzca"</h3>
                     <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 29 de Septiembre de 2026 | Cutral Co, Neuquén</div>
                     
@@ -2431,9 +1308,73 @@
                     </div>
                 </div>
 
-                <div class="featured-pastizal-card" style="border-left-color: var(--text-muted); background: #fdfdfe; margin-top: 30px;">
-                    <span class="featured-pastizal-badge" style="background-color: var(--text-muted); color: #fff;">📌 Nota Pasada</span>
-                    <h3 style="color: var(--text-muted);">Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
+                <!-- Artículos varios de El Capi Viajero -->
+                <div class="articles-grid">
+                    <div class="article-box-card">
+                        <h4>1. El norte también reclama</h4>
+                        <p>Crónicas desde Salta y Jujuy: el federalismo que se exige a gritos en las rutas del NOA.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>2. Vaca Muerta y el después</h4>
+                        <p>Qué pasa con las ciudades petroleras cuando el recurso se agota. Voces desde Neuquén y Río Negro.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>3. El campo que no duerme</h4>
+                        <p>Productores de Santa Fe y Córdoba cuentan cómo sobreviven entre retenciones y sequías.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>4. La Patagonia que resiste</h4>
+                        <p>Chubut, Santa Cruz y Tierra del Fuego: las provincias que pelean por sus recursos.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>5. Cuyo en alerta</h4>
+                        <p>Mendoza y San Juan frente al desafío del agua y la minería. ¿Desarrollo o saqueo?</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VISTA 4: LA BILLETERA -->
+        <main id="vista-billetera" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">La Billetera</h2>
+                <p>Precios de los alimentos, paritarias y cómo cuidar el mango en la provincia sin volverse loco.</p>
+
+                <div class="articles-grid">
+                    <div class="article-box-card">
+                        <h4>1. El changuito en terapia</h4>
+                        <p>Relevamiento de precios en ferias barriales y mayoristas del conurbano para ganarle a la inflación.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>2. Paritarias bonaerenses</h4>
+                        <p>Nuevos tramos de aumento salarial acordados para estatales y docentes en distrito provincial.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>3. Tarifas y boletas</h4>
+                        <p>Impacto de las últimas subas de servicios en comercios de cercanía y pymes zonales.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>4. Descuentos con Cuenta DNI</h4>
+                        <p>El cronograma de ahorro en carnicerías y verdulerías para aliviar el bolsillo el fin de semana.</p>
+                    </div>
+                    <div class="article-box-card">
+                        <h4>5. Naftas y transporte</h4>
+                        <p>Cómo afecta el último incremento en combustibles al costo logístico de delivery y remises.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VISTA 5: EL PASTIZAL (SIN LA NOTA DE DENIS, QUE SE MOVIÓ A EL CAPI VIAJERO) -->
+        <main id="vista-pastizal" class="page-view">
+            <section class="content-card">
+                <h2 class="article-title">El Pastizal</h2>
+                <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
+
+                <!-- Artículo Destacado / Nota Propia de Autor (Norberto Delgado - se mantiene) -->
+                <div class="featured-pastizal-card">
+                    <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
+                    <h3>Norberto Delgado, el armador de la 4ta: 'Victoria es la única que puede poner de pie a la Provincia</h3>
                     <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 24 de Julio de 2026</div>
                     <p> En un mano a mano picante, el referente de Junín habló del armado territorial, de la incertidumbre por la candidatura de Villarruel y de por qué el interior bonaerense ya no quiere ser un convidado de piedra.</p>
                     <p>Si hay algo que no se negocia en la Cuarta Sección Electoral es el trabajo silencioso de la calle. Y Norberto Delgado es uno de los que mueve los hilos. Mientras la rosca política nacional mira para otro lado, en Junín la maquinaria ya empezó a aceitarse.
@@ -2460,6 +1401,7 @@
 
 <p><strong>La incógnita que todos se hacen:
 Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita en el tablero bonaerense, hombres como Norberto Delgado ya juegan su propio partido. En Junín, dicen, la 4ta Sección se está poniendo de pie. Y si el armado sigue creciendo, no sería descabellado ver ese eslogan convertido en una boleta real en los próximos comicios.<br>Lo único seguro es que la política bonaerense no duerme. Y en la 4ta, menos que menos.</strong></p>
+
                 </div>
 
                 <div class="articles-grid">
@@ -2484,33 +1426,23 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                         <p>Reflexiones sobre los espacios verdes que se pierden y las torres que crecen sin planificación.</p>
                     </div>
                 </div>
-<!-- MARQUESINA ESPACIO DISPONIBLE - CLIENTE 2 -->
-<div class="marquesina-interna">
-    <div class="marquesina-foto">
-        ESPACIO<br>DISPONIBLE
-    </div>
-    <div class="marquesina-texto-container">
-        <div class="marquesina-texto">
-            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-        </div>
-    </div>
-</div>
             </section>
         </main>
-
-        <!-- VISTA 6: EL TERMÓMETRO -->
+        <!-- VISTA 6: EL TERMÓMETRO (ENCUESTA BONAERENSE) -->
         <main id="vista-termometro" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">🌡️ El Termómetro de la Provincia</h2>
                 <div class="date">Participación ciudadana bonaerense</div>
                 <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
 
+                <!-- PREGUNTA 1: Partido y Distrito -->
                 <div class="termometro-card">
                     <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
                     <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
                     <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
                 </div>
 
+                <!-- PREGUNTA 2: Salud Pública -->
                 <div class="termometro-card">
                     <h3>Pregunta 2: Salud Pública</h3>
                     <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
@@ -2526,6 +1458,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- PREGUNTA 3: Seguridad y Prevención -->
                 <div class="termometro-card">
                     <h3>Pregunta 3: Seguridad y Prevención</h3>
                     <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
@@ -2541,6 +1474,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- PREGUNTA 4: Educación y Escuelas -->
                 <div class="termometro-card">
                     <h3>Pregunta 4: Educación y Escuelas</h3>
                     <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
@@ -2556,6 +1490,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- PREGUNTA 5: Servicios y Obras Públicas -->
                 <div class="termometro-card">
                     <h3>Pregunta 5: Servicios y Obras Públicas</h3>
                     <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
@@ -2571,84 +1506,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- BOTÓN DE VOTAR -->
                 <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
-            </section>
-        </main>
-
-        <!-- VISTA 8: CLASIFICADOS -->
-        <main id="vista-clasificados" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">📌 Clasificados Vecinales</h2>
-                <p>El espacio donde los vecinos de la Provincia publican lo que necesitan. Vendé, comprá, alquilá, ofrecé servicios o buscá trabajo. Publicar tu aviso es fácil y económico.</p>
-
-                <div class="clasificados-plantilla">
-                    <strong>📝 Plantilla de referencia:</strong> Así va a verse tu aviso. Copiá este formato y completalo con tus datos.<br><br>
-                    <strong>Categoría:</strong> (Venta / Alquiler / Servicios / Trabajo / Varios)<br>
-                    <strong>Título:</strong> (Ej: "Vendo bicicleta rodado 26 en buen estado")<br>
-                    <strong>Descripción:</strong> (Contá lo que querés vender o el servicio que ofrecés, con detalles útiles)<br>
-                    <strong>Contacto:</strong> (Tu WhatsApp o mail para que te escriban)
-                </div>
-
-                <div class="clasificados-form">
-                    <h3>Publicá tu aviso</h3>
-                    <p>Completá el formulario y lo subimos a la página en menos de 24 horas. El costo es de $2.000 por 7 días. Te contactamos para coordinar el pago.</p>
-                    <form name="clasificados" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="clasificados" />
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu nombre o comercio:</label>
-                        <input type="text" name="nombre" placeholder="Ej: Almacén Don Pedro" required>
-                        
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Categoría:</label>
-                        <select name="categoria" required>
-                            <option value="">Elegí una categoría</option>
-                            <option value="Venta">Venta</option>
-                            <option value="Alquiler">Alquiler</option>
-                            <option value="Servicios">Servicios</option>
-                            <option value="Trabajo">Trabajo</option>
-                            <option value="Varios">Varios</option>
-                        </select>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Título del aviso:</label>
-                        <input type="text" name="titulo" placeholder="Ej: Vendo bicicleta rodado 26" required>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Descripción:</label>
-                        <textarea name="descripcion" rows="4" placeholder="Contá los detalles de tu aviso..." required></textarea>
-
-                        <label style="font-size:13px; font-weight:bold; color:var(--text-color); display:block; margin-bottom:5px;">Tu contacto (WhatsApp o mail):</label>
-                        <input type="text" name="contacto" placeholder="Ej: 11 2345-6789 o tunombre@mail.com" required>
-
-                        <button type="submit">📩 Enviar mi aviso</button>
-                    </form>
-                </div>
-
-                <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 10px;">Avisos destacados</h3>
-                <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Estos son los avisos que ya están publicados. Si querés el tuyo, completá el formulario de arriba.</p>
-
-                <div class="clasificados-lista">
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🔧 Servicios</div>
-                        <div class="clasificado-titulo">Electricista matriculado - Zona Sur</div>
-                        <p class="clasificado-desc">Instalaciones, reparaciones y urgencias. Trabajo con garantía. Presupuestos sin cargo.</p>
-                        <div class="clasificado-contacto">📞 11 5555-1234</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🏠 Alquiler</div>
-                        <div class="clasificado-titulo">Monoambiente amoblado en La Plata</div>
-                        <p class="clasificado-desc">A estrenar, con cocina y baño completo. Ideal estudiantes o pareja. Zona céntrica.</p>
-                        <div class="clasificado-contacto">📧 alquilereslp@mail.com</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">🚲 Venta</div>
-                        <div class="clasificado-titulo">Bicicleta rodado 26 en buen estado</div>
-                        <p class="clasificado-desc">Vendo bici con cambios, frenos nuevos y asiento cómodo. Poco uso. Escucho ofertas.</p>
-                        <div class="clasificado-contacto">📞 11 4444-9876</div>
-                    </div>
-                    <div class="clasificado-card">
-                        <div class="clasificado-categoria">💼 Trabajo</div>
-                        <div class="clasificado-titulo">Busco trabajo de administrativa</div>
-                        <p class="clasificado-desc">Experiencia en atención al cliente y manejo de sistemas. Disponibilidad full time. Zona Norte.</p>
-                        <div class="clasificado-contacto">📧 cv.ana@mail.com</div>
-                    </div>
-                </div>
             </section>
         </main>
 
@@ -2658,13 +1517,14 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h2 class="article-title">📢 Publicidad en Capibara News</h2>
                 <p>Si tenés un comercio, una pyme o una marca personal en la Provincia de Buenos Aires, este es tu lugar. Capibara News es el diario digital que crece día a día, con un enfoque federal y una audiencia fiel que busca información útil y sin vueltas.</p>
 
+                <!-- DATOS DE AUDIENCIA -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
                     <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
                         <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">39.900+</div>
                         <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Suscriptores al Newsletter</div>
                     </div>
                     <div style="background: #f0f4f8; border-left: 4px solid var(--lima-color); padding: 20px; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">100</div>
+                        <div style="font-size: 32px; font-weight: bold; color: var(--primary-color);">10</div>
                         <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Municipios Cubiertos</div>
                     </div>
                     <div style="background: #f0f4f8; border-left: 4px solid var(--accent-color); padding: 20px; border-radius: 8px; text-align: center;">
@@ -2673,6 +1533,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- FORMATOS DISPONIBLES -->
                 <h3 style="color: var(--primary-color); margin-top: 35px; margin-bottom: 15px;">Formatos Disponibles</h3>
 
                 <div class="articles-grid">
@@ -2694,6 +1555,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     </div>
                 </div>
 
+                <!-- CTA DE CONTACTO -->
                 <div style="background: linear-gradient(135deg, #102630, #1F4E5F); color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 35px; text-align: center; border-left: 5px solid var(--lima-color);">
                     <h3 style="color: var(--lima-color); margin: 0 0 10px 0; text-transform: uppercase;">¿Querés anunciar con nosotros?</h3>
                     <p style="color: #e0f7fa; font-size: 14px; margin-bottom: 20px;">Escribinos y te enviamos el Media Kit completo con precios y disponibilidad.</p>
@@ -2702,7 +1564,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             </section>
         </main>
         
-        <!-- VISTA CONTACTO -->
+        <!-- VISTA 8: CONTACTO -->
         <main id="vista-contacto" class="page-view">
             <article class="content-card">
                 <h2 class="article-title">Contacto Directo</h2>
@@ -2714,19 +1576,20 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 
                 <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin: 25px 0;">
                     <strong style="color: var(--primary-color); font-size: 15px;">📧 Correo Electrónico:</strong><br>
-                    <a href="mailto:hablaleacapibaranews@outlook.com" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">hablaleacapibaranews@outlook.com</a>
+                    <a href="mailto:capibaranewscontacto@outlook.com.ar" style="color: var(--secondary-color); font-size: 18px; font-weight: bold; text-decoration: none;">capibaranewscontacto@outlook.com.ar</a>
                 </div>
 
                 <p>Leemos todos los mensajes que llegan. Si la historia vale la pena, la hacemos tapa en el diario.</p>
             </article>
         </main>
 
-        <!-- VISTA: EL VECINDARIO -->
+        <!-- VISTA 9: EL VECINDARIO -->
         <main id="vista-vecindario" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">El Vecindario</h2>
                 <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
 
+                <!-- BOTÓN DE PARTICIPACIÓN -->
                 <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
                     <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
                     <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
@@ -2734,18 +1597,21 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
 
                 <div class="articles-grid">
+                    <!-- Nota 1 -->
                     <div class="article-box-card" style="border-left-color: var(--lima-color);">
                         <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
                         <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
                         <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
                     </div>
 
+                    <!-- Nota 2 -->
                     <div class="article-box-card" style="border-left-color: #ef4444;">
                         <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
                         <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
                         <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
                     </div>
 
+                    <!-- Nota 3 -->
                     <div class="article-box-card" style="border-left-color: var(--accent-color);">
                         <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
                         <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
@@ -2757,6 +1623,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
         <!-- BARRA LATERAL DINÁMICA -->
         <aside>
+            <!-- BANNER FIJO LISTO PARA PROMOCIONAR -->
             <div class="promo-sticky-banner">
                 <span class="promo-badge">Espacio Disponible</span>
                 <h4>¡Tu Marca Acá!</h4>
@@ -2764,43 +1631,34 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
+            <!-- 1. Banners Estándar + Confesionario -->
             <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
-                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
-                    <div class="placeholder-banner-600">
-                        ÚLTIMO ESPACIO<br>DISPONIBLE
-                        <small>300x600 · Publicidad Premium</small>
-                    </div>
-                </div>
-
-                <div class="ad-box">
                     <div class="ad-title">Publicidad Destacada</div>
-                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
-                
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad</div>
-                    <img src="espacio02.jpg" alt="Denis Ferragut - IAFyP" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
-                
-                <!-- BOTÓN DE INSTAGRAM -->
-                <div class="instagram-box">
-                    <div class="instagram-icon">📷</div>
-                    <h4>Seguinos en Instagram</h4>
-                    <p>@newsconcapi</p>
-                    <a href="https://www.instagram.com/newsconcapi/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-                        Ver Perfil →
+                    <a href="#" class="live-banner">
+                        <h4>¡Anunciá tu Local Acá!</h4>
+                        <p>Llegá directo a miles de vecinos.</p>
                     </a>
                 </div>
+                
+                <!-- IMAGEN ESPACIO01.JPG -->
                 <div class="ad-box">
-                    <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">ULTIMOS DISPONIBLES!<br><small>300x250</small></div>
+                    <div class="ad-title">Publicidad</div>
+                    <img src="ESPACIO01.JPG" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
 
+                <!-- BANNER 300x250 (ESPACIO DISPONIBLE) -->
+                <div class="ad-box">
+                    <div class="ad-title">Espacio Publicitario</div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
+                </div>
+
+                <!-- CONFESIONARIO DEL CAPIBARA (JSONBIN) -->
                 <div class="confesionario-box">
                     <h4>💬 Confesionario del Capibara</h4>
                     <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
 
+                    <!-- Formulario -->
                     <div id="form-confesionario">
                         <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
                         <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
@@ -2810,19 +1668,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
+            <!-- 2. Banners Exclusivos LA ROSCA -->
             <div id="sidebar-rosca" style="display: none; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
-                    <div class="placeholder-banner-600">
-                        ÚLTIMO ESPACIO<br>DISPONIBLE
-                        <small>300x600 · Publicidad Premium</small>
-                    </div>
-                </div>
-
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad Destacada</div>
-                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
                 <div class="ad-box">
                     <div class="ad-title">Patrocinio Político Exclusivo</div>
                     <div class="large-placeholder-banner">
@@ -2831,23 +1678,12 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">ULTIMOS DISPONIBLES!<br><small>300x250</small></div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
                 </div>
             </div>
 
+            <!-- 3. Banner Exclusivo LA BILLETERA -->
             <div id="sidebar-billetera" style="display: none; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
-                    <div class="placeholder-banner-600">
-                        ÚLTIMO ESPACIO<br>DISPONIBLE
-                        <small>300x600 · Publicidad Premium</small>
-                    </div>
-                </div>
-
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad Destacada</div>
-                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
                 <div class="ad-box">
                     <div class="ad-title" style="color: var(--lima-color);">Sponsor Exclusivo de Sección</div>
                     <div class="massive-placeholder-banner" style="padding: 50px 15px;">
@@ -2861,19 +1697,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
+            <!-- 4. Banner Exclusivo EL VECINDARIO -->
             <div id="sidebar-vecindario" style="display: none; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
-                    <div class="placeholder-banner-600">
-                        ÚLTIMO ESPACIO<br>DISPONIBLE
-                        <small>300x600 · Publicidad Premium</small>
-                    </div>
-                </div>
-
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad Destacada</div>
-                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
                 <div class="ad-box">
                     <div class="ad-title">Patrocinio del Vecindario</div>
                     <div class="large-placeholder-banner">
@@ -2886,80 +1711,21 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </div>
 
-            <div id="sidebar-contacto" style="display: none; flex-direction: column; gap: 20px;">
+            <!-- 5. Banner Exclusivo EL CAPI VIAJERO -->
+            <div id="sidebar-capiviajero" style="display: none; flex-direction: column; gap: 20px;">
                 <div class="ad-box">
-                    <div class="ad-title">Publicidad Destacada</div>
-                    <img src="espacio03.jpg" alt="Publicidad" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+                    <div class="ad-title" style="color: var(--accent-color);">Sponsor Exclusivo de El Capi Viajero</div>
+                    <div class="large-placeholder-banner" style="background: #e0f7fa; border-color: var(--accent-color); color: #014361;">
+                        ESPACIO 7<br><small style="font-size: 12px; font-weight: normal;">Banner Premium 300x400</small>
+                    </div>
                 </div>
-                
-                <div class="ad-box">
-                    <div class="ad-title">Publicidad</div>
-                    <img src="espacio02.jpg" alt="Denis Ferragut - IAFyP" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
-                </div>
-
                 <div class="ad-box">
                     <div class="ad-title">Espacio Publicitario</div>
-                    <div class="placeholder-banner" style="padding: 40px 10px;">ULTIMOS DISPONIBLES!<br><small>300x250</small></div>
-                </div>
-                                <!-- BOTÓN DE INSTAGRAM -->
-                <div class="instagram-box">
-                    <div class="instagram-icon">📷</div>
-                    <h4>Seguinos en Instagram</h4>
-                    <p>@newsconcapi</p>
-                    <a href="https://www.instagram.com/newsconcapi/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-                        Ver Perfil →
-                    </a>
-                </div>
-
-                <div class="confesionario-box">
-                    <h4>💬 Confesionario del Capibara</h4>
-                    <p>Dejá tu comentario, queja u opinión. Todo se publica directo en el Muro. ¡Es 100% anónimo!</p>
-
-                    <div id="form-confesionario">
-                        <input type="text" id="conf-nombre" class="conf-input" placeholder="Tu nombre (o Anónimo)" maxlength="30">
-                        <input type="text" id="conf-red" class="conf-input" placeholder="Tu Red Social (opcional)" maxlength="30">
-                        <textarea id="conf-texto" class="conf-textarea" placeholder="Escribí tu comentario acá..." maxlength="500"></textarea>
-                        <button type="button" class="conf-btn" onclick="enviarComentario()">📩 Enviar al Muro</button>
-                    </div>
+                    <div class="placeholder-banner" style="padding: 40px 10px;">DISPONIBLE<br><small>300x250</small></div>
                 </div>
             </div>
 
         </aside>
-    </div>
-
-    <!-- MODAL DE NOTICIAS POR DISTRITO -->
-    <div class="modal-overlay" id="modal-distrito" onclick="cerrarModalSiEsAfuera(event)">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-titulo">Noticias del distrito</h3>
-                <button class="modal-close" onclick="cerrarModalDistrito()">✕</button>
-            </div>
-            <div class="modal-body">
-                <p>Las 5 noticias más relevantes de la semana, con link a la fuente original.</p>
-                <div id="modal-noticias-lista"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL ÚLTIMA HORA -->
-    <div class="modal-ultima-hora" id="modal-ultima-hora" onclick="cerrarModalUltimaHoraSiEsAfuera(event)">
-        <div class="modal-ultima-hora-content">
-            <div class="modal-ultima-hora-header">
-                <div class="modal-ultima-hora-header-left">
-                    <span class="modal-ultima-hora-badge-mini">🔴 ÚLTIMA HORA</span>
-                    <h3 class="modal-ultima-hora-titulo" id="modal-ultima-hora-titulo"></h3>
-                    <div class="modal-ultima-hora-meta" id="modal-ultima-hora-meta"></div>
-                </div>
-                <button class="modal-ultima-hora-close" onclick="cerrarModalUltimaHora()">✕</button>
-            </div>
-            <div class="modal-ultima-hora-body">
-                <div class="modal-ultima-hora-resumen" id="modal-ultima-hora-resumen"></div>
-                <div class="modal-ultima-hora-footer">
-                    <p>📝 Resumen de Capibara News. Fuente original citada arriba.</p>
-                    <a id="modal-ultima-hora-link" href="#" target="_blank" rel="noopener noreferrer">Leer fuente original →</a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- FOOTER -->
@@ -2982,13 +1748,13 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h4>Secciones</h4>
                 <ul>
                     <li><a onclick="cambiarVista('inicio')">Inicio</a></li>
+                    <li><a onclick="cambiarVista('vecindario')">El Vecindario</a></li>
                     <li><a onclick="cambiarVista('rosca')">La Rosca</a></li>
                     <li><a onclick="cambiarVista('municipios')">Municipios</a></li>
+                    <li><a onclick="cambiarVista('capiviajero')">El Capi Viajero</a></li>
                     <li><a onclick="cambiarVista('billetera')">La Billetera</a></li>
                     <li><a onclick="cambiarVista('pastizal')">El Pastizal</a></li>
-                    <li><a onclick="cambiarVista('vecindario')">El Vecindario</a></li>
                     <li><a onclick="cambiarVista('termometro')">El Termómetro</a></li>
-                    <li><a onclick="cambiarVista('clasificados')">Clasificados</a></li>
                     <li><a onclick="cambiarVista('publicidad')">Publicidad</a></li>
                 </ul>
             </div>
@@ -2997,7 +1763,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <h4>Contáctenos</h4>
                 <ul>
                     <li><a onclick="cambiarVista('contacto')">Redacción</a></li>
-                    <li><a href="mailto:hablaleacapibaranews@outlook.com">Envío de material</a></li>
+                    <li><a href="mailto:capibaranewscontacto@outlook.com.ar">Envío de material</a></li>
                     <li><a onclick="cambiarVista('contacto')">Empleo / Pasantías</a></li>
                 </ul>
             </div>
@@ -3029,85 +1795,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
 
     <!-- SCRIPT DE FUNCIONALIDADES -->
     <script>
-                              // ===== ÚLTIMA HORA - LEE DESDE JSONBIN =====
-        const JSONBIN_ULTIMA_HORA_BIN_ID = "6ac004cfac6210605a0d8d79";
-        const JSONBIN_ULTIMA_HORA_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_ULTIMA_HORA_BIN_ID;
-        let ultimasNoticias = [];
-
-        function cargarNoticiasDesdeJSONBin() {
-            return fetch(JSONBIN_ULTIMA_HORA_URL + '/latest')
-                .then(res => res.json())
-                .then(data => {
-                    ultimasNoticias = (data.record && data.record.noticias) ? data.record.noticias : [];
-                    return ultimasNoticias;
-                })
-                .catch(err => {
-                    console.error('Error cargando noticias de Última Hora:', err);
-                    ultimasNoticias = [];
-                    return [];
-                });
-        }
-        // ============================================
-        function renderizarUltimaHora() {
-            const lista = document.getElementById('ultima-hora-lista');
-            if (!lista) return;
-
-            const noticiasActivas = ultimasNoticias.filter(n => n.activa === true).slice(0, 3);
-
-            if (noticiasActivas.length === 0) {
-                document.getElementById('ultima-hora-section').style.display = 'none';
-                return;
-            }
-
-            lista.innerHTML = '';
-            noticiasActivas.forEach(n => {
-                const item = document.createElement('div');
-                item.className = 'ultima-hora-item';
-                item.onclick = () => abrirModalUltimaHora(n.id);
-                item.innerHTML = `
-                    <p class="ultima-hora-item-titulo">${escapeHtml(n.titulo)}</p>
-                    <div class="ultima-hora-item-meta">
-                        <span class="fuente">📰 ${escapeHtml(n.fuente)}</span>
-                        <span>📅 ${escapeHtml(n.fecha)}</span>
-                    </div>
-                    <span class="ultima-hora-item-cta">🔍 Leer resumen completo →</span>
-                `;
-                lista.appendChild(item);
-            });
-        }
-
-        function abrirModalUltimaHora(id) {
-            const noticia = ultimasNoticias.find(n => n.id === id);
-            if (!noticia) return;
-
-            document.getElementById('modal-ultima-hora-titulo').textContent = noticia.titulo;
-            document.getElementById('modal-ultima-hora-meta').innerHTML = `
-                <span class="fuente">📰 ${escapeHtml(noticia.fuente)}</span>
-                <span>📅 ${escapeHtml(noticia.fecha)}</span>
-            `;
-            document.getElementById('modal-ultima-hora-resumen').innerHTML = noticia.resumen;
-            document.getElementById('modal-ultima-hora-link').href = noticia.link;
-
-            document.getElementById('modal-ultima-hora').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function cerrarModalUltimaHora() {
-            document.getElementById('modal-ultima-hora').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function cerrarModalUltimaHoraSiEsAfuera(event) {
-            if (event.target.id === 'modal-ultima-hora') {
-                cerrarModalUltimaHora();
-            }
-        }
-
-               window.addEventListener('DOMContentLoaded', () => {
-                      cargarNoticiasDesdeJSONBin().then(() => {
-                renderizarUltimaHora();
-            });
-        
+        // Lógica del contador dinámico de suscriptores
+        window.addEventListener('DOMContentLoaded', () => {
             const startDate = new Date('2025-07-09'); 
             const currentDate = new Date();
             
@@ -3144,13 +1833,13 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             const sidebarRosca = document.getElementById('sidebar-rosca');
             const sidebarBilletera = document.getElementById('sidebar-billetera');
             const sidebarVecindario = document.getElementById('sidebar-vecindario');
-            const sidebarContacto = document.getElementById('sidebar-contacto');
+            const sidebarCapiViajero = document.getElementById('sidebar-capiviajero');
 
             if(sidebarStandard) sidebarStandard.style.display = 'none';
             if(sidebarRosca) sidebarRosca.style.display = 'none';
             if(sidebarBilletera) sidebarBilletera.style.display = 'none';
             if(sidebarVecindario) sidebarVecindario.style.display = 'none';
-            if(sidebarContacto) sidebarContacto.style.display = 'none';
+            if(sidebarCapiViajero) sidebarCapiViajero.style.display = 'none';
 
             if (nombreVista === 'rosca') {
                 if(sidebarRosca) sidebarRosca.style.display = 'flex';
@@ -3158,8 +1847,8 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 if(sidebarBilletera) sidebarBilletera.style.display = 'flex';
             } else if (nombreVista === 'vecindario') {
                 if(sidebarVecindario) sidebarVecindario.style.display = 'flex';
-            } else if (nombreVista === 'contacto') {
-                if(sidebarContacto) sidebarContacto.style.display = 'flex';
+            } else if (nombreVista === 'capiviajero') {
+                if(sidebarCapiViajero) sidebarCapiViajero.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
             }
@@ -3173,6 +1862,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
+        // Lógica de selección de opciones de Encuesta (El Termómetro)
         function seleccionarOpcion(elemento, categoria, valor) {
             const contenedor = document.getElementById('grupo-' + categoria);
             const botones = contenedor.querySelectorAll('.pill-btn');
@@ -3210,6 +1900,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                        .replace(/'/g, "&#039;");
         }
 
+        // Lógica del Newsletter con Netlify Forms
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form[name="newsletter"]');
             if (form) {
@@ -3230,203 +1921,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                         alert('Hubo un error al suscribirte. Intentá de nuevo.');
                     });
                 });
-            }
-        });
-
-        const noticiasPorDistrito = {
-            "La Matanza": [
-                { titulo: "Obras viales congeladas en la zona oeste", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Reclamos barriales por falta de agua", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Presupuesto municipal bajo la lupa", fuente: "El Día", fecha: "26/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Nuevo operativo de seguridad en San Justo", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Fuerte debate por tasas municipales", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "La Plata": [
-                { titulo: "Tensión por reestructuración del transporte público", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Obras en el casco urbano generan caos", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Nuevo centro de salud en Los Hornos", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Conflicto docente en la capital bonaerense", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Inauguran luminarias LED en el centro", fuente: "El Día", fecha: "24/09/2026", link: "https://www.eldia.com/" }
-            ],
-            "Lomas de Zamora": [
-                { titulo: "Operativos nocturnos en corredores gastronómicos", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Reclamos por inseguridad en Banfield", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Avanzan las obras en la avenida Hipólito Yrigoyen", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevo destacamento policial en Temperley", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Feria de emprendedores en el parque", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "General Pueyrredón": [
-                { titulo: "Mar del Plata se prepara para la temporada alta", fuente: "La Capital", fecha: "28/09/2026", link: "https://www.lacapital.com.ar/" },
-                { titulo: "Obras en el puerto generan expectativa", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Nuevos vuelos low cost al exterior", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Crecimiento del turismo de escapada", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Inauguran paseo costero en Playa Grande", fuente: "La Capital", fecha: "24/09/2026", link: "https://www.lacapital.com.ar/" }
-            ],
-            "Quilmes": [
-                { titulo: "Vecinos exigen refuerzos en recolección de residuos", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Tormenta dejó anegamientos en Bernal", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Obras de cloacas en Quilmes Oeste", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevo polo gastronómico en la ribera", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Fuerte operativo de seguridad en el centro", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Almirante Brown": [
-                { titulo: "Nuevas luminarias LED en Burzaco", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Parque industrial en pleno crecimiento", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Obras de asfalto en Adrogué", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Reclamos por inseguridad en Glew", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Nuevo centro cultural en Longchamps", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Merlo": [
-                { titulo: "Fuerte debate por presupuesto hospitalario", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Reclamos por falta de médicos en el Hospital Héroes de Malvinas", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Obras de agua corriente en San Antonio de Padua", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevo destacamento policial en Libertad", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Feria de productores locales en el centro", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Moreno": [
-                { titulo: "Créditos blandos para pymes agroecológicas", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Obras viales en la Ruta 23", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Reclamos por inseguridad en Paso del Rey", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevo centro de salud en Francisco Álvarez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Avanzan las obras de cloacas en Cuartel V", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Florencio Varela": [
-                { titulo: "Inauguran centro de salud comunitario", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Reclamos por falta de iluminación en Villa Angélica", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Obras de asfalto en el centro", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevo operativo de seguridad en Bosques", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Feria de emprendedores en el parque", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "General San Martín": [
-                { titulo: "Avanzan las obras de asfaltado", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Reclamos por inseguridad en Villa Ballester", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Nuevo centro comercial en San Martín", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Obras de cloacas en José León Suárez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Inauguran polideportivo municipal", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Pases de factura en el conurbano": [
-                { titulo: "Intendentes rearman alianzas pensando en 2027", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Cumbre secreta en La Matanza por el armado legislativo", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "El peronismo bonaerense busca reordenarse", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Pases de factura entre bloques del conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Nuevos alineamientos en el Frente de Todos", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Sesión caliente en La Plata": [
-                { titulo: "Cruce por coparticipación en la Legislatura", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Fuerte debate por fondos a comunas opositoras", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Sesión maratónica en la Cámara de Diputados", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Tensión entre bloques por el presupuesto", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Nuevos cruces en el Senado bonaerense", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Operativo operativo": [
-                { titulo: "Reuniones cumbre en despachos oscuros", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "El armado territorial que no se ve", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Definen candidaturas sin hacer ruido", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Operativos políticos en el conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Los movimientos que no salen en los diarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Presupuesto bajo la lupa": [
-                { titulo: "Concejales analizan la letra chica del presupuesto", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Partidas para obras públicas demoradas", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Fuerte debate por el gasto municipal", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Auditoría sobre fondos educativos", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "El presupuesto bonaerense bajo sospecha", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "El teléfono descompuesto": [
-                { titulo: "Cortocircuitos entre Provincia y municipios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Demoras en convenios por falta de coordinación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Cruces entre carteras provinciales", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "El problema de la comunicación política", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Falta de diálogo entre Nación y Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "El changuito en terapia": [
-                { titulo: "Relevamiento de precios en ferias barriales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Mayoristas del conurbano y la inflación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "El precio de la carne sigue en aumento", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Verduras y frutas con fuertes subas", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Cómo ahorrar en el supermercado", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Paritarias bonaerenses": [
-                { titulo: "Nuevos tramos de aumento para estatales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Docentes bonaerenses reclaman reapertura", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Acuerdo salarial para la administración pública", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Los gremios evalúan la oferta oficial", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Paritarias: el pulso de la Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Tarifas y boletas": [
-                { titulo: "Impacto de las subas de servicios en comercios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Aumento de luz y gas: cómo afecta a las pymes", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "El peso de las tarifas en el bolsillo", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Boletas que no dan respiro", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Reclamos por errores en la facturación", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Descuentos con Cuenta DNI": [
-                { titulo: "Cronograma de ahorro en carnicerías", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "Descuentos en verdulerías y ferias", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Los mejores descuentos del fin de semana", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Cuenta DNI: beneficios de la semana", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Cómo aprovechar los descuentos bancarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ],
-            "Naftas y transporte": [
-                { titulo: "Nuevo incremento en combustibles", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
-                { titulo: "El costo logístico de delivery y remises", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
-                { titulo: "Nafta súper supera los $2.000", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Impacto en el transporte de carga", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
-                { titulo: "Subas que golpean al bolsillo", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
-            ]
-        };
-
-        function abrirModalDistrito(nombre) {
-            const modal = document.getElementById('modal-distrito');
-            const titulo = document.getElementById('modal-titulo');
-            const lista = document.getElementById('modal-noticias-lista');
-
-            titulo.textContent = 'Noticias: ' + nombre;
-            lista.innerHTML = '';
-
-            const noticias = noticiasPorDistrito[nombre] || [];
-
-            if (noticias.length === 0) {
-                lista.innerHTML = '<p style="text-align:center; color: var(--text-muted); font-style: italic;">Todavía no hay noticias cargadas para esta categoría.</p>';
-            } else {
-                noticias.forEach(n => {
-                    const link = document.createElement('a');
-                    link.className = 'noticia-item';
-                    link.href = n.link;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    link.innerHTML = `
-                        <p class="noticia-titulo">${escapeHtml(n.titulo)}</p>
-                        <div class="noticia-meta">
-                            <span class="fuente">📰 ${escapeHtml(n.fuente)}</span>
-                            <span>📅 ${escapeHtml(n.fecha)}</span>
-                        </div>
-                        <span class="noticia-link-arrow">Leer nota completa →</span>
-                    `;
-                    lista.appendChild(link);
-                });
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function cerrarModalDistrito() {
-            const modal = document.getElementById('modal-distrito');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function cerrarModalSiEsAfuera(event) {
-            if (event.target.id === 'modal-distrito') {
-                cerrarModalDistrito();
-            }
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                cerrarModalUltimaHora();
-                cerrarModalDistrito();
             }
         });
     </script>
