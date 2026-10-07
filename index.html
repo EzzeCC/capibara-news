@@ -2627,13 +2627,10 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-            <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="ad-box">
-                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
-                    <div class="placeholder-banner-600">
-                        ÚLTIMO ESPACIO<br>DISPONIBLE
-                        <small>300x600 · Publicidad Premium</small>
-                    </div>
+                            <!-- IMAGEN DE FABIÁN - SOLO VISIBLE EN EL PASTIZAL -->
+                <div class="ad-box" id="foto-fabian-pastizal" style="display: none;">
+                    <div class="ad-title">Publicidad</div>
+                    <img src="espacio05.png" alt="Fabián Suárez" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
                 </div>
 
                 <div class="ad-box">
@@ -3071,6 +3068,15 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 if(sidebarCapiViajero) sidebarCapiViajero.style.display = 'flex';
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
+            }
+                        // Mostrar la foto de Fabián SOLO en El Pastizal
+            const fotoFabian = document.getElementById('foto-fabian-pastizal');
+            if (fotoFabian) {
+                if (nombreVista === 'pastizal') {
+                    fotoFabian.style.display = 'block';
+                } else {
+                    fotoFabian.style.display = 'none';
+                }
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
