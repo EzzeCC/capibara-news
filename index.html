@@ -768,6 +768,172 @@
             .mapa-punto-label { font-size: 10px; }
             .mapa-distritos-titulo { font-size: 16px; }
         }
+                /* ===== RADAR REGIONAL EN VIVO ===== */
+        .radar-regional-wrapper {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid #e2e8f0;
+            border-left: 6px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 25px 25px 20px 25px;
+            margin-top: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+        .radar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #cbd5e1;
+        }
+        .radar-header h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .radar-live-badge {
+            background: #e53935;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulseRadar 1.8s infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .radar-live-badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+            display: inline-block;
+        }
+        @keyframes pulseRadar {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7); }
+            50% { box-shadow: 0 0 0 8px rgba(229, 57, 53, 0); }
+        }
+        .radar-filtros {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .radar-filtro-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+        .radar-filtro-btn:hover {
+            background: #e2e8f0;
+        }
+        .radar-filtro-btn.active {
+            background: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+        .radar-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 520px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .radar-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 6px;
+            padding: 12px 16px;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .radar-item:hover {
+            border-left-color: var(--lima-color);
+            box-shadow: 0 4px 12px rgba(31, 78, 95, 0.1);
+            transform: translateX(4px);
+        }
+        .radar-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            background: #e0f2fe;
+            padding: 2px 8px;
+            border-radius: 3px;
+            align-self: flex-start;
+        }
+        .radar-titulo {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            line-height: 1.35;
+            transition: color 0.2s;
+        }
+        .radar-titulo:hover {
+            color: var(--lima-color);
+            text-decoration: underline;
+        }
+        .radar-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .radar-meta .fuente {
+            color: var(--lima-color);
+            font-weight: bold;
+        }
+        .radar-loading {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 14px;
+        }
+        .radar-vacio {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 14px;
+        }
+        @media (max-width: 700px) {
+            .radar-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .radar-header h3 {
+                font-size: 16px;
+            }
+        }
 
         .article-box-card.clickable-municipio {
             cursor: pointer;
@@ -2077,6 +2243,25 @@
                         </div>
                     </div>
                 </div>
+                                <!-- ===== RADAR REGIONAL EN VIVO ===== -->
+                <div class="radar-regional-wrapper" id="radar-regional-wrapper">
+                    <div class="radar-header">
+                        <h3>
+                            📡 Radar de la Región
+                            <span class="radar-live-badge">EN VIVO</span>
+                        </h3>
+                        <div class="radar-filtros" id="radar-filtros">
+                            <button class="radar-filtro-btn active" onclick="filtrarRadar('todos', this)">Todos</button>
+                            <button class="radar-filtro-btn" onclick="filtrarRadar('Almirante Brown', this)">Brown</button>
+                            <button class="radar-filtro-btn" onclick="filtrarRadar('Quilmes', this)">Quilmes</button>
+                            <button class="radar-filtro-btn" onclick="filtrarRadar('La Matanza', this)">La Matanza</button>
+                            <button class="radar-filtro-btn" onclick="filtrarRadar('La Plata', this)">La Plata</button>
+                        </div>
+                    </div>
+                    <div class="radar-feed" id="radar-feed">
+                        <p class="radar-loading">🔄 Cargando noticias de la región...</p>
+                    </div>
+                </div>
             </section>
         </main>
 
@@ -3079,7 +3264,9 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                     fotoFabian.style.display = 'none';
                 }
             }
-
+            if (nombreVista === 'municipios' && radarNoticias.length === 0) {
+                cargarRadarRegional();
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -3345,6 +3532,93 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 cerrarModalDistrito();
             }
         });
+                // ===== RADAR REGIONAL EN VIVO =====
+        let radarNoticias = [];
+        let radarFiltroActivo = 'todos';
+
+        const RADAR_DISTRITOS = [
+            'Almirante Brown', 'Quilmes', 'La Matanza', 'La Plata',
+            'Lomas de Zamora', 'Merlo', 'Moreno', 'Florencio Varela',
+            'General San Martín', 'General Pueyrredón'
+        ];
+
+        async function cargarRadarRegional() {
+            const feed = document.getElementById('radar-feed');
+            if (!feed) return;
+
+            feed.innerHTML = '<p class="radar-loading">🔄 Cargando noticias de la región...</p>';
+
+            const resultados = [];
+
+            // Hacemos las consultas en paralelo
+            const promesas = RADAR_DISTRITOS.map(async (distrito) => {
+                try {
+                    const query = encodeURIComponent(distrito + ' Buenos Aires');
+                    const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=es-419&gl=AR&ceid=AR:es-419`;
+                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+                    const res = await fetch(apiUrl);
+                    const data = await res.json();
+
+                    return (data.items || []).slice(0, 2).map(item => ({
+                        distrito: distrito,
+                        titulo: item.title,
+                        link: item.link,
+                        fecha: item.pubDate,
+                        fuente: item.author || 'Google News'
+                    }));
+                } catch (err) {
+                    console.error('Error cargando distrito:', distrito, err);
+                    return [];
+                }
+            });
+
+            const resultadosPorDistrito = await Promise.all(promesas);
+            resultadosPorDistrito.forEach(arr => resultados.push(...arr));
+
+            // Ordenamos por fecha descendente
+            resultados.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+            radarNoticias = resultados;
+            renderizarRadar();
+        }
+
+        function renderizarRadar() {
+            const feed = document.getElementById('radar-feed');
+            if (!feed) return;
+
+            let noticiasAMostrar = radarNoticias;
+            if (radarFiltroActivo !== 'todos') {
+                noticiasAMostrar = radarNoticias.filter(n => n.distrito === radarFiltroActivo);
+            }
+
+            if (noticiasAMostrar.length === 0) {
+                feed.innerHTML = '<p class="radar-vacio">No hay noticias recientes para este filtro. Probá con otro distrito.</p>';
+                return;
+            }
+
+            feed.innerHTML = '';
+            noticiasAMostrar.slice(0, 25).forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'radar-item';
+                div.innerHTML = `
+                                       <span class="radar-tag">${escapeHtml(item.distrito)}</span>
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="radar-titulo">${escapeHtml(item.titulo)}</a>
+                    <div class="radar-meta">
+                        <span class="fuente">${escapeHtml(item.fuente)}</span>
+                        <span>${new Date(item.fecha).toLocaleDateString('es-AR')}</span>
+                    </div>
+                ;
+                feed.appendChild(div);
+            });
+        }
+
+        function filtrarRadar(filtro, boton) {
+            radarFiltroActivo = filtro;
+            document.querySelectorAll('.radar-filtro-btn').forEach(b => b.classList.remove('active'));
+            if (boton) boton.classList.add('active');
+            renderizarRadar();
+        }
     </script>
 
     <!-- SCRIPT DEL CONFESIONARIO CON JSONBIN -->
