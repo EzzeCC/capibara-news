@@ -3343,7 +3343,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
                 function cambiarVista(nombreVista) {
-            // ... (todo el código que ya tenías) ...
+            
             
             // Cargar el Radar Regional solo la primera vez que se entra a Municipios
             if (nombreVista === 'municipios' && radarNoticias.length === 0) {
@@ -3352,7 +3352,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ⬇️ ACÁ VAN LAS FUNCIONES DEL POP-UP ⬇️
+               // ===== FUNCIONES DEL POP-UP =====
         function abrirPopup() {
             document.getElementById('popup-publicidad').classList.add('active');
             document.body.style.overflow = 'hidden'; 
@@ -3366,10 +3366,7 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(abrirPopup, 1500); 
         });
-        // ⬆️ FIN DEL POP-UP ⬆️
-
-        function buscarMunicipio(nombre) {
-            // ...
+        // ===== FIN DEL POP-UP =====
 
         function buscarMunicipio(nombre) {
             if(nombre.trim() !== "") {
