@@ -1894,9 +1894,82 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 12px rgba(0,0,0,0.3);
         }
+                /* ===== POP-UP DE ENTRADA ===== */
+        .popup-overlay {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(16, 38, 48, 0.85); /* Fondo oscuro semitransparente */
+            z-index: 9999; /* Por encima de todo */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .popup-overlay.active {
+            display: flex;
+        }
+        .popup-content {
+            position: relative;
+            background: transparent;
+            max-width: 600px; /* Ancho máximo de la imagen */
+            width: 100%;
+            text-align: center;
+            animation: slideUpModal 0.4s ease;
+        }
+        .popup-close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #e53935;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background 0.2s;
+            z-index: 10;
+        }
+        .popup-close-btn:hover {
+            background: #c62828;
+            transform: scale(1.1);
+        }
+        .popup-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block;
+        }
+        
+        /* Para que en celulares el botón no se salga de la pantalla */
+        @media (max-width: 600px) {
+            .popup-close-btn {
+                top: -10px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+        <!-- POP-UP DE ENTRADA (PUBLICIDAD) -->
+    <!-- Cambiá "espacio07.jpeg" por el nombre de la imagen que quieras mostrar -->
+    <div class="popup-overlay" id="popup-publicidad">
+        <div class="popup-content">
+            <button class="popup-close-btn" onclick="cerrarPopup()">✕</button>
+            <img src="espacio07.jpeg" alt="Publicidad" class="popup-img">
+        </div>
+    </div>
 
     <!-- BARRA SUPERIOR -->
     <div class="top-bar">
@@ -3269,6 +3342,34 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+                function cambiarVista(nombreVista) {
+            // ... (todo el código que ya tenías) ...
+            
+            // Cargar el Radar Regional solo la primera vez que se entra a Municipios
+            if (nombreVista === 'municipios' && radarNoticias.length === 0) {
+                cargarRadarRegional();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ⬇️ ACÁ VAN LAS FUNCIONES DEL POP-UP ⬇️
+        function abrirPopup() {
+            document.getElementById('popup-publicidad').classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function cerrarPopup() {
+            document.getElementById('popup-publicidad').classList.remove('active');
+            document.body.style.overflow = ''; 
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(abrirPopup, 1500); 
+        });
+        // ⬆️ FIN DEL POP-UP ⬆️
+
+        function buscarMunicipio(nombre) {
+            // ...
 
         function buscarMunicipio(nombre) {
             if(nombre.trim() !== "") {
