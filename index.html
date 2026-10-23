@@ -1946,138 +1946,151 @@
         </main>
 
         <!-- VISTA 3: MUNICIPIOS -->
-        <main id="vista-municipios" class="page-view">
-            <section class="content-card">
-                <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
-                <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
+       <main id="vista-municipios" class="page-view">
+    <section class="content-card">
+        <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
+        <p>Monitoreo en tiempo real del pulso de las 10 cabeceras urbanas más influyentes de la Provincia de Buenos Aires. <strong style="color: var(--lima-color);">Hacé click en cada distrito para ver las 5 noticias más relevantes.</strong></p>
 
-                <div class="mapa-distritos-wrapper">
-                    <h3 class="mapa-distritos-titulo">🗺️ Mapa Interactivo de Distritos</h3>
-                    <p class="mapa-distritos-subtitulo">Hacé click en cada distrito para ver las 5 noticias más relevantes</p>
-                    
-                    <div class="mapa-canvas">
-                        <span class="mapa-region" style="top: 8%; left: 5%;">Zona Norte</span>
-                        <span class="mapa-region" style="top: 45%; left: 5%;">Zona Oeste</span>
-                        <span class="mapa-region" style="top: 65%; left: 35%;">Zona Sur</span>
-                        <span class="mapa-region" style="top: 90%; left: 65%;">Interior / Costa</span>
+        <!-- TITULAR DE IMPACTO DE LA SEMANA -->
+        <div style="background: linear-gradient(135deg, #102630, #1F4E5F); border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin-bottom: 30px; color: white;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+                <span style="background: #e53935; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase;">🔥 Impacto Semanal</span>
+                <span style="font-size: 12px; color: #b0bec5;">Actualizado: 23/10/2026</span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #fff; font-size: 20px;">Alonso aseguró que se redujeron las entraderas y el robo de autos en la Provincia</h3>
+            <p style="margin: 0; font-size: 14px; color: #e0f7fa;">El ministro de Seguridad bonaerense destacó la coordinación con los municipios y pidió adherir al programa Entramados para intervenir con menores.</p>
+        </div>
 
-                        <div class="mapa-punto" style="top: 15%; left: 65%;" onclick="abrirModalDistrito('Tigre')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">T</div>
-                            <div class="mapa-punto-label">Tigre</div>
-                        </div>
+        <!-- MAPA INTERACTIVO (Mantenemos tu estructura) -->
+        <div class="mapa-distritos-wrapper">
+            <h3 class="mapa-distritos-titulo">🗺️ Mapa Interactivo de Distritos</h3>
+            <p class="mapa-distritos-subtitulo">Hacé click en cada distrito para ver las 5 noticias más relevantes</p>
+            
+            <div class="mapa-canvas">
+                <span class="mapa-region" style="top: 8%; left: 5%;">Zona Norte</span>
+                <span class="mapa-region" style="top: 45%; left: 5%;">Zona Oeste</span>
+                <span class="mapa-region" style="top: 65%; left: 35%;">Zona Sur</span>
+                <span class="mapa-region" style="top: 90%; left: 65%;">Interior / Costa</span>
 
-                        <div class="mapa-punto" style="top: 20%; left: 45%;" onclick="abrirModalDistrito('San Isidro')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">SI</div>
-                            <div class="mapa-punto-label">San Isidro</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 28%; left: 58%;" onclick="abrirModalDistrito('General San Martín')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">SM</div>
-                            <div class="mapa-punto-label">San Martín</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 42%; left: 38%;" onclick="abrirModalDistrito('Morón')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">MO</div>
-                            <div class="mapa-punto-label">Morón</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 50%; left: 22%;" onclick="abrirModalDistrito('Merlo')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">ME</div>
-                            <div class="mapa-punto-label">Merlo</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 55%; left: 38%;" onclick="abrirModalDistrito('La Matanza')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LM</div>
-                            <div class="mapa-punto-label">La Matanza</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 68%; left: 52%;" onclick="abrirModalDistrito('Lomas de Zamora')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LZ</div>
-                            <div class="mapa-punto-label">Lomas de Zamora</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 72%; left: 68%;" onclick="abrirModalDistrito('Quilmes')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">Q</div>
-                            <div class="mapa-punto-label">Quilmes</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 85%; left: 55%;" onclick="abrirModalDistrito('La Plata')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">LP</div>
-                            <div class="mapa-punto-label">La Plata</div>
-                        </div>
-
-                        <div class="mapa-punto" style="top: 88%; left: 82%;" onclick="abrirModalDistrito('General Pueyrredón')">
-                            <div class="mapa-punto-pulse"></div>
-                            <div class="mapa-punto-circulo">GP</div>
-                            <div class="mapa-punto-label">Gral. Pueyrredón</div>
-                        </div>
-                    </div>
+                <div class="mapa-punto" style="top: 15%; left: 65%;" onclick="abrirModalDistrito('Tigre')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">T</div>
+                    <div class="mapa-punto-label">Tigre</div>
                 </div>
 
-                <div class="articles-grid">
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Matanza')">
-                        <h4>1. La Matanza</h4>
-                        <p>Obras viales congeladas y reclamos barriales marcan el pulso de la semana en la zona oeste.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Plata')">
-                        <h4>2. La Plata</h4>
-                        <p>Tensión en el Casco Urbano por la reestructuración de los recorridos de transporte público.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Lomas de Zamora')">
-                        <h4>3. Lomas de Zamora</h4>
-                        <p>Avanzan los operativos nocturnos de prevención vial en los principales corredores gastronómicos.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General Pueyrredón')">
-                        <h4>4. General Pueyrredón</h4>
-                        <p>Mar del Plata calienta motores para la temporada alta con foco en la llegada de turismo de escapada.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Quilmes')">
-                        <h4>5. Quilmes</h4>
-                        <p>Vecinos exigen refuerzos en la recolección de residuos tras las últimas jornadas de tormenta.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Almirante Brown')">
-                        <h4>6. Almirante Brown</h4>
-                        <p>Apertura de nuevas luminarias LED en accesos clave del parque industrial de Burzaco.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Merlo')">
-                        <h4>7. Merlo</h4>
-                        <p>Fuerte debate en el Concejo Deliberante por el presupuesto asignado al mantenimiento hospitalario.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Moreno')">
-                        <h4>8. Moreno</h4>
-                        <p>Lanzan programa de financiamiento y créditos blandos para pymes agroecológicas de la zona.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Florencio Varela')">
-                        <h4>9. Florencio Varela</h4>
-                        <p>Inauguran centro de salud comunitario enfocado en la atención pediátrica preventiva.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General San Martín')">
-                        <h4>10. General San Martín</h4>
-                        <p>Planes de asfaltado y reparación de colectoras avanzan sobre las arterias comerciales principales.</p>
-                    </div>
+                <div class="mapa-punto" style="top: 20%; left: 45%;" onclick="abrirModalDistrito('San Isidro')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">SI</div>
+                    <div class="mapa-punto-label">San Isidro</div>
                 </div>
 
-                <div class="marquesina-interna">
-                    <div class="marquesina-foto">
-                        ESPACIO<br>DISPONIBLE
-                    </div>
-                    <div class="marquesina-texto-container">
-                        <div class="marquesina-texto">
-                            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-                        </div>
-                    </div>
+                <div class="mapa-punto" style="top: 28%; left: 58%;" onclick="abrirModalDistrito('General San Martín')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">SM</div>
+                    <div class="mapa-punto-label">San Martín</div>
                 </div>
-            </section>
-        </main>
+
+                <div class="mapa-punto" style="top: 42%; left: 38%;" onclick="abrirModalDistrito('Morón')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">MO</div>
+                    <div class="mapa-punto-label">Morón</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 50%; left: 22%;" onclick="abrirModalDistrito('Merlo')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">ME</div>
+                    <div class="mapa-punto-label">Merlo</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 55%; left: 38%;" onclick="abrirModalDistrito('La Matanza')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">LM</div>
+                    <div class="mapa-punto-label">La Matanza</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 68%; left: 52%;" onclick="abrirModalDistrito('Lomas de Zamora')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">LZ</div>
+                    <div class="mapa-punto-label">Lomas de Zamora</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 72%; left: 68%;" onclick="abrirModalDistrito('Quilmes')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">Q</div>
+                    <div class="mapa-punto-label">Quilmes</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 85%; left: 55%;" onclick="abrirModalDistrito('La Plata')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">LP</div>
+                    <div class="mapa-punto-label">La Plata</div>
+                </div>
+
+                <div class="mapa-punto" style="top: 88%; left: 82%;" onclick="abrirModalDistrito('General Pueyrredón')">
+                    <div class="mapa-punto-pulse"></div>
+                    <div class="mapa-punto-circulo">GP</div>
+                    <div class="mapa-punto-label">Gral. Pueyrredón</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TARJETAS DE MUNICIPIOS ACTUALIZADAS -->
+        <div class="articles-grid">
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Plata')">
+                <h4>1. La Plata</h4>
+                <p>Kicillof entregó 175 viviendas en Melchor Romero para víctimas de violencia de género y personas externadas.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('General Pueyrredón')">
+                <h4>2. General Pueyrredón</h4>
+                <p>Javier Alonso destacó la reducción de entraderas en Mar del Plata y pidió adherir al programa Entramados.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Bahía Blanca')">
+                <h4>3. Bahía Blanca</h4>
+                <p>El intendente Susbielles presentó un nuevo plan de fomento para obras de asfalto, cordón cuneta y veredas.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('La Matanza')">
+                <h4>4. La Matanza</h4>
+                <p>Más de 80 intendentes en la Provincia no podrán reelegir; el distrito ya busca sucesores para 2027.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Quilmes')">
+                <h4>5. Quilmes</h4>
+                <p>Operativos de prevención y refuerzo de patrullaje en los principales corredores comerciales del distrito.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Almirante Brown')">
+                <h4>6. Almirante Brown</h4>
+                <p>El colapso sanitario y la falta de insumos marcan la agenda local tras la entrevista a Fabián Suárez.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Escobar')">
+                <h4>7. Escobar</h4>
+                <p>Ariel Sujarchuk escaló al segundo puesto del ranking de imagen de intendentes del GBA con 59,6%.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Esteban Echeverría')">
+                <h4>8. Esteban Echeverría</h4>
+                <p>Fernando Gray lidera el ranking de imagen de octubre con el mejor diferencial entre los 24 intendentes.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Lomas de Zamora')">
+                <h4>9. Lomas de Zamora</h4>
+                <p>Federico Otermín se mantiene en el podio de los jefes comunales mejor valorados del Conurbano.</p>
+            </div>
+            <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Pilar')">
+                <h4>10. Pilar</h4>
+                <p>Federico Achával alcanzó el cuarto lugar en el ranking de imagen con un 57,9% de valoración positiva.</p>
+            </div>
+        </div>
+
+        <!-- MARQUESINA INTERNA (Mantenemos tu estructura) -->
+        <div class="marquesina-interna">
+            <div class="marquesina-foto">
+                ESPACIO<br>DISPONIBLE
+            </div>
+            <div class="marquesina-texto-container">
+                <div class="marquesina-texto">
+                    ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
         <!-- VISTA NUEVA: EL CAPI VIAJERO (reemplaza a Clasificados) -->
         <main id="vista-capiviajero" class="page-view">
