@@ -28,15 +28,15 @@
             color: var(--text-color);
             line-height: 1.6;
         }
-        .top-bar {
-            background-color: #102630;
+                .top-bar {
+            background-color: #0d1e26; /* Un tono más oscuro y profundo */
             color: #ffffff;
-            padding: 8px 20px;
-            font-size: 13px;
+            padding: 10px 20px;
+            font-size: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 1px solid #1f4554;
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -139,57 +139,64 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .municipio-input {
-            background: #142f3a;
-            color: #fff;
-            border: 1px solid #285467;
-            padding: 5px 10px;
-            border-radius: 4px;
+                .municipio-input {
+            background: #ffffff;
+            color: #333;
+            border: none;
+            padding: 6px 12px 6px 30px; /* Espacio para el icono */
+            border-radius: 20px;
             font-size: 12px;
             outline: none;
-            width: 180px;
-            transition: border-color 0.2s;
-        }
-        .municipio-input:focus {
-            border-color: var(--accent-color);
+            width: 200px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23607D8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+            background-repeat: no-repeat;
+            background-position: 10px center;
         }
 
         header {
             background-color: var(--card-bg);
-            border-bottom: 3px solid var(--accent-color);
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 20px 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            position: relative;
         }
-        header h1 {
+         header h1 {
             color: var(--primary-color);
             margin: 0;
-            font-size: 36px;
-            letter-spacing: 1px;
+            font-size: 48px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 900;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
         }
         header p {
             color: var(--text-muted);
             margin: 5px 0 0 0;
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* MARQUESINA PROMOCIONAL */
         .marquesina-promo {
-            background: linear-gradient(90deg, #1F4E5F 0%, #163844 100%);
-            border-top: 3px solid var(--lima-color);
-            border-bottom: 3px solid var(--lima-color);
+            background: #102630;
             padding: 0;
             overflow: hidden;
             display: flex;
             align-items: center;
-            height: 90px;
+            height: 60px; /* Más fina */
             position: relative;
             width: 100%;
             max-width: 100%;
             box-sizing: border-box;
+            border-bottom: 1px solid #1f4554;
         }
+
         .marquesina-promo .marquesina-foto {
             flex-shrink: 0;
             width: 90px;
@@ -1731,37 +1738,24 @@
     </style>
 </head>
 <body>
-
-    <!-- BARRA SUPERIOR -->
+       <!-- BARRA SUPERIOR -->
     <div class="top-bar">
         <div class="top-left-group">
             <div class="weather-widget">
-                <span style="font-size: 16px;">☀️</span>
+                <span style="font-size: 14px;">☀️</span>
                 <div class="weather-info">
-                    <strong>25 °C</strong> Soleado<br>
-                    <span style="color: var(--accent-color); font-size: 10px;">Provincia de Bs. As. ▼</span>
-                </div>
-                <div class="weather-extended">
-                    <h5>Pronóstico Extendible</h5>
-                    <div class="forecast-day"><span>Viernes 25</span> <strong>25° / 14° ☀️</strong></div>
-                    <div class="forecast-day"><span>Sábado 26</span> <strong>22° / 12° ⛅</strong></div>
-                    <div class="forecast-day"><span>Domingo 27</span> <strong>19° / 10° 🌧️</strong></div>
-                    <div class="forecast-day"><span>Lunes 28</span> <strong>23° / 11° ☀️</strong></div>
+                    <strong>25 °C</strong> Soleado
                 </div>
             </div>
 
             <a href="https://dolarhoy.com/" target="_blank" class="dolar-widget">
-                <span>💵</span>
-                <div>
-                    Dólar Hoy: <strong>$1.250 / $1.270</strong>
-                </div>
+                <span style="font-size: 14px;">💵</span>
+                <div>Dólar: <strong>$1.250 / $1.270</strong></div>
             </a>
         </div>
         
         <div class="search-municipio-container">
-            <span class="search-municipio-label">BUSCÁ TU DISTRITO:</span>
-            <input list="lista-municipios" id="input-municipio" class="municipio-input" placeholder="Escribí tu municipio..." onchange="buscarMunicipio(this.value)">
-            
+            <input list="lista-municipios" id="input-municipio" class="municipio-input" placeholder="Buscar distrito..." onchange="buscarMunicipio(this.value)">
             <datalist id="lista-municipios">
                 <option value="Adolfo Alsina"></option>
                 <option value="Almirante Brown"></option>
@@ -1791,6 +1785,7 @@
         </div>
     </div>
 
+    <!-- HEADER CON ESTILO DE DIARIO -->
     <header>
         <h1>Capibara News</h1>
         <p>La realidad de la región, masticada y digerida</p>
@@ -1798,16 +1793,15 @@
 
     <!-- MARQUESINA PROMOCIONAL -->
     <div class="marquesina-promo">
-        <div class="marquesina-foto">
-            ESPACIO<br>DISPONIBLE
+        <div class="marquesina-foto" style="width: 60px; height: 60px; background: #163844; border-right: 1px solid #1f4554; font-size: 9px;">
+            ESPACIO<br>DISP.
         </div>
         <div class="marquesina-texto-container">
-            <div class="marquesina-texto">
-                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span>
+            <div class="marquesina-texto" style="font-size: 16px; letter-spacing: 1px; color: #b0bec5; animation: desplazarMarquesina 30s linear infinite;">
+                <span style="color: var(--accent-color);">►</span> ESPACIO PUBLICITARIO DISPONIBLE <span style="color: var(--accent-color);">►</span> ANUNCIÁ TU MARCA EN EL DIARIO LÍDER DE LA REGIÓN <span style="color: var(--accent-color);">►</span> ESPACIO PUBLICITARIO DISPONIBLE <span style="color: var(--accent-color);">►</span> ANUNCIÁ TU MARCA EN EL DIARIO LÍDER DE LA REGIÓN <span style="color: var(--accent-color);">►</span>
             </div>
         </div>
     </div>
-
     <!-- SECCIÓN ÚLTIMA HORA -->
     <section class="ultima-hora-section" id="ultima-hora-section">
         <div class="ultima-hora-container">
