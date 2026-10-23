@@ -1909,28 +1909,47 @@
                 <h2 class="article-title">La Rosca</h2>
                 <p>Pasillos de legislaturas, concejos deliberantes y los movimientos políticos sin filtro. Lo que charlan a puertas cerradas. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
 
-                <div class="articles-grid">
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Pases de factura en el conurbano')">
-                        <h4>1. Pases de factura en el conurbano</h4>
-                        <p>Intendentes reconfiguran alianzas silenciosas pensando en el armado legislativo del próximo año.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Sesión caliente en La Plata')">
-                        <h4>2. Sesión caliente en La Plata</h4>
-                        <p>Fuerte cruce entre bloques por la distribución de fondos coparticipables a comunas opositoras.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Operativo operativo')">
-                        <h4>3. Operativo operativo</h4>
-                        <p>Reuniones cumbre en despachos oscuros para definir candidaturas territoriales sin hacer mucho ruido.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('Presupuesto bajo la lupa')">
-                        <h4>4. Presupuesto bajo la lupa</h4>
-                        <p>Concejales analizan letra chica de partidas destinadas a obras públicas demoradas.</p>
-                    </div>
-                    <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El teléfono descompuesto')">
-                        <h4>5. El teléfono descompuesto</h4>
-                        <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
-                    </div>
-                </div>
+                <div class="articles-grid" style="gap: 20px;">
+    <div class="article-box-card clickable-municipio" style="border-left-color: #ef4444; background: #fffafb;" onclick="abrirModalDistrito('El apriete del presupuesto')">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="color: #b91c1c; margin-top: 0;">💣 El apriete del presupuesto</h4>
+            <span style="font-size: 10px; background: #fee2e2; color: #b91c1c; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">URGENTE</span>
+        </div>
+        <p>Concejales opositores denuncian que les retuvieron partidas de obras barriales para obligarlos a aprobar el endeudamiento municipal.</p>
+    </div>
+
+    <div class="article-box-card clickable-municipio" style="border-left-color: #f59e0b; background: #fffcf5;" onclick="abrirModalDistrito('Fuego amigo en el PJ')">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="color: #b45309; margin-top: 0;">🔥 Fuego amigo en el PJ</h4>
+            <span style="font-size: 10px; background: #fef3c7; color: #b45309; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">INTERNA</span>
+        </div>
+        <p>Intendentes del conurbano le soltaron la mano al armado provincial. Reuniones secretas en Capital para armar una lista por afuera.</p>
+    </div>
+
+    <div class="article-box-card clickable-municipio" style="border-left-color: #8b5cf6; background: #faf5ff;" onclick="abrirModalDistrito('La caja de la salud')">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="color: #6d28d9; margin-top: 0;">🩺 La caja de la salud</h4>
+            <span style="font-size: 10px; background: #f3e8ff; color: #6d28d9; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">FILTRACIÓN</span>
+        </div>
+        <p>Auditores detectaron sobreprecios millonarios en la compra de insumos para hospitales provinciales. Hay funcionarios apuntados.</p>
+    </div>
+
+    <div class="article-box-card clickable-municipio" style="border-left-color: #3b82f6; background: #f0f9ff;" onclick="abrirModalDistrito('El operativo silencio')">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="color: #1d4ed8; margin-top: 0;">🤫 El operativo silencio</h4>
+            <span style="font-size: 10px; background: #dbeafe; color: #1d4ed8; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">ROSCA PURA</span>
+        </div>
+        <p>El gobierno provincial salió a blindar a un intendente cuestionado por una causa de corrupción para no perder la gobernabilidad en la Cuarta.</p>
+    </div>
+
+    <div class="article-box-card clickable-municipio" style="border-left-color: #64748b; background: #f8fafc;" onclick="abrirModalDistrito('Carpetazo en el Concejo')">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4 style="color: #334155; margin-top: 0;">🗄️ Carpetazo en el Concejo</h4>
+            <span style="font-size: 10px; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">OCULTO</span>
+        </div>
+        <p>Un pedido de jury de enjuiciamiento contra un secretario de Obras Públicas desapareció misteriosamente de la mesa de entradas.</p>
+    </div>
+</div>
 
                 <div class="marquesina-interna">
                     <div class="marquesina-foto">
@@ -3328,6 +3347,41 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "El impacto del nuevo aumento en el transporte de cargas y delivery", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
                 { titulo: "El precio del gasoil y su efecto en la inflación de octubre", fuente: "El Cronista", fecha: "20/10/2026", link: "https://www.cronista.com/" },
                 { titulo: "Subas en combustibles: qué esperar para la próxima semana", fuente: "Clarín", fecha: "19/10/2026", link: "https://www.clarin.com/" }
+            ],
+                        "El apriete del presupuesto": [
+                { titulo: "Concejales denuncian apriete oficial por la aprobación del Presupuesto 2027", fuente: "La Nación", fecha: "23/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Retienen partidas de obras y peligra la sesión en el Concejo Deliberante", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Oposición exige que el Ejecutivo aclare el destino de los fondos retenidos", fuente: "Clarín", fecha: "21/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "El bloque oficialista suspende la sesión por falta de quórum tras las amenazas", fuente: "Página/12", fecha: "20/10/2026", link: "https://www.pagina12.com.ar/" },
+                { titulo: "Denuncian 'extorsión legislativa' en el Conurbano por el endeudamiento", fuente: "El Día", fecha: "19/10/2026", link: "https://www.eldia.com/" }
+            ],
+            "Fuego amigo en el PJ": [
+                { titulo: "Interna en el PJ: intendentes armadores buscan desmarcarse de la conducción provincial", fuente: "El Destape", fecha: "23/10/2026", link: "https://www.eldestapeweb.com/" },
+                { titulo: "Reuniones secretas en Capital: el armado que incomoda en La Plata", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Malestar en la Rosada por los movimientos de intendentes del conurbano", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Un sector del peronismo advierte por una 'fuga' de dirigentes hacia otros espacios", fuente: "Clarín", fecha: "20/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "El fuego amigo que preocupa a los jefes comunales de la Primera", fuente: "El Día", fecha: "19/10/2026", link: "https://www.eldia.com/" }
+            ],
+            "La caja de la salud": [
+                { titulo: "Escándalo en salud: detectan sobreprecios millonarios en compras de insumos", fuente: "Clarín", fecha: "23/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Auditoría revela que faltan respiradores en hospitales clave de la Provincia", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Apuntan a funcionarios por desvíos de fondos en la compra de medicamentos", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "La oposición pide juicio político por la crisis sanitaria en el interior", fuente: "Página/12", fecha: "20/10/2026", link: "https://www.pagina12.com.ar/" },
+                { titulo: "Filtración de un chat compromete a un director de área por la caja de la salud", fuente: "El Destape", fecha: "19/10/2026", link: "https://www.eldestapeweb.com/" }
+            ],
+            "El operativo silencio": [
+                { titulo: "El Ejecutivo sale a blindar a un intendente cuestionado por causas judiciales", fuente: "Infobae", fecha: "23/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Gobernabilidad en riesgo: el armado provincial prioriza los votos antes que la ética", fuente: "Clarín", fecha: "22/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Silencio ensordecedor: nadie en la Legislatura quiere hablar de la causa", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Denuncian un pacto de impunidad para proteger al jefe comunal", fuente: "Página/12", fecha: "20/10/2026", link: "https://www.pagina12.com.ar/" },
+                { titulo: "Los medios oficialistas minimizan la investigación judicial en plena campaña", fuente: "El Diario Sur", fecha: "19/10/2026", link: "https://www.eldiariosur.com/" }
+            ],
+            "Carpetazo en el Concejo": [
+                { titulo: "Misterio en el Concejo: desapareció el pedido de jury contra el secretario de Obras Públicas", fuente: "El Día", fecha: "23/10/2026", link: "https://www.eldia.com/" },
+                { titulo: "Vecinos indignados: el expediente con más de 200 firmas no aparece", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Bloques opositores exigen explicaciones por el 'carpetazo' en mesa de entradas", fuente: "Clarín", fecha: "21/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Investigan si hubo mano política en la desaparición de la denuncia", fuente: "La Nación", fecha: "20/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "El oficialismo desmiente los rumores, pero no encuentra el expediente", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
             ]
         };
 
