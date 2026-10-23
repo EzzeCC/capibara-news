@@ -2614,36 +2614,65 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             </article>
         </main>
 
-        <!-- VISTA: EL VECINDARIO -->
+                <!-- VISTA: EL VECINDARIO -->
         <main id="vista-vecindario" class="page-view">
             <section class="content-card">
-                <h2 class="article-title">El Vecindario</h2>
-                <p>Acá no miramos los grandes titulares de las cabeceras. Acá nos metemos en los pueblos, en los barrios, en las localidades que no salen en los medios masivos. Historias de vecinos que se organizan, denuncian lo que nadie ve y celebran sus pequeñas victorias. Bienvenido al lugar donde la noticia la hace la gente.</p>
+                <h2 class="article-title">🚨 El Radar del Vecindario</h2>
+                <p>Acá no miramos los grandes titulares. Acá salimos a la calle a mostrar lo que la municipalidad no quiere que veas. Baches, basurales, obras abandonadas y la lucha diaria del que se levanta a laburar. <strong style="color: var(--lima-color);">El municipio cobra las tasas, los vecinos exigimos respuestas.</strong></p>
 
-                <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 1px solid #c8e6c9; border-left: 5px solid var(--lima-color); padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
-                    <h4 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 18px;">¿Tenés una historia que contar?</h4>
-                    <p style="font-size: 14px; color: #37474f; margin-bottom: 15px; text-align: center;">Si en tu barrio pasa algo que nadie denuncia, o conocés una historia que merece ser contada, mandala al Confesionario del Capibara. La publicamos en el Muro.</p>
-                    <a onclick="cambiarVista('contacto')" style="background-color: var(--lima-color); color: #113019; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; cursor: pointer; display: inline-block;">📩 Mandanos tu historia</a>
+                <!-- BOTÓN DE ACCIÓN RÁPIDA -->
+                <div style="background: linear-gradient(135deg, #102630, #1F4E5F); border-left: 5px solid #ef4444; padding: 20px; border-radius: 8px; margin: 25px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 18px;">¿Tu calle está rota o hay un basural a cielo abierto?</h4>
+                        <p style="font-size: 13px; color: #b0bec5; margin: 0;">Mandanos la foto y la ubicación. Lo publicamos en nuestro muro de denuncias.</p>
+                    </div>
+                    <a onclick="cambiarVista('contacto')" style="background-color: #ef4444; color: #fff; padding: 12px 24px; border-radius: 4px; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);">📩 Denunciar Problema</a>
                 </div>
 
-                <div class="articles-grid">
-                    <div class="article-box-card" style="border-left-color: var(--lima-color);">
-                        <div style="font-size: 11px; color: var(--lima-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📍 Historias de Barrio</div>
-                        <h4>1. El pueblo que se organizó para arreglar la plaza</h4>
-                        <p>Cansados de esperar respuestas del municipio, los vecinos de una localidad del interior bonaerense juntaron plata y manos para recuperar el espacio verde. Una historia de solidaridad y autogestión.</p>
+                <!-- GRILLA TIPO DASHBOARD -->
+                <div class="articles-grid" style="gap: 20px;">
+                    
+                    <!-- ALERTA ROJA -->
+                    <div class="article-box-card clickable-municipio" style="border-left-color: #ef4444; background: #fffafb;" onclick="abrirModalDistrito('Alerta Basural')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h4 style="color: #b91c1c; margin: 0;">☣️ Alerta Sanitaria</h4>
+                            <span style="font-size: 10px; background: #ef4444; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">URGENTE</span>
+                        </div>
+                        <p>El basural a cielo abierto que enferma a un barrio entero. Vecinos denuncian que el municipio hace meses que no limpia el predio.</p>
                     </div>
 
-                    <div class="article-box-card" style="border-left-color: #ef4444;">
-                        <div style="font-size: 11px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">📢 Denuncia Vecinal</div>
-                        <h4>2. El basural a cielo abierto que enferma a un barrio entero</h4>
-                        <p>Vecinos de una localidad periférica denuncian que la acumulación de residuos les está generando problemas respiratorios. Reclaman una solución urgente a las autoridades.</p>
+                    <!-- OBRA FANTASMA -->
+                    <div class="article-box-card clickable-municipio" style="border-left-color: #f59e0b; background: #fffcf5;" onclick="abrirModalDistrito('Obra Fantasma')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h4 style="color: #b45309; margin: 0;">🏗️ Obra Fantasma</h4>
+                            <span style="font-size: 10px; background: #f59e0b; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">ABANDONO</span>
+                        </div>
+                        <p>Inauguraron una plaza con bombos y platillos, pero a los dos meses se cayó el techo del Paseo y nadie se hace cargo del arreglo.</p>
                     </div>
 
-                    <div class="article-box-card" style="border-left-color: var(--accent-color);">
-                        <div style="font-size: 11px; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">🎉 Cultura y Tradición</div>
-                        <h4>3. La fiesta del pueblo que resiste a la crisis</h4>
-                        <p>A pesar de los ajustes y la caída del consumo, una localidad del interior decidió que su fiesta anual se hacía igual. La comunidad se puso al hombro la organización para no perder la tradición.</p>
+                    <!-- LUCHA VECINAL (POSITIVA) -->
+                    <div class="article-box-card clickable-municipio" style="border-left-color: #22c55e; background: #f0fdf4;" onclick="abrirModalDistrito('Lucha Vecinal')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h4 style="color: #15803d; margin: 0;">🤝 Autogestión</h4>
+                            <span style="font-size: 10px; background: #22c55e; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">ORGULLO</span>
+                        </div>
+                        <p>Cansados de esperar, los vecinos de una localidad juntaron plata y manos para arreglar la plaza del barrio ellos mismos. Una historia de solidaridad.</p>
                     </div>
+
+                    <!-- EL TOP 3 DE LOS BACHES (LISTA) -->
+                    <div class="article-box-card clickable-municipio" style="border-left-color: #64748b; background: #f8fafc; grid-column: 1 / -1;" onclick="abrirModalDistrito('Top 3 Baches')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h4 style="color: #334155; margin: 0;">🕳️ El Top 3 de los Baches de la Semana</h4>
+                            <span style="font-size: 10px; background: #64748b; color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; letter-spacing: 0.5px;">RANKING</span>
+                        </div>
+                        <p style="margin-bottom: 10px;">Nuestros lectores votaron y estos son los cráteres que se están comiendo los trenes delanteros en la Provincia:</p>
+                        <ul style="font-size: 13px; color: #475569; margin: 0; padding-left: 20px; line-height: 1.6;">
+                            <li><strong>1° Puesto:</strong> Av. Calchaquí y Camino Gral. Belgrano (Florencio Varela) - *Parece un cráter lunar*.</li>
+                            <li><strong>2° Puesto:</strong> Ruta 3 y el acceso a González Catán (La Matanza) - *Un clásico que nunca falla*.</li>
+                            <li><strong>3° Puesto:</strong> Calle 7 entre 50 y 54 (La Plata) - *Ahora tiene peces*.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </section>
         </main>
@@ -3382,6 +3411,34 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "Bloques opositores exigen explicaciones por el 'carpetazo' en mesa de entradas", fuente: "Clarín", fecha: "21/10/2026", link: "https://www.clarin.com/" },
                 { titulo: "Investigan si hubo mano política en la desaparición de la denuncia", fuente: "La Nación", fecha: "20/10/2026", link: "https://www.lanacion.com.ar/" },
                 { titulo: "El oficialismo desmiente los rumores, pero no encuentra el expediente", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+                        "Alerta Basural": [
+                { titulo: "Vecinos denuncian que el basural a cielo abierto les provoca problemas respiratorios", fuente: "El Diario Sur", fecha: "23/10/2026", link: "https://www.eldiariosur.com/" },
+                { titulo: "El municipio asegura que está trabajando, pero las fotos muestran otra cosa", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Presentaron un amparo judicial para obligar al municipio a limpiar el predio", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "La basura se acumula desde hace tres meses y ya hay ratas en las casas", fuente: "Clarín", fecha: "20/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "El olor es insoportable: los vecinos piden una solución urgente", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Obra Fantasma": [
+                { titulo: "La plaza que inauguraron en marzo ya está destruida y nadie la arregla", fuente: "El Día", fecha: "23/10/2026", link: "https://www.eldia.com/" },
+                { titulo: "Inauguraron un Paseo con fondos provinciales, pero los materiales eran de baja calidad", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "El techo del Paseo se vino abajo tras las lluvias y el municipio no toma cartas", fuente: "Clarín", fecha: "21/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Concejales piden un informe por el sobreprecio de la obra de la plaza", fuente: "La Nación", fecha: "20/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Fotos y videos: el abandono del Paseo que prometieron cuidar", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Lucha Vecinal": [
+                { titulo: "Cansados de esperar, los vecinos arreglaron la plaza con sus propias manos", fuente: "El Diario Sur", fecha: "23/10/2026", link: "https://www.eldiariosur.com/" },
+                { titulo: "Hicieron una colecta y juntaron fondos para pintar las hamacas y cortar el pasto", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "El intendente no fue a la inauguración, pero los vecinos sí celebraron", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "La historia de solidaridad que inspira a otros barrios de la zona", fuente: "Clarín", fecha: "20/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Cómo se organizaron para recuperar el espacio verde del barrio", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Top 3 Baches": [
+                { titulo: "El Top 10 de los baches más peligrosos de la Provincia", fuente: "Infobae", fecha: "23/10/2026", link: "https://www.infobae.com/" },
+                { titulo: "Los cráteres que se comen los trenes delanteros en el conurbano", fuente: "Clarín", fecha: "22/10/2026", link: "https://www.clarin.com/" },
+                { titulo: "Vecinos de Varela usan un neumático como boya para marcar el bache", fuente: "El Diario Sur", fecha: "21/10/2026", link: "https://www.eldiariosur.com/" },
+                { titulo: "La Plata: la calle 7 convertida en un río por las lluvias", fuente: "0221", fecha: "20/10/2026", link: "https://www.0221.com.ar/" },
+                { titulo: "Denuncian que el bache de La Matanza tiene más de un año", fuente: "La Nación", fecha: "19/10/2026", link: "https://www.lanacion.com.ar/" }
             ]
         };
 
