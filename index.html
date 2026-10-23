@@ -227,7 +227,7 @@
         .marquesina-promo .marquesina-texto {
             display: inline-block;
             white-space: nowrap;
-            animation: desplazarMarquesina 40s linear infinite;
+            animation: desplazarMarquesina 25s linear infinite;
             color: #ffffff;
             font-size: 22px;
             font-weight: bold;
@@ -767,172 +767,6 @@
             .mapa-punto-circulo { width: 36px; height: 36px; font-size: 12px; }
             .mapa-punto-label { font-size: 10px; }
             .mapa-distritos-titulo { font-size: 16px; }
-        }
-                /* ===== RADAR REGIONAL EN VIVO ===== */
-        .radar-regional-wrapper {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-            border: 1px solid #e2e8f0;
-            border-left: 6px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 25px 25px 20px 25px;
-            margin-top: 30px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        }
-        .radar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed #cbd5e1;
-        }
-        .radar-header h3 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .radar-live-badge {
-            background: #e53935;
-            color: #ffffff;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 3px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: pulseRadar 1.8s infinite;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .radar-live-badge::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #fff;
-            display: inline-block;
-        }
-        @keyframes pulseRadar {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7); }
-            50% { box-shadow: 0 0 0 8px rgba(229, 57, 53, 0); }
-        }
-        .radar-filtros {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .radar-filtro-btn {
-            background: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            color: #475569;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 5px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-        }
-        .radar-filtro-btn:hover {
-            background: #e2e8f0;
-        }
-        .radar-filtro-btn.active {
-            background: var(--primary-color);
-            color: #ffffff;
-            border-color: var(--primary-color);
-        }
-        .radar-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 520px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-        .radar-item {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid var(--accent-color);
-            border-radius: 6px;
-            padding: 12px 16px;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .radar-item:hover {
-            border-left-color: var(--lima-color);
-            box-shadow: 0 4px 12px rgba(31, 78, 95, 0.1);
-            transform: translateX(4px);
-        }
-        .radar-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary-color);
-            background: #e0f2fe;
-            padding: 2px 8px;
-            border-radius: 3px;
-            align-self: flex-start;
-        }
-        .radar-titulo {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-            line-height: 1.35;
-            transition: color 0.2s;
-        }
-        .radar-titulo:hover {
-            color: var(--lima-color);
-            text-decoration: underline;
-        }
-        .radar-meta {
-            font-size: 11px;
-            color: var(--text-muted);
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-        .radar-meta .fuente {
-            color: var(--lima-color);
-            font-weight: bold;
-        }
-        .radar-loading {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-muted);
-            font-style: italic;
-            font-size: 14px;
-        }
-        .radar-vacio {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-muted);
-            font-style: italic;
-            font-size: 14px;
-        }
-        @media (max-width: 700px) {
-            .radar-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .radar-header h3 {
-                font-size: 16px;
-            }
         }
 
         .article-box-card.clickable-municipio {
@@ -1894,82 +1728,9 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 12px rgba(0,0,0,0.3);
         }
-                /* ===== POP-UP DE ENTRADA ===== */
-        .popup-overlay {
-            display: none; /* Oculto por defecto */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(16, 38, 48, 0.85); /* Fondo oscuro semitransparente */
-            z-index: 9999; /* Por encima de todo */
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .popup-overlay.active {
-            display: flex;
-        }
-        .popup-content {
-            position: relative;
-            background: transparent;
-            max-width: 600px; /* Ancho máximo de la imagen */
-            width: 100%;
-            text-align: center;
-            animation: slideUpModal 0.4s ease;
-        }
-        .popup-close-btn {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: #e53935;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s, background 0.2s;
-            z-index: 10;
-        }
-        .popup-close-btn:hover {
-            background: #c62828;
-            transform: scale(1.1);
-        }
-        .popup-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: block;
-        }
-        
-        /* Para que en celulares el botón no se salga de la pantalla */
-        @media (max-width: 600px) {
-            .popup-close-btn {
-                top: -10px;
-                right: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-        <!-- POP-UP DE ENTRADA (PUBLICIDAD) -->
-    <!-- Cambiá "espacio07.jpg" por el nombre de la imagen que quieras mostrar -->
-    <div class="popup-overlay" id="popup-publicidad">
-        <div class="popup-content">
-            <button class="popup-close-btn" onclick="cerrarPopup()">✕</button>
-            <img src="espacio07.jpg" alt="Publicidad" class="popup-img">
-        </div>
-    </div>
 
     <!-- BARRA SUPERIOR -->
     <div class="top-bar">
@@ -2035,14 +1796,14 @@
         <p>La realidad de la región, masticada y digerida</p>
     </header>
 
-                <!-- MARQUESINA PROMOCIONAL -->
+    <!-- MARQUESINA PROMOCIONAL -->
     <div class="marquesina-promo">
         <div class="marquesina-foto">
-            TU<br>MARCA
+            ESPACIO<br>DISPONIBLE
         </div>
         <div class="marquesina-texto-container">
             <div class="marquesina-texto">
-                ESPACIO PUBLICITARIO DISPONIBLE <span>►</span> ESPACIO PUBLICITARIO DISPONIBLE <span>►</span> ESPACIO PUBLICITARIO DISPONIBLE <span>►</span> ESPACIO PUBLICITARIO DISPONIBLE <span>►</span>
+                ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span> ESPACIO DISPONIBLE <span>►</span>
             </div>
         </div>
     </div>
@@ -2103,23 +1864,24 @@
                 
                 <p>Nuestro compromiso es simple: traerte la información de lo que pasa en tu distrito, en tu barrio y en tu región sin vueltas. Queremos ser ese puente entre los grandes temas provinciales y tu cuadra, con un enfoque federal real, útil y con la dosis justa de humor ácido que la coyuntura merece.</p>
 
-                               <!-- BANNER DOBLE: MITAD EL PASTIZAL / MITAD EL CAPI VIAJERO -->
+                <!-- BANNER DOBLE: MITAD EL PASTIZAL / MITAD EL CAPI VIAJERO -->
                 <div class="banner-doble-wrapper">
                     <div class="banner-mitad banner-mitad-pastizal">
                         <div>
                             <h4>✨ El Pastizal</h4>
-                            <p><strong>Fabian Suarez, Lic en enfermeria:</strong> 'Almirante Brown en terapia intensiva...'</p>
+                            <p><strong>Norberto Delgado, el armador de la 4ta:</strong> 'Victoria es la única que puede poner de pie a la Provincia'</p>
                         </div>
                         <a class="content-ad-btn" onclick="cambiarVista('pastizal')">Ver nota en El Pastizal</a>
                     </div>
                     <div class="banner-mitad banner-mitad-capi">
                         <div>
                             <h4>🧳 El Capi Viajero</h4>
-                            <p><strong>Osvaldo "Tati" Ferreyra:</strong> "El PJ de Córdoba se olvidó de la calle". Dirigente de base cruzó a Natalia de la Sota y a Llaryora.</p>
-                        </div> <!-- Faltaba este cierre -->
+                            <p><strong>Denis Ferragut:</strong> "No somos políticos profesionales, somos gente de trabajo que quiere que el país produzca" — desde Cutral Co, Neuquén</p>
+                        </div>
                         <a class="content-ad-btn" onclick="cambiarVista('capiviajero')">Ver nota en El Capi Viajero</a>
                     </div>
                 </div>
+
                 <div class="fotolog-wall">
                     <h3>💬 El Muro de Capibara News</h3>
                     <p>Acá se van acumulando en tiempo real las opiniones, confesiones y preguntas que mandan los lectores desde el panel lateral.</p>
@@ -2167,6 +1929,23 @@
                     <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El teléfono descompuesto')">
                         <h4>5. El teléfono descompuesto</h4>
                         <p>Cortocircuitos entre carteras provinciales y secretarías municipales por demoras en convenios.</p>
+                    </div>
+                </div>
+
+                <div class="marquesina-interna">
+                    <div class="marquesina-foto">
+                        ESPACIO<br>DISPONIBLE
+                    </div>
+                    <div class="marquesina-texto-container">
+                        <div class="marquesina-texto">
+                            ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VISTA 3: MUNICIPIOS -->
         <main id="vista-municipios" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">Lo más relevante de los Municipios Clave</h2>
@@ -2297,115 +2076,16 @@
                         </div>
                     </div>
                 </div>
-                                <!-- ===== RADAR REGIONAL EN VIVO ===== -->
-                <div class="radar-regional-wrapper" id="radar-regional-wrapper">
-                    <div class="radar-header">
-                        <h3>
-                            📡 Radar de la Región
-                            <span class="radar-live-badge">EN VIVO</span>
-                        </h3>
-                        <div class="radar-filtros" id="radar-filtros">
-                            <button class="radar-filtro-btn active" onclick="filtrarRadar('todos', this)">Todos</button>
-                            <button class="radar-filtro-btn" onclick="filtrarRadar('Almirante Brown', this)">Brown</button>
-                            <button class="radar-filtro-btn" onclick="filtrarRadar('Quilmes', this)">Quilmes</button>
-                            <button class="radar-filtro-btn" onclick="filtrarRadar('La Matanza', this)">La Matanza</button>
-                            <button class="radar-filtro-btn" onclick="filtrarRadar('La Plata', this)">La Plata</button>
-                        </div>
-                    </div>
-                    <div class="radar-feed" id="radar-feed">
-                        <p class="radar-loading">🔄 Cargando noticias de la región...</p>
-                    </div>
-                </div>
             </section>
         </main>
 
-                
-     <!-- VISTA NUEVA: EL CAPI VIAJERO (reemplaza a Clasificados) -->
+        <!-- VISTA NUEVA: EL CAPI VIAJERO (reemplaza a Clasificados) -->
         <main id="vista-capiviajero" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">🧳 El Capi Viajero</h2>
                 <div class="date">Noticias fuera de Buenos Aires</div>
                 <p><strong>Acá el Capibara cruza las fronteras de la Provincia y alza la voz.</strong> Historias, entrevistas y realidades de todo el país que no salen en los medios porteños. Porque la Argentina profunda también tiene cosas para decir, y desde acá le damos micrófono. <strong style="color: var(--lima-color);">¡El Capi Viajero ya está en marcha!</strong></p>
-                     <!-- NOTA OSVALDO 'TATI' FERREYRA (PJ CÓRDOBA) -->
-                <div class="featured-pastizal-card">
-                    <span class="featured-pastizal-badge">⭐ Entrevista Exclusiva / El Capi Viajero</span>
-                    <h3>"El PJ de Córdoba se olvidó de la calle": un referente de base cruzó a Natalia de la Sota y a Llaryora</h3>
-                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 23 de Octubre de 2026 | Córdoba Capital</div>
-                    
-                    <div style="margin: 15px 0 25px 0; display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://wa.me/?text=Mir%C3%A1%20esta%20nota%20de%20Capibara%20News%3A%20El%20PJ%20de%20C%C3%B3rdoba%20se%20olvid%C3%B3%20de%20la%20calle%20%F0%9F%93%B0%20https%3A%2F%2Fezzecc.github.io%2Fcapibara-news%2F" 
-                           target="_blank" 
-                           style="display: inline-flex; align-items: center; gap: 8px; background-color: #25D366; color: #ffffff; padding: 10px 18px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            <span style="font-size: 18px;">📲</span> Compartir por WhatsApp
-                        </a>
-                    </div>
-                    
-                    <p><strong>Osvaldo "Tati" Ferreyra</strong> es un histórico dirigente de la seccional 14 del PJ en barrio Alberdi. No tiene cargos en la Legislatura ni maneja presupuestos millonarios, pero conoce cada timbre de la ciudad. Desde su despacho lleno de afiches de campaña, analizó sin filtro la pelea entre Natalia de la Sota y el oficialismo de Martín Llaryora.</p>
 
-                    <p><strong>—Tati, la interna del peronismo cordobés parece un campo minado. ¿Qué se ve desde la seccional, desde la base?</strong></p>
-                    <p>— Lo que se ve es mucha rosca de oficina y poca calle. Mientras Llaryora se saca fotos en la Casa Rosada con Milei o negocia con Schiaretti, y Natalia se hace la rebelde pero termina tomando un café con Massa en Buenos Aires, el vecino de Alberdi nos pregunta qué hicimos con las cloacas y con el precio de la carne. La dirigencia se pelea por el poder y se olvida de la gente.</p>
-
-                    <p><strong>—¿Qué opinión tenés de Natalia de la Sota? Dicen que quiere armar una alternativa federal.</strong></p>
-                    <p>— Natalia tiene el apellido y tiene calle, eso no se lo discuto. Pero me hace ruido. Si querés ser oposición de verdad, no te juntes con el kirchnerismo que fundió el interior. Ella dice que es "peronista de verdad", pero para mí juega a la política de la grieta. Acá en Córdoba la gente labura, y el kirchnerismo nos dejó a pie. Si de verdad quiere pelearle a Milei, que venga a la seccional y escuche lo que pasa en los barrios, no que se saque fotos en La Plata.</p>
-
-                    <p><strong>—¿Y con Llaryora cómo es la relación?</strong></p>
-                    <p>— Llaryora ganó porque supo leer la ola de Milei, pero el peronismo de verdad no se sostiene con amagues. Se olvidó de la mística. Hace un par de años nos decían que la casta era el enemigo, y ahora algunos compañeros se pelean por un lugar en las listas para seguir cobrando. Él y Natalia son dos caras de la misma moneda: los dos quieren el poder por el poder. Acá el único que pierde es el laburante.</p>
-                    
-                    <p><strong>—¿A quién ves como el verdadero heredero del peronismo cordobés?</strong></p>
-                    <p>— Al pueblo. El peronismo no es un club de amigos de la capital. Somos los que salimos a pelear las paritarias, los que ponemos la cara en los barrios cuando falta el agua. Yo quiero un espacio que no le tenga miedo a los medios, que no sea funcional ni a Milei ni al kirchnerismo. Si no entendemos eso, el 2027 nos pasa por arriba.</p>
-
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin-top: 20px;">
-                        <strong style="color: var(--primary-color); font-size: 14px;">📞 Contacto del Referente:</strong><br>
-                        <span style="font-size: 13px;">Osvaldo "Tati" Ferreyra | Dirigente Seccional 14, PJ Córdoba</span>
-                    </div>
-                </div>
-                <!-- NOTA ARMANDO GUTIÉRREZ (PRO TUCUMÁN) -->
-                <div class="featured-pastizal-card">
-                    <span class="featured-pastizal-badge">⭐ Nota Destacada / El Capi Viajero</span>
-                    <h3>Tucumán no se arrodilla: Gutiérrez, el PRO que no se rinde y el juego sucio de Milei, Jaldo y Manzur</h3>
-                    <div class="date" style="margin-bottom: 10px;">Por Armando Gutiérrez, referente del PRO en Tucumán | 5 de Octubre de 2026 | San Miguel de Tucumán</div>
-                    
-                    <div style="margin: 15px 0 25px 0; display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://wa.me/?text=Mir%C3%A1%20esta%20nota%20de%20Capibara%20News%3A%20Tucum%C3%A1n%20no%20se%20arrodilla%20-%20Armando%20Guti%C3%A9rrez%20%F0%9F%93%B0%20https%3A%2F%2Fezzecc.github.io%2Fcapibara-news%2F" 
-                           target="_blank" 
-                           style="display: inline-flex; align-items: center; gap: 8px; background-color: #25D366; color: #ffffff; padding: 10px 18px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            <span style="font-size: 18px;">📲</span> Compartir por WhatsApp
-                        </a>
-                    </div>
-                    
-                    <p><strong>1. La provincia que aprieta los dientes</strong></p>
-                    <p>Tucumán no es un decorado. Es una provincia que trabaja, produce y resiste. Pero acá, mientras unos cuantos se reparten el poder, la gente sigue esperando que el agua llegue a los barrios, que las rutas no se caigan a pedazos y que las fábricas no cierren. El capibara no se calla. Y desde el PRO tucumano tampoco.</p>
-
-                    <p><strong>2. Jaldo, el gobernador que no se tira de la lengua</strong></p>
-                    <p>Osvaldo Jaldo dijo esta semana: "No me tire la lengua" cuando le preguntaron por Manzur. ¿Qué esconde? Que el peronismo tucumano está partido. Que el gobernador baila al ritmo de Milei mientras su excompañero de fórmula, Juan Manzur, lo acusa de ser "candidato de Milei". Manzur camina la provincia. Jaldo lo evita. Y en el medio, la gente mira cómo se pelean mientras las necesidades no se resuelven.</p>
-
-                    <p><strong>3. Milei tiene dos candidatos en Tucumán (y ninguno es del PRO)</strong></p>
-                    <p>Manzur lo dijo sin vueltas: "Si Jaldo le vota todo a Milei, significa que Milei tiene dos candidatos en Tucumán: uno es Catalán y el otro es Jaldo". Es simple: un gobernador peronista que le aprueba todas las leyes a un presidente libertario. Un armador del PRO que se hace el distraído. Y una interna que, mientras tanto, deja a la provincia sin respuestas.</p>
-
-                    <p><strong>4. La Libertad Avanza avanza sobre el PRO (y el PRO no se deja)</strong></p>
-                    <p>Lisandro Catalán, el líder de La Libertad Avanza en Tucumán, atacó a Manzur diciendo que "representa los 40 años de peronismo que venimos a combatir". Pero el PRO tucumano tiene algo para decirle a Catalán: <strong>el PRO no es un apéndice de nadie</strong>. Mientras LLA negocia con gobernadores para eliminar las PASO y quedarse con el poder sin votos, el PRO sigue defendiendo las primarias. Porque las reglas claras no se negocian.</p>
-
-                    <p><strong>5. El PRO tucumano se ordena y se planta</strong></p>
-                    <p>Mientras todos hablan de internas, el PRO de Tucumán está haciendo algo distinto: <strong>organizarse de verdad</strong>. Benjamín Terraf, concejal de Tafí Viejo y referente de la Fundación Pensar, quedó al frente de la normalización del partido. Se vienen las internas del 17 de octubre y el PRO va a jugar con candidatos propios. "En el PRO se fueron los que tenían que irse y nos quedamos quienes realmente representamos las ideas y los valores del partido", dijo Terraf. Eso, para los que quieren convertir el PRO en una sucursal de Milei, es una mala noticia.</p>
-
-                    <p><strong>6. El peronismo tucumano se desangra (y no lo tapa nadie)</strong></p>
-                    <p>La guerra interna entre Jaldo y Manzur ya no tiene vuelta atrás. La foto de Manzur con Cristina, los dardos entre ambos, el "pollerudo" que le dijo Jaldo a su antecesor… Todo eso no es un detalle: es la prueba de que el peronismo tucumano no puede gobernar ni su propia interna. Y mientras se pelean, la provincia espera.</p>
-
-                    <p><strong>7. Las PASO: el intento de Milei de quedarse con el poder sin votos</strong></p>
-                    <p>El gobierno de Milei quiere eliminar las PASO. Karina Milei prometió a los gobernadores no poner candidatos que los molesten, a cambio de que apoyen la reforma electoral. Traducción: <strong>Milei no quiere competir. Quiere que le regalen el poder.</strong> El PRO no va a ser parte de eso. Las PASO son el único filtro real que le queda a la gente para elegir sin que los aparatos decidan por ellos.</p>
-
-                    <p><strong>8. El PRO no es un partido de rehenes</strong></p>
-                    <p>El PRO tucumano va a las internas. Se ordena. Se prepara. Y va a pelear con identidad propia, con candidatos propios, con una propuesta que no se arrodilla ante nadie. Ni ante Milei. Ni ante Jaldo. Ni ante Manzur. Ni ante LLA.</p>
-
-                    <p><strong>9. Tucumán tiene futuro (pero no con estos mismos)</strong></p>
-                    <p>Tucumán tiene industria, tiene campo, tiene gente que labura. Lo que no tiene es un gobierno que esté a la altura. El PRO de Tucumán no viene a repartir cargos. Viene a construir una alternativa real. Y el capibara viajero, que ya recorrió el país, sabe que el interior no se rinde. <strong>Tucumán no se rinde. El PRO tampoco.</strong></p>
-
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin-top: 20px;">
-                        <strong style="color: var(--primary-color); font-size: 14px;">📞 Contacto del Referente:</strong><br>
-                        <span style="font-size: 13px;">Armando Gutiérrez | Referente del PRO Tucumán</span>
-                    </div>
-                </div>
-                
                 <!-- NOTA DENIS FERRAGUT (MOVIDA DESDE EL PASTIZAL) -->
                 <div class="featured-pastizal-card">
                     <span class="featured-pastizal-badge">⭐ Nota Destacada / El Capi Viajero</span>
@@ -2498,58 +2178,57 @@
                 <h2 class="article-title">La Billetera</h2>
                 <p>El termómetro del bolsillo. Resumen de las noticias económicas que impactan directamente en tu día a día, con la mirada del Capibara. <strong style="color: var(--lima-color);">Hacé click en cada tema para ver las 5 noticias más relevantes.</strong></p>
 
-                               <div class="billetera-hoy">
+                <div class="billetera-hoy">
                     <div class="billetera-hoy-header">
                         <h3>📊 La Billetera Hoy</h3>
-                        <span class="billetera-hoy-fecha">Semana del 20/10 al 26/10</span>
+                        <span class="billetera-hoy-fecha">Semana del 30/09 al 06/10</span>
                     </div>
                     <div class="billetera-hoy-grid">
                         <div class="billetera-dato">
                             <div class="dato-label">🍞 Canasta Básica Total</div>
-                            <div class="dato-valor">$1.245.500</div>
+                            <div class="dato-valor">$1.160.780</div>
                             <div class="dato-sub">Familia tipo</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">🍽️ Canasta Alimentaria</div>
-                            <div class="dato-valor">+42,1%</div>
+                            <div class="dato-valor">+39,6%</div>
                             <div class="dato-sub">Interanual</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">📈 Inflación mensual</div>
-                            <div class="dato-valor">~2,4%</div>
-                            <div class="dato-sub">Oct. (proyectada)</div>
+                            <div class="dato-valor">~2,0%</div>
+                            <div class="dato-sub">Sept. (proyectada)</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">💵 Dólar Blue</div>
-                            <div class="dato-valor">$1.610</div>
+                            <div class="dato-valor">$1.560</div>
                             <div class="dato-sub">Venta</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">🥩 Asado (kg)</div>
-                            <div class="dato-valor">~$25.500</div>
+                            <div class="dato-valor">~$23.000</div>
                             <div class="dato-sub">Media res</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">💡 Tarifas</div>
-                            <div class="dato-valor">+2,5%</div>
-                            <div class="dato-sub">Luz y Gas (Oct.)</div>
+                            <div class="dato-valor">+1,75%</div>
+                            <div class="dato-sub">Luz (gas +1,40%)</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">📉 Pobreza</div>
-                            <div class="dato-valor">35,2%</div>
-                            <div class="dato-sub">2do semestre 2026</div>
+                            <div class="dato-valor">32,3%</div>
+                            <div class="dato-sub">1er semestre 2026</div>
                         </div>
                         <div class="billetera-dato">
                             <div class="dato-label">📊 Indigencia</div>
-                            <div class="dato-valor">8,1%</div>
-                            <div class="dato-sub">2do semestre 2026</div>
-                                            </div> <!-- Cierra el último dato (Indigencia) -->
-                </div> <!-- ⬅️ ESTE CIERRA LA GRILLA (billetera-hoy-grid) -->
-                
-                <div class="billetera-hoy-footer">
-                    📌 Datos actualizados semanalmente. Fuente: INDEC, ENReGE, medios nacionales.
+                            <div class="dato-valor">7,5%</div>
+                            <div class="dato-sub">1er semestre 2026</div>
+                        </div>
+                    </div>
+                    <div class="billetera-hoy-footer">
+                        📌 Datos actualizados semanalmente. Fuente: INDEC, ENReGE, medios nacionales.
+                    </div>
                 </div>
-            </div> <!-- Cierra la caja grande oscura (billetera-hoy) -->
 
                 <div class="articles-grid">
                     <div class="article-box-card clickable-municipio" onclick="abrirModalDistrito('El changuito en terapia')">
@@ -2574,77 +2253,24 @@
                     </div>
                 </div>
 
-                                 <div class="marquesina-interna">
+                <div class="marquesina-interna">
                     <div class="marquesina-foto">
                         ESPACIO<br>DISPONIBLE
                     </div>
                     <div class="marquesina-texto-container">
                         <div class="marquesina-texto">
                             ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span> ESPACIO DISPONIBLE ULTIMOS CUPOS <span>►</span>
-                        </div> <!-- ⬅️ CIERRA EL TEXTO -->
-                    </div> <!-- ⬅️ CIERRA EL CONTENEDOR DEL TEXTO -->
-                </div> <!-- ⬅️ CIERRA LA MARQUESINA -->
-            </section> <!-- ⬅️ CIERRA EL CONTENT-CARD -->
-        </main> <!-- ⬅️ CIERRA LA VISTA -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <!-- VISTA 5: EL PASTIZAL -->
+        <!-- VISTA 5: EL PASTIZAL (SIN LA NOTA DE DENIS, MOVIDA A EL CAPI VIAJERO) -->
         <main id="vista-pastizal" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">El Pastizal</h2>
                 <p>Opinión filosa, editoriales picantes y catarsis colectiva sobre las cosas que nos pasan todos los días. Acá publicamos nuestras notas y artículos propios.</p>
-                <!-- NOTA FABIÁN SUÁREZ - ALMIRANTE BROWN -->
-                <div class="featured-pastizal-card">
-                    <span class="featured-pastizal-badge">⭐ Entrevista Exclusiva / Nota Propia</span>
-                    <h3>Radiografía de la desidia: Fabián Suárez desnuda el colapso sanitario y el ajuste en Almirante Brown</h3>
-                    <div class="date" style="margin-bottom: 10px;">Por Redacción Capibara News | 6 de Octubre de 2026 | Almirante Brown, Provincia de Buenos Aires</div>
-                    
-                    <div style="margin: 15px 0 25px 0; display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://wa.me/?text=Mir%C3%A1%20esta%20nota%20de%20Capibara%20News%3A%20Fabi%C3%A1n%20Su%C3%A1rez%20y%20el%20colapso%20sanitario%20en%20Almirante%20Brown%20%F0%9F%93%B0%20https%3A%2F%2Fezzecc.github.io%2Fcapibara-news%2F" 
-                           target="_blank" 
-                           style="display: inline-flex; align-items: center; gap: 8px; background-color: #25D366; color: #ffffff; padding: 10px 18px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            <span style="font-size: 18px;">📲</span> Compartir por WhatsApp
-                        </a>
-                    </div>
-
-                    <p><strong>En una entrevista exclusiva para nuestro portal, el Licenciado en Enfermería y referente territorial, Fabián Suárez, expone sin anestesia la crítica situación de la salud pública en el distrito, la falta de idoneidad en cargos clave de PAMI y la complicidad de la falsa oposición en el Concejo Deliberante. Una radiografía cruda del abandono municipal y una convocatoria a recuperar la dignidad desde el territorio.</strong></p>
-
-                    <p>El distrito de Almirante Brown atraviesa una de sus peores crisis sanitarias y sociales, donde la falta de respuestas del poder de turno golpea de manera implacable al vecino común. Para poner blanco sobre negro, conversamos a fondo con el Licenciado en Enfermería y referente político local, Fabián Suárez, quien camina a diario los pasillos de los hospitales y conoce de primera mano el sufrimiento de la comunidad.</p>
-
-                    <p><strong>1. Como Licenciado en Enfermería que camina a diario los pasillos de los hospitales y centros de atención del distrito, ¿cuál es su lectura profunda sobre la degradación de un sistema sanitario que hoy funciona sostenido con alambre en Almirante Brown?</strong></p>
-                    <p>— Es desoladora. Uno recorre los hospitales y la atención primaria del distrito y ve lo que nadie quiere mostrar: pasillos colapsados, falta total de insumos básicos y profesionales desbordados que hacen magia con nada. El sistema sanitario en Almirante Brown no se sostiene por gestión política, se sostiene únicamente por el sacrificio humano de los médicos, enfermeros y trabajadores esenciales que ponen el cuerpo todos los días a pesar de la desidia del poder de turno.</p>
-
-                    <p><strong>2. Detrás de cada estadística hay una persona esperando meses un turno, una madre sin respuestas o un abuelo al que le negaron lo básico. ¿Cómo se llegó a este nivel de insensibilidad donde la salud del vecino quedó a merced de las prioridades de la política partidaria?</strong></p>
-                    <p>— Se llegó porque instalaron una lógica donde la salud pública es una variable de ajuste o una caja de la política, en lugar de un derecho sagrado. Hoy un vecino tiene que peregrinar meses para conseguir un turno médico o un estudio de complejidad, mientras los directores y funcionarios políticos están más ocupados en responder a los intereses partidarios del municipio que en pisar una salita para ver la realidad de la gente.</p>
-
-                    <p><strong>3. ¿Qué análisis hace de la designación de funcionarios y directores en áreas críticas como PAMI o la salud municipal que no tienen formación sanitaria, y cómo impacta esa lógica de acomodo en la calidad de atención de nuestra gente?</strong></p>
-                    <p>— Es una falta de respeto absoluta hacia los vecinos y hacia los profesionales de carrera. No se puede poner a manejar la salud y las prestaciones de PAMI en Almirante Brown a gente que no tiene la más puta idea de lo que es la sanidad pública, solo por favores de la política. Por eso terminamos viendo lo que vemos: pacientes a los que le niegan una cama, una silla de ruedas o un inodoro portátil, porque quienes manejan la estructura están desconectados por completo de las necesidades reales de la calle.</p>
-
-                    <p><strong>4. En un municipio históricamente peronista, la falta de respuestas muchas veces se disimula con pactos de silencio entre el oficialismo y sectores de la "oposición" en el Concejo Deliberante. ¿Cómo opera esa connivencia que deja desamparado al vecino común?</strong></p>
-                    <p>— Opera mediante el silencio y la complicidad de cúpula. En el deliberativo local muchas veces se arman falsas grietas para la tribuna, pero a la hora de discutir los presupuestos o interpelar por el vaciamiento de la salud, se cajonean los proyectos. Hay sectores de la supuesta oposición que prefieren negociar sus espacios de poder antes que romper los arreglos con el oficialismo, dejando al vecino completamente desamparado.</p>
-
-                    <p><strong>5. Siendo el espacio liberal y federal una opción de peso creciente en la Tercera Sección Electoral, ¿qué le faltó a la alternativa política para marcar un límite firme y frenar el desmanejo institucional en el distrito?</strong></p>
-                    <p>— Faltó decisión y presencia real en el territorio para interpelar a los vecinos con propuestas técnicas y serias, saliendo de la rosca barata de oficina. Desde espacios como el nuestro, articulando el trabajo en salud, seguridad y formación, demostramos que hay otra forma de hacer política, plantándose de cara a los vecinos y sin transar con los aparatos tradicionales.</p>
-
-                    <p><strong>6. ¿Qué herramientas institucionales y de control real tiene un concejal verdaderamente comprometido para romper con los arreglos de cúpula y trasladar los reclamos urgentes de los barrios al recinto deliberativo?</strong></p>
-                    <p>— La principal herramienta es la transparencia y la rendición de cuentas pública, transformando el Concejo Deliberante en una caja de resonancia de los reclamos barriales y no en una notaría del intendente. Hay que impulsar pedidos de informes vinculantes, auditorías abiertas y convocar de inmediato a los vecinos y trabajadores de la salud para que sus demandas sean obligatorias en la agenda legislativa.</p>
-
-                    <p><strong>7. ¿Cuáles serían los primeros ejes de una auditoría profunda y de saneamiento administrativo para garantizar que los recursos de la salud lleguen adonde realmente se necesitan?</strong></p>
-                    <p>— Primero, transparentar el destino de cada partida presupuestaria destinada a insumos y medicamentos. Segundo, auditar la planta de personal y jerarquizar a los profesionales idóneos desplazando a los punteros políticos enquistados en la administración. Y tercero, garantizar que los recursos de la red sanitaria lleguen directamente a las salitas y hospitales barriales, cortando de raíz los desvíos burocráticos.</p>
-
-                    <p><strong>8. Frente a hospitales colapsados y centros de atención vaciados, ¿cómo se rediseña un esquema de atención primaria que prevenga y contenga verdaderamente en cada localidad de Brown?</strong></p>
-                    <p>— Hay que volver al territorio con centros de atención primaria funcionando las 24 horas, con médicos de guardia fijos, provisión constante de medicamentos y articulación directa con los barrios. No podemos seguir naturalizando que un vecino de los sectores más postergados tenga que viajar descompuesto kilómetros porque en su localidad la salita cierra a las dos de la tarde o no tiene insumos básicos.</p>
-
-                    <p><strong>9. Los médicos, enfermeros y trabajadores esenciales están precarizados, perseguidos y silenciados. ¿Qué plan de jerarquización y revalorización propone para quienes sostienen el sistema a pesar de todo?</strong></p>
-                    <p>— Los trabajadores de la salud hoy están atados de pies y manos por temor a represalias laborales si denuncian el colapso. Lo primero que hay que hacer es devolverles la estabilidad laboral, garantizar salarios dignos acordes a la responsabilidad de su tarea, y armar mesas de trabajo donde los profesionales sean escuchados para diseñar las políticas sanitarias del distrito.</p>
-
-                    <p><strong>10. Pensando en ese vecino de Almirante Brown que se levanta temprano, sufre las carencias del día a día, siente que la política le dio la espalda y está desencantado: ¿Qué le dice desde el corazón para convencerlo de que todavía se puede recuperar la dignidad, el esfuerzo y el orgullo de vivir en nuestra tierra?</strong></p>
-                    <p>— Le digo que entiendo perfectamente su bronca y su desilusión, porque yo lo vivo y lo veo todos los días en la calle y en los hospitales. Sé lo que es romperse el lomo trabajando y sentir que el esfuerzo no vale nada frente a un Estado ausente que solo aparece para cobrar impuestos. Pero les pido que no bajen los brazos: el verdadero cambio se logra involucrándose, sacando a los que nos gobiernan hace décadas y recuperando la cultura del trabajo, la salud y la seguridad que nos robaron. Todavía estamos a tiempo de dar vuelta esta realidad y devolverle la dignidad a Almirante Brown.</p>
-
-                    <div style="background: #f0f4f8; border-left: 4px solid var(--primary-color); padding: 15px 20px; border-radius: 4px; margin-top: 20px;">
-                        <strong style="color: var(--primary-color); font-size: 14px;">📞 Contacto:</strong><br>
-                        <span style="font-size: 13px;">Fabián Suárez | Licenciado en Enfermería y referente territorial de Almirante Brown</span>
-                    </div>
-                </div>
 
                 <div class="featured-pastizal-card">
                     <span class="featured-pastizal-badge">⭐ Artículo Destacado / Nota Propia</span>
@@ -2901,10 +2527,13 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 <a class="promo-btn" onclick="cambiarVista('publicidad')">Consultar Espacio</a>
             </div>
 
-                            <!-- IMAGEN DE FABIÁN - SOLO VISIBLE EN EL PASTIZAL -->
-                <div class="ad-box" id="foto-fabian-pastizal" style="display: none;">
-                    <div class="ad-title">Publicidad</div>
-                    <img src="espacio05.png" alt="Fabián Suárez" style="width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;">
+            <div id="sidebar-standard" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="ad-box">
+                    <div class="ad-title">ÚLTIMO ESPACIO DISPONIBLE</div>
+                    <div class="placeholder-banner-600">
+                        ÚLTIMO ESPACIO<br>DISPONIBLE
+                        <small>300x600 · Publicidad Premium</small>
+                    </div>
                 </div>
 
                 <div class="ad-box">
@@ -3343,37 +2972,9 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             } else {
                 if(sidebarStandard) sidebarStandard.style.display = 'flex';
             }
-                        // Mostrar la foto de Fabián SOLO en El Pastizal
-            const fotoFabian = document.getElementById('foto-fabian-pastizal');
-            if (fotoFabian) {
-                if (nombreVista === 'pastizal') {
-                    fotoFabian.style.display = 'block';
-                } else {
-                    fotoFabian.style.display = 'none';
-                }
-            }
-            if (nombreVista === 'municipios' && radarNoticias.length === 0) {
-                cargarRadarRegional();
-            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-              
-
-               // ===== FUNCIONES DEL POP-UP =====
-        function abrirPopup() {
-            document.getElementById('popup-publicidad').classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function cerrarPopup() {
-            document.getElementById('popup-publicidad').classList.remove('active');
-            document.body.style.overflow = ''; 
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-         //   setTimeout(abrirPopup, 1500); 
-        });
-        // ===== FIN DEL POP-UP =====
 
         function buscarMunicipio(nombre) {
             if(nombre.trim() !== "") {
@@ -3512,40 +3113,75 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 { titulo: "Obras de cloacas en José León Suárez", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
                 { titulo: "Inauguran polideportivo municipal", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
-                       "Pases de factura en el conurbano": [
-                { titulo: "La puja por el presupuesto 2027 calienta la Legislatura bonaerense", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/politica/" },
-                { titulo: "Intendentes del conurbano piden audiencia urgente con Kicillof", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/politica/" },
-                { titulo: "El massismo busca reacomodarse tras las últimas encuestas", fuente: "Clarín", fecha: "20/10/2026", link: "https://www.clarin.com/politica/" },
-                { titulo: "Reunión secreta entre referentes del PRO y LLA en la Provincia", fuente: "El Destape", fecha: "19/10/2026", link: "https://www.eldestapeweb.com/" },
-                { titulo: "La interna radical define su posición para las próximas elecciones", fuente: "Página/12", fecha: "18/10/2026", link: "https://www.pagina12.com.ar/" }
+            "Pases de factura en el conurbano": [
+                { titulo: "Intendentes rearman alianzas pensando en 2027", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Cumbre secreta en La Matanza por el armado legislativo", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "El peronismo bonaerense busca reordenarse", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Pases de factura entre bloques del conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Nuevos alineamientos en el Frente de Todos", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
             "Sesión caliente en La Plata": [
-                { titulo: "Fuerte debate en el Senado por la Ley de Ministerios", fuente: "El Día", fecha: "22/10/2026", link: "https://www.eldia.com/" },
-                { titulo: "Bloques opositores exigen tratar la emergencia educativa", fuente: "0221", fecha: "21/10/2026", link: "https://www.0221.com.ar/" },
-                { titulo: "Kicillof envió un nuevo paquete de leyes a la Legislatura", fuente: "Infobae", fecha: "20/10/2026", link: "https://www.infobae.com/" },
-                { titulo: "Tensión por la coparticipación: intendentes reclaman fondos", fuente: "La Nación", fecha: "19/10/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Concejales de La Plata denuncian desmanejo en obras públicas", fuente: "Clarín", fecha: "18/10/2026", link: "https://www.clarin.com/" }
+                { titulo: "Cruce por coparticipación en la Legislatura", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Fuerte debate por fondos a comunas opositoras", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Sesión maratónica en la Cámara de Diputados", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Tensión entre bloques por el presupuesto", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Nuevos cruces en el Senado bonaerense", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
             "Operativo operativo": [
-                { titulo: "El armado silencioso del oficialismo para retener la Provincia", fuente: "La Nación", fecha: "23/10/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Milei y Kicillof: la foto que no fue y los gestos que incomodan", fuente: "Infobae", fecha: "22/10/2026", link: "https://www.infobae.com/" },
-                { titulo: "Gobernadores del PJ se reúnen para coordinar una estrategia común", fuente: "Clarín", fecha: "21/10/2026", link: "https://www.clarin.com/" },
-                { titulo: "La CGT define los pasos a seguir tras la reunión con el Gobierno", fuente: "Página/12", fecha: "20/10/2026", link: "https://www.pagina12.com.ar/" },
-                { titulo: "El PRO busca despegarse de la gestión nacional de cara al 2027", fuente: "El Destape", fecha: "19/10/2026", link: "https://www.eldestapeweb.com/" }
+                { titulo: "Reuniones cumbre en despachos oscuros", fuente: "Clarín", fecha: "28/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El armado territorial que no se ve", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Definen candidaturas sin hacer ruido", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Operativos políticos en el conurbano", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Los movimientos que no salen en los diarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
             "Presupuesto bajo la lupa": [
-                { titulo: "Especialistas advierten por el impacto del ajuste en las provincias", fuente: "El Día", fecha: "22/10/2026", link: "https://www.eldia.com/" },
-                { titulo: "El Senado debate la letra chica de la reforma fiscal", fuente: "Infobae", fecha: "21/10/2026", link: "https://www.infobae.com/" },
-                { titulo: "Auditoría revela desvíos millonarios en obras públicas", fuente: "La Nación", fecha: "20/10/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "Concejales analizan el presupuesto municipal con lupa", fuente: "0221", fecha: "19/10/2026", link: "https://www.0221.com.ar/" },
-                { titulo: "Fuerte cruce por la partida destinada a la salud bonaerense", fuente: "Clarín", fecha: "18/10/2026", link: "https://www.clarin.com/" }
+                { titulo: "Concejales analizan la letra chica del presupuesto", fuente: "El Día", fecha: "28/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Partidas para obras públicas demoradas", fuente: "Infobae", fecha: "27/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Fuerte debate por el gasto municipal", fuente: "Clarín", fecha: "26/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Auditoría sobre fondos educativos", fuente: "La Nación", fecha: "25/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "El presupuesto bonaerense bajo sospecha", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ],
             "El teléfono descompuesto": [
-                { titulo: "Falta de coordinación entre Nación y Provincia por las obras públicas", fuente: "Infobae", fecha: "23/10/2026", link: "https://www.infobae.com/" },
-                { titulo: "Intendentes denuncian que los fondos nacionales no llegan", fuente: "Clarín", fecha: "22/10/2026", link: "https://www.clarin.com/" },
-                { titulo: "Cortocircuitos en el gabinete de Kicillof por las internas", fuente: "La Nación", fecha: "21/10/2026", link: "https://www.lanacion.com.ar/" },
-                { titulo: "El problema de la comunicación entre la Casa Rosada y los gobernadores", fuente: "El Día", fecha: "20/10/2026", link: "https://www.eldia.com/" },
-                { titulo: "Convenios demorados: la queja de los municipios del conurbano", fuente: "Página/12", fecha: "19/10/2026", link: "https://www.pagina12.com.ar/" }
+                { titulo: "Cortocircuitos entre Provincia y municipios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Demoras en convenios por falta de coordinación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Cruces entre carteras provinciales", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "El problema de la comunicación política", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Falta de diálogo entre Nación y Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "El changuito en terapia": [
+                { titulo: "Relevamiento de precios en ferias barriales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Mayoristas del conurbano y la inflación", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El precio de la carne sigue en aumento", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Verduras y frutas con fuertes subas", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Cómo ahorrar en el supermercado", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Paritarias bonaerenses": [
+                { titulo: "Nuevos tramos de aumento para estatales", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Docentes bonaerenses reclaman reapertura", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Acuerdo salarial para la administración pública", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Los gremios evalúan la oferta oficial", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Paritarias: el pulso de la Provincia", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Tarifas y boletas": [
+                { titulo: "Impacto de las subas de servicios en comercios", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Aumento de luz y gas: cómo afecta a las pymes", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "El peso de las tarifas en el bolsillo", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Boletas que no dan respiro", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Reclamos por errores en la facturación", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Descuentos con Cuenta DNI": [
+                { titulo: "Cronograma de ahorro en carnicerías", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "Descuentos en verdulerías y ferias", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Los mejores descuentos del fin de semana", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Cuenta DNI: beneficios de la semana", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Cómo aprovechar los descuentos bancarios", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
+            ],
+            "Naftas y transporte": [
+                { titulo: "Nuevo incremento en combustibles", fuente: "Infobae", fecha: "28/09/2026", link: "https://www.infobae.com/" },
+                { titulo: "El costo logístico de delivery y remises", fuente: "Clarín", fecha: "27/09/2026", link: "https://www.clarin.com/" },
+                { titulo: "Nafta súper supera los $2.000", fuente: "La Nación", fecha: "26/09/2026", link: "https://www.lanacion.com.ar/" },
+                { titulo: "Impacto en el transporte de carga", fuente: "El Día", fecha: "25/09/2026", link: "https://www.eldia.com/" },
+                { titulo: "Subas que golpean al bolsillo", fuente: "Página/12", fecha: "24/09/2026", link: "https://www.pagina12.com.ar/" }
             ]
         };
 
@@ -3602,93 +3238,6 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 cerrarModalDistrito();
             }
         });
-                // ===== RADAR REGIONAL EN VIVO =====
-        let radarNoticias = [];
-        let radarFiltroActivo = 'todos';
-
-        const RADAR_DISTRITOS = [
-            'Almirante Brown', 'Quilmes', 'La Matanza', 'La Plata',
-            'Lomas de Zamora', 'Merlo', 'Moreno', 'Florencio Varela',
-            'General San Martín', 'General Pueyrredón'
-        ];
-
-        async function cargarRadarRegional() {
-            const feed = document.getElementById('radar-feed');
-            if (!feed) return;
-
-            feed.innerHTML = '<p class="radar-loading">🔄 Cargando noticias de la región...</p>';
-
-            const resultados = [];
-
-            // Hacemos las consultas en paralelo
-            const promesas = RADAR_DISTRITOS.map(async (distrito) => {
-                try {
-                    const query = encodeURIComponent(distrito + ' Buenos Aires');
-                    const rssUrl = `https://news.google.com/rss/search?q=${query}&hl=es-419&gl=AR&ceid=AR:es-419`;
-                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-                    const res = await fetch(apiUrl);
-                    const data = await res.json();
-
-                    return (data.items || []).slice(0, 2).map(item => ({
-                        distrito: distrito,
-                        titulo: item.title,
-                        link: item.link,
-                        fecha: item.pubDate,
-                        fuente: item.author || 'Google News'
-                    }));
-                } catch (err) {
-                    console.error('Error cargando distrito:', distrito, err);
-                    return [];
-                }
-            });
-
-            const resultadosPorDistrito = await Promise.all(promesas);
-            resultadosPorDistrito.forEach(arr => resultados.push(...arr));
-
-            // Ordenamos por fecha descendente
-            resultados.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-            radarNoticias = resultados;
-            renderizarRadar();
-        }
-
-        function renderizarRadar() {
-            const feed = document.getElementById('radar-feed');
-            if (!feed) return;
-
-            let noticiasAMostrar = radarNoticias;
-            if (radarFiltroActivo !== 'todos') {
-                noticiasAMostrar = radarNoticias.filter(n => n.distrito === radarFiltroActivo);
-            }
-
-            if (noticiasAMostrar.length === 0) {
-                feed.innerHTML = '<p class="radar-vacio">No hay noticias recientes para este filtro. Probá con otro distrito.</p>';
-                return;
-            }
-
-            feed.innerHTML = '';
-            noticiasAMostrar.slice(0, 25).forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'radar-item';
-                div.innerHTML = `
-                                       <span class="radar-tag">${escapeHtml(item.distrito)}</span>
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="radar-titulo">${escapeHtml(item.titulo)}</a>
-                    <div class="radar-meta">
-                        <span class="fuente">${escapeHtml(item.fuente)}</span>
-                        <span>${new Date(item.fecha).toLocaleDateString('es-AR')}</span>
-                    </div>
-                                `;
-                feed.appendChild(div);
-            });
-        }
-
-        function filtrarRadar(filtro, boton) {
-            radarFiltroActivo = filtro;
-            document.querySelectorAll('.radar-filtro-btn').forEach(b => b.classList.remove('active'));
-            if (boton) boton.classList.add('active');
-            renderizarRadar();
-        }
     </script>
 
     <!-- SCRIPT DEL CONFESIONARIO CON JSONBIN -->
