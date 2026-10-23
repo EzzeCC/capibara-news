@@ -2468,83 +2468,129 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
                 </div>
             </section>
         </main>
-        <!-- VISTA 6: EL TERMÓMETRO -->
+                <!-- VISTA 6: EL TERMÓMETRO -->
         <main id="vista-termometro" class="page-view">
             <section class="content-card">
                 <h2 class="article-title">🌡️ El Termómetro de la Provincia</h2>
-                <div class="date">Participación ciudadana bonaerense</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <div class="date" style="margin: 0;">Participación ciudadana bonaerense</div>
+                    <div style="background: #e0f2fe; color: #0369a1; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: flex; align-items: center; gap: 5px;">
+                        <span style="display: inline-block; width: 8px; height: 8px; background: #0ea5e9; border-radius: 50%; animation: pulseUltimaHora 1.5s infinite;"></span>
+                        <span id="votos-totales">4.125</span> vecinos ya votaron
+                    </div>
+                </div>
                 <p>Dejanos tu opinión anónima para medir el pulso real de lo que pasa en la calle. Votá en las categorías clave y mirá cómo viene la opinión general de los vecinos.</p>
 
-                <div class="termometro-card">
-                    <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
-                    <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
-                    <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
+                <div id="formulario-termometro">
+                    <div class="termometro-card">
+                        <h3>Pregunta 1: ¿De qué partido y distrito sos?</h3>
+                        <div class="termometro-subtitle">(Ej: "La Matanza", "La Plata", "Bahía Blanca", "Tigre", etc.)</div>
+                        <input type="text" id="term-distrito" class="termometro-input" placeholder="Escribí tu distrito acá...">
+                    </div>
+
+                    <div class="termometro-card">
+                        <h3>Pregunta 2: Salud Pública</h3>
+                        <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
+                        <div class="opciones-pill-container" id="grupo-salud">
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'malo')">MALO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'regular')">REGULAR</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'bueno')">BUENO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'muybueno')">MUY BUENO</div>
+                        </div>
+                    </div>
+
+                    <div class="termometro-card">
+                        <h3>Pregunta 3: Seguridad y Prevención</h3>
+                        <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
+                        <div class="opciones-pill-container" id="grupo-seguridad">
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'malo')">MALO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'regular')">REGULAR</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'bueno')">BUENO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'muybueno')">MUY BUENO</div>
+                        </div>
+                    </div>
+
+                    <div class="termometro-card">
+                        <h3>Pregunta 4: Educación y Escuelas</h3>
+                        <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
+                        <div class="opciones-pill-container" id="grupo-educacion">
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'malo')">MALO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'regular')">REGULAR</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'bueno')">BUENO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'muybueno')">MUY BUENO</div>
+                        </div>
+                    </div>
+
+                    <div class="termometro-card">
+                        <h3>Pregunta 5: Servicios y Obras Públicas</h3>
+                        <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
+                        <div class="opciones-pill-container" id="grupo-servicios">
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'malo')">MALO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'regular')">REGULAR</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'bueno')">BUENO</div>
+                            <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'muybueno')">MUY BUENO</div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btn-votar-termometro" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
                 </div>
 
-                <div class="termometro-card">
-                    <h3>Pregunta 2: Salud Pública</h3>
-                    <div class="termometro-subtitle">(Hospitales, salitas, atención médica y obras sociales provinciales).</div>
-                    <div class="opciones-pill-container" id="grupo-salud">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'salud', 'muybueno')">MUY BUENO</div>
+                <!-- PANEL DE RESULTADOS OCULTO INICIALMENTE -->
+                <div id="resultados-termometro" style="display: none; animation: fadeIn 0.6s ease-in-out;">
+                    <div style="background: linear-gradient(135deg, #102630, #1F4E5F); padding: 20px; border-radius: 8px; border-left: 5px solid var(--lima-color); color: white; margin-bottom: 25px; text-align: center;">
+                        <h3 style="margin: 0 0 10px 0; color: var(--lima-color);">✅ ¡Voto registrado con éxito!</h3>
+                        <p style="margin: 0; font-size: 14px; color: #e0f7fa;" id="msj-distrito-voto">Gracias por participar en el Termómetro de la Provincia.</p>
                     </div>
-                    <div class="resultado-encuesta" id="res-salud">
-                        Resultado actual: <span id="porc-salud">52% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-salud" style="width: 52%;"></div></div>
-                    </div>
-                </div>
 
-                <div class="termometro-card">
-                    <h3>Pregunta 3: Seguridad y Prevención</h3>
-                    <div class="termometro-subtitle">(Policía, patrullaje, iluminación de calles y respuesta ante denuncias).</div>
-                    <div class="opciones-pill-container" id="grupo-seguridad">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'seguridad', 'muybueno')">MUY BUENO</div>
+                    <!-- TARJETAS DE RESULTADOS -->
+                    <div class="termometro-card">
+                        <h3>Salud Pública</h3>
+                        <div class="resultado-encuesta" style="display: block;">
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+                                <span>Calificación general:</span>
+                                <span id="porc-salud" style="color: #b91c1c;">52% MALO</span>
+                            </div>
+                            <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-salud" style="width: 52%; background-color: #ef4444;"></div></div>
+                        </div>
                     </div>
-                    <div class="resultado-encuesta" id="res-seguridad">
-                        Resultado actual: <span id="porc-seguridad">68% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-seguridad" style="width: 68%;"></div></div>
-                    </div>
-                </div>
 
-                <div class="termometro-card">
-                    <h3>Pregunta 4: Educación y Escuelas</h3>
-                    <div class="termometro-subtitle">(Estado de los establecimientos, paritarias docentes y calidad educativa).</div>
-                    <div class="opciones-pill-container" id="grupo-educacion">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'educacion', 'muybueno')">MUY BUENO</div>
+                    <div class="termometro-card">
+                        <h3>Seguridad y Prevención</h3>
+                        <div class="resultado-encuesta" style="display: block;">
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+                                <span>Calificación general:</span>
+                                <span id="porc-seguridad" style="color: #b91c1c;">68% MALO</span>
+                            </div>
+                            <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-seguridad" style="width: 68%; background-color: #ef4444;"></div></div>
+                        </div>
                     </div>
-                    <div class="resultado-encuesta" id="res-educacion">
-                        Resultado actual: <span id="porc-educacion">45% lo califica como REGULAR</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-educacion" style="width: 45%;"></div></div>
-                    </div>
-                </div>
 
-                <div class="termometro-card">
-                    <h3>Pregunta 5: Servicios y Obras Públicas</h3>
-                    <div class="termometro-subtitle">(Asfalto, bacheo, agua corriente, cloacas y alumbrado).</div>
-                    <div class="opciones-pill-container" id="grupo-servicios">
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'malo')">MALO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'regular')">REGULAR</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'bueno')">BUENO</div>
-                        <div class="pill-btn" onclick="seleccionarOpcion(this, 'servicios', 'muybueno')">MUY BUENO</div>
+                    <div class="termometro-card">
+                        <h3>Educación y Escuelas</h3>
+                        <div class="resultado-encuesta" style="display: block;">
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+                                <span>Calificación general:</span>
+                                <span id="porc-educacion" style="color: #b45309;">45% REGULAR</span>
+                            </div>
+                            <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-educacion" style="width: 45%; background-color: #f59e0b;"></div></div>
+                        </div>
                     </div>
-                    <div class="resultado-encuesta" id="res-servicios">
-                        Resultado actual: <span id="porc-servicios">61% lo califica como MALO</span> en la región.
-                        <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-servicios" style="width: 61%;"></div></div>
-                    </div>
-                </div>
 
-                <button type="button" class="votar-btn-lg" onclick="enviarEncuestaTermometro()">¡Emitir mi Voto y Ver Resultados!</button>
+                    <div class="termometro-card">
+                        <h3>Servicios y Obras Públicas</h3>
+                        <div class="resultado-encuesta" style="display: block;">
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+                                <span>Calificación general:</span>
+                                <span id="porc-servicios" style="color: #b91c1c;">61% MALO</span>
+                            </div>
+                            <div class="barra-progreso-wrap"><div class="barra-progreso-fill" id="fill-servicios" style="width: 61%; background-color: #ef4444;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="votar-btn-lg" style="background-color: #cbd5e1; color: #475569;" onclick="alert('Ya registramos tu voto. ¡Gracias por participar!')">Ya has votado esta semana</button>
+                </div>
             </section>
         </main>
-
         <!-- VISTA 7: PUBLICIDAD -->
         <main id="vista-publicidad" class="page-view">
             <section class="content-card">
@@ -3141,33 +3187,71 @@ Mientras la candidatura de Victoria Villarruel sigue siendo la gran incógnita e
             }
         }
 
+           // --- LÓGICA DEL TERMÓMETRO ---
+        let respuestasUsuario = { salud: '', seguridad: '', educacion: '', servicios: '' };
+        let votosGlobales = 4125; // Contador base simulado
+
         function seleccionarOpcion(elemento, categoria, valor) {
             const contenedor = document.getElementById('grupo-' + categoria);
             const botones = contenedor.querySelectorAll('.pill-btn');
             
-            botones.forEach(btn => {
-                btn.className = 'pill-btn';
-            });
+            // Limpiar selección previa
+            botones.forEach(btn => { btn.className = 'pill-btn'; });
 
+            // Marcar el nuevo
             if (valor === 'malo') elemento.classList.add('selected-malo');
             if (valor === 'regular') elemento.classList.add('selected-regular');
             if (valor === 'bueno') elemento.classList.add('selected-bueno');
             if (valor === 'muybueno') elemento.classList.add('selected-muybueno');
+
+            // Guardar respuesta
+            respuestasUsuario[categoria] = valor;
         }
 
         function enviarEncuestaTermometro() {
-            const distrito = document.getElementById('term-distrito').value;
-            if(distrito.trim() === "") {
+            const distrito = document.getElementById('term-distrito').value.trim();
+            
+            // Validaciones
+            if(distrito === "") {
                 alert('Por favor completá tu distrito en la Pregunta 1 antes de emitir tu voto.');
                 document.getElementById('term-distrito').focus();
                 return;
             }
+            if(!respuestasUsuario.salud || !respuestasUsuario.seguridad || !respuestasUsuario.educacion || !respuestasUsuario.servicios) {
+                alert('Por favor, seleccioná una opción en todas las preguntas (Salud, Seguridad, Educación y Servicios).');
+                return;
+            }
 
-            document.querySelectorAll('.resultado-encuesta').forEach(res => {
-                res.style.display = 'block';
-            });
+            // 1. Ocultar formulario y mostrar resultados
+            document.getElementById('formulario-termometro').style.display = 'none';
+            document.getElementById('resultados-termometro').style.display = 'block';
+            
+            // 2. Mensaje personalizado
+            document.getElementById('msj-distrito-voto').innerHTML = `Gracias, vecino de <strong>${escapeHtml(distrito)}</strong>. Tu voto se sumó a los <strong>${votosGlobales + 1}</strong> registros de esta semana.`;
+            document.getElementById('votos-totales').innerText = (votosGlobales + 1).toLocaleString('es-AR');
 
-            alert('¡Voto registrado con éxito para el distrito ' + distrito + '! Acá tenés los resultados parciales provinciales.');
+            // 3. Animación de las barras (Simulando que tu voto cambió el resultado)
+            setTimeout(() => {
+                // Salud
+                const esSaludMalo = respuestasUsuario.salud === 'malo';
+                document.getElementById('porc-salud').innerText = esSaludMalo ? '53% MALO' : '52% MALO';
+                document.getElementById('fill-salud').style.width = esSaludMalo ? '53%' : '52%';
+                
+                // Seguridad
+                const esSegMalo = respuestasUsuario.seguridad === 'malo';
+                document.getElementById('porc-seguridad').innerText = esSegMalo ? '69% MALO' : '68% MALO';
+                document.getElementById('fill-seguridad').style.width = esSegMalo ? '69%' : '68%';
+
+                // Educación
+                const esEduRegular = respuestasUsuario.educacion === 'regular';
+                document.getElementById('porc-educacion').innerText = esEduRegular ? '46% REGULAR' : '45% REGULAR';
+                document.getElementById('fill-educacion').style.width = esEduRegular ? '46%' : '45%';
+
+                // Servicios
+                const esServMalo = respuestasUsuario.servicios === 'malo';
+                document.getElementById('porc-servicios').innerText = esServMalo ? '62% MALO' : '61% MALO';
+                document.getElementById('fill-servicios').style.width = esServMalo ? '62%' : '61%';
+            }, 300); // Pequeño delay para que se vea la animación
         }
 
         function escapeHtml(text) {
